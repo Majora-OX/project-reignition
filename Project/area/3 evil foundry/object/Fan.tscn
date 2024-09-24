@@ -9,6 +9,7 @@ size = Vector3(1, 6, 0.5)
 
 [node name="Fan" type="Node3D"]
 script = ExtResource("1_0gep6")
+RotationsPerSecond = 0
 root = NodePath("Root")
 sfx = NodePath("SFX")
 
