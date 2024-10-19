@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://co2akledxygt2"]
+[gd_scene load_steps=11 format=3 uid="uid://cwtl4j0k0mgtv"]
 
 [ext_resource type="Script" path="res://effect/sun/script/Sun.cs" id="1_wrbwf"]
 [ext_resource type="Material" uid="uid://c0oinwdqfmb1f" path="res://effect/sun/material/Base.tres" id="2_128fb"]

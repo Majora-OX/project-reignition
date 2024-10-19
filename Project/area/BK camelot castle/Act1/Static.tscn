@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://chyg4fd83jn8r"]
+[gd_scene load_steps=89 format=3 uid="uid://chyg4fd83jn8r"]
 
 [ext_resource type="Script" path="res://object/stage/StageSettings.cs" id="1_61liy"]
 [ext_resource type="Resource" uid="uid://brknjxuaah7xr" path="res://area/1 sand oasis/act 1/camera/StartCam.tres" id="2_k2hv6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://wpj0smmgjk01" path="res://area/1 sand oasis/act 1/environment/sandfall event/SandfallEvent.tscn" id="6_c7jqd"]
 [ext_resource type="PackedScene" uid="uid://etu2s6i547gb" path="res://object/trigger/state trigger/DriftTrigger.tscn" id="7_gs3dn"]
 [ext_resource type="Script" path="res://object/trigger/modules/CameraTrigger.cs" id="8_1o8wn"]
+[ext_resource type="Resource" uid="uid://dxy5ed0og2ka7" path="res://area/BK camelot castle/Act1/Camera/Bridge2DCamera2.tres" id="10_tnuyq"]
 [ext_resource type="Resource" uid="uid://bba8gwmq3g2ns" path="res://area/BK camelot castle/Act1/Camera/Bridge2DCamera1.tres" id="11_ckfxu"]
 [ext_resource type="Script" path="res://object/trigger/modules/LockoutTrigger.cs" id="11_x5k60"]
 [ext_resource type="Resource" uid="uid://38s0wkpi5mlf" path="res://resource/preset/lockout/run/RecenterLockout.tres" id="12_in01s"]
@@ -535,7 +536,7 @@ collision_layer = 0
 
 [node name="SandfallEvent" parent="Trigger/SandfallTrigger" instance=ExtResource("6_c7jqd")]
 transform = Transform3D(0.972087, -0.0423664, -0.230762, 0.0634712, 0.994374, 0.084812, 0.22587, -0.0970912, 0.969307, 542.771, -28.6034, 1368.04)
-"Trigger Settings/Player Stand-in" = null
+"Trigger Settings/Player Stand-in" = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/SandfallTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 3, -0.5)
@@ -571,11 +572,17 @@ shape = SubResource("BoxShape3D_84q52")
 
 [node name="BridgeTrigger" parent="Trigger/Object" instance=ExtResource("5_pgl6d")]
 transform = Transform3D(0.999854, 0, -0.0171205, 0, 1, 0, 0.0171205, 0, 0.999854, -204.458, -44.1885, 54.4024)
+"Trigger Mode" = 2
+"Enter Mode" = 0
+"Exit Mode" = 0
 
 [node name="CameraTrigger" type="Node3D" parent="Trigger/Object/BridgeTrigger"]
 script = ExtResource("8_1o8wn")
+BlendOffDistance = true
+blendDistance = 165
 settings = ExtResource("11_ckfxu")
 previousSettings = ExtResource("24_5usbh")
+DistanceBlendSetting = ExtResource("10_tnuyq")
 
 [node name="Lockout" type="Node3D" parent="Trigger/Object/BridgeTrigger"]
 script = ExtResource("11_x5k60")
