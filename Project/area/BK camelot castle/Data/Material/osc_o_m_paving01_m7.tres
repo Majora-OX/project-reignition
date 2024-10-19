@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bxlo1dqp0y64d"]
+
+[ext_resource type="Texture2D" uid="uid://txhirstpet30" path="res://area/BK camelot castle/Data/Texture/osc_o_m_paving01_m7.png" id="1_ytr4e"]
+
+[resource]
+resource_name = "osc_o_m_paving01_m7"
+cull_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ytr4e")

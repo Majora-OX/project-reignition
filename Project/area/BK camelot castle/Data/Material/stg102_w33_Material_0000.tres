@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://brk5sfy031fxa"]
+
+[resource]
+resource_name = "stg102_w33_Material_0000"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+roughness = 0.5

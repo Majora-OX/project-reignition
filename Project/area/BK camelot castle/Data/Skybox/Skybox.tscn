@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://clg26r2i6xo03"]
+
+[ext_resource type="PackedScene" path="res://effect/sun/CamelotSun.tscn" id="1_bsgi4"]
+[ext_resource type="PackedScene" uid="uid://i1g0ckweuera" path="res://area/BK camelot castle/Data/Skybox/Model/Skybox.glb" id="1_xqvkm"]
+[ext_resource type="PackedScene" uid="uid://dar74l2eiux2t" path="res://effect/buffer/DepthRenderer.tscn" id="3_qsxik"]
+
+[node name="Skybox" type="Node3D"]
+
+[node name="Sun" parent="." instance=ExtResource("1_bsgi4")]
+transform = Transform3D(0.172054, -0.497203, -0.153264, 0.0939665, 0.188468, -0.505919, 0.511734, 0.132562, 0.144429, 870.942, 981.742, -1483.27)
+
+[node name="Skybox" parent="." instance=ExtResource("1_xqvkm")]
+
+[node name="DepthRenderer" parent="." instance=ExtResource("3_qsxik")]

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bhly0il6qxwoq"]
+
+[ext_resource type="Texture2D" uid="uid://18rr8fl3xi2i" path="res://area/BK camelot castle/Data/Texture/osc_o_k_statue02.png" id="1_tc426"]
+
+[resource]
+resource_name = "osc_o_k_statue02"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_tc426")
+roughness = 0.5

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ec6xl1km766u"]
+
+[ext_resource type="Texture2D" uid="uid://cvp8yqxbf7x0o" path="res://area/BK camelot castle/Data/Texture/osc_p_m_window02.png" id="1_b4mxf"]
+
+[resource]
+resource_name = "osc_p_m_window02"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_b4mxf")
+metallic_specular = 0.0

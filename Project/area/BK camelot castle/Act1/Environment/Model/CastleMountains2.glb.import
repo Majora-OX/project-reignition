@@ -1,0 +1,117 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cw5aahqrlb12a"
+path="res://.godot/imported/CastleMountains2.glb-448cd1d97dd1dad611941251808020c2.scn"
+
+[deps]
+
+source_file="res://area/BK camelot castle/Act1/Environment/Model/CastleMountains2.glb"
+dest_files=["res://.godot/imported/CastleMountains2.glb-448cd1d97dd1dad611941251808020c2.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=15
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"osc_o_a_refsea01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_a_refsea01.tres"
+},
+"osc_o_m_house02": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_house02.tres"
+},
+"osc_o_m_metal01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_metal01.tres"
+},
+"osc_o_m_metal03": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_metal03.tres"
+},
+"osc_o_m_wall01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall01.tres"
+},
+"osc_o_m_wall02": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall02.tres"
+},
+"osc_o_m_wall03": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall03.tres"
+},
+"osc_o_m_wall04": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall04.tres"
+},
+"osc_o_m_wall07": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall07.tres"
+},
+"osc_o_m_wood01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wood01.tres"
+},
+"osc_o_m_wood02": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wood02.tres"
+},
+"osc_o_t_ground01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_t_ground01.tres"
+},
+"osc_o_t_ground02_m5": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_t_ground02_m5.tres"
+},
+"osc_o_t_ground03_m5": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_t_ground03_m5.tres"
+},
+"osc_o_t_mountain01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_t_mountain01.tres"
+},
+"osc_p_m_tree01_m6": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_m_tree01_m6.tres"
+},
+"osc_p_t_far01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_t_far01.tres"
+},
+"osc_p_t_trees01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_t_trees01.tres"
+}
+},
+"nodes": {
+"PATH:stg102_o40_Mesh_0003": {
+"mesh_instance/layers": 0
+},
+"PATH:stg102_o40_Mesh_0009": {
+"mesh_instance/layers": 0
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=0

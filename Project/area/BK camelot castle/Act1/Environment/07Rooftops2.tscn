@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3o7mo0tb6gjq"]
+
+[ext_resource type="PackedScene" uid="uid://bb5f1f1f2q6bt" path="res://area/BK camelot castle/Act1/Environment/Model/Rooftops1.glb" id="2_2anu1"]
+[ext_resource type="PackedScene" uid="uid://d36jmsl3rl6df" path="res://area/BK camelot castle/Act1/Environment/Model/Rooftops2.glb" id="2_xh7ey"]
+
+[node name="07Rooftops2" type="Node3D"]
+
+[node name="Lights" type="Node3D" parent="."]
+visible = false
+
+[node name="Sun" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(-0.823719, -0.175288, 0.539223, 0.27586, 0.706972, 0.651223, -0.495367, 0.685175, -0.533991, 63.1512, 0.935509, 717.067)
+visible = false
+shadow_enabled = true
+shadow_bias = 0.2
+directional_shadow_mode = 0
+
+[node name="Rooftops1" parent="." instance=ExtResource("2_2anu1")]
+visible = false
+
+[node name="Rooftops2" parent="." instance=ExtResource("2_xh7ey")]

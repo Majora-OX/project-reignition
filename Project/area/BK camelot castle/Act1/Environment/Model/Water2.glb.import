@@ -1,0 +1,41 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://6lup2ymwt8q0"
+path="res://.godot/imported/Water2.glb-0b53c1470887a48d93390f3dc5101f34.scn"
+
+[deps]
+
+source_file="res://area/BK camelot castle/Act1/Environment/Model/Water2.glb"
+dest_files=["res://.godot/imported/Water2.glb-0b53c1470887a48d93390f3dc5101f34.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=15
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"stg102_w33_Material_0000": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/Ocean.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=0

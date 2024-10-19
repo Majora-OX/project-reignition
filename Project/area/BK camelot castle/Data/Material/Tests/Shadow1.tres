@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://0awb8kkl0fc8"]
+
+[ext_resource type="Texture2D" uid="uid://cebvng3wy1cyd" path="res://area/BK camelot castle/Data/Texture/osc_x_t_shadow01.png" id="1_cn0j8"]
+
+[resource]
+resource_name = "stg102_a01_Material_0000.002"
+cull_mode = 1
+depth_draw_mode = 1
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.261264, 0.810412, 1)
+albedo_texture = ExtResource("1_cn0j8")

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cij6tng87nl3c"]
+
+[ext_resource type="Texture2D" uid="uid://cjhihw6l353hp" path="res://area/BK camelot castle/Data/Texture/osc_o_t_road05.png" id="1_byybk"]
+
+[resource]
+resource_name = "osc_o_t_road05"
+cull_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_byybk")

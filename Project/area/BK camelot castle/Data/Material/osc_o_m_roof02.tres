@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://gf0lh88irh7w"]
+
+[ext_resource type="Texture2D" uid="uid://dohu13ydevuls" path="res://area/BK camelot castle/Data/Texture/osc_o_m_roof02.png" id="1_f5w8d"]
+
+[resource]
+resource_name = "osc_o_m_roof02"
+cull_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_f5w8d")

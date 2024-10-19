@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bp6vdcbqud601"]
+
+[ext_resource type="Shader" path="res://area/BK camelot castle/Data/Shaders/Waterfall.gdshader" id="1_gkyso"]
+[ext_resource type="Texture2D" uid="uid://cd60xurdwafut" path="res://area/BK camelot castle/Data/Texture/osc_a_m_splash02.png" id="2_7s3nu"]
+[ext_resource type="Texture2D" uid="uid://bh15xgpvboavg" path="res://area/BK camelot castle/Data/Texture/osc_i_m_water01.png" id="2_ldlwf"]
+[ext_resource type="Texture2D" uid="uid://dtamn25rlf5uj" path="res://area/BK camelot castle/Data/Texture/osc_a_m_splash01.png" id="3_i4lu3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gkyso")
+shader_parameter/flowSpeed = 0.731
+shader_parameter/displacementFlowSpeed = 0.041
+shader_parameter/displacementScale = 0.071
+shader_parameter/albedo = ExtResource("2_7s3nu")
+shader_parameter/displacement = ExtResource("2_ldlwf")
+shader_parameter/mask = ExtResource("3_i4lu3")

@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bx447vj5ln7it"]
+
+[ext_resource type="Shader" uid="uid://citv67sx6hqvt" path="res://area/BK camelot castle/Data/Shaders/CastleDrainVisualTest.tres" id="1_132cu"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 60
+shader = ExtResource("1_132cu")

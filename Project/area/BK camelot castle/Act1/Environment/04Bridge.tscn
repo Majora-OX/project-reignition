@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwr80lrvv1qit"]
+
+[ext_resource type="PackedScene" uid="uid://m44u5l0y6qk6" path="res://area/BK camelot castle/Act1/Environment/Model/Brige.glb" id="3_oan1k"]
+[ext_resource type="PackedScene" uid="uid://6lup2ymwt8q0" path="res://area/BK camelot castle/Act1/Environment/Model/Water2.glb" id="4_2gdae"]
+[ext_resource type="PackedScene" uid="uid://bicj7ihu1sol0" path="res://area/BK camelot castle/Act1/Environment/Model/CastleTown.glb" id="4_7638l"]
+
+[node name="04Bridge" type="Node3D"]
+
+[node name="Lights" type="Node3D" parent="."]
+visible = false
+
+[node name="Sun" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(-0.823719, -0.175288, 0.539223, 0.27586, 0.706972, 0.651223, -0.495367, 0.685175, -0.533991, 63.1512, 0.935509, 717.067)
+visible = false
+shadow_enabled = true
+shadow_bias = 0.2
+directional_shadow_mode = 0
+
+[node name="CastleTown" parent="." instance=ExtResource("4_7638l")]
+visible = false
+
+[node name="Brige" parent="." instance=ExtResource("3_oan1k")]
+
+[node name="Water2" parent="." instance=ExtResource("4_2gdae")]

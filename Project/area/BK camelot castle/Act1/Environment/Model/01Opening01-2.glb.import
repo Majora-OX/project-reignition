@@ -1,0 +1,110 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cxgg2cjfeyijb"
+path="res://.godot/imported/01Opening01-2.glb-512a19ffd9340a9a3434b1904a1b9306.scn"
+
+[deps]
+
+source_file="res://area/BK camelot castle/Act1/Environment/Model/01Opening01-2.glb"
+dest_files=["res://.godot/imported/01Opening01-2.glb-512a19ffd9340a9a3434b1904a1b9306.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=15
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"osc_o_j_woodbox01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_j_woodbox01.tres"
+},
+"osc_o_m_tree01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_tree01.tres"
+},
+"osc_o_m_wall01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall01.tres"
+},
+"osc_o_m_wall02": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall02.tres"
+},
+"osc_o_m_wall03": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall03.tres"
+},
+"osc_o_m_wall07": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_m_wall07.tres"
+},
+"osc_o_t_ground01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_t_ground01.tres"
+},
+"osc_o_t_ground02_m5": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_t_ground02_m5.tres"
+},
+"osc_o_t_ground03_m5": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_t_ground03_m5.tres"
+},
+"osc_o_t_ground04_m7": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_o_t_ground04_m7.tres"
+},
+"osc_p_m_tree01_m6": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_m_tree01_m6.tres"
+},
+"osc_p_m_tree02_m6": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_m_tree02_m6.tres"
+},
+"osc_p_m_window01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_m_window01.tres"
+},
+"osc_p_t_green01_m6": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_t_green01_m6.tres"
+},
+"osc_p_t_green03_m6": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_t_green03_m6.tres"
+},
+"osc_p_t_trees01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_p_t_trees01.tres"
+},
+"osc_x_t_shadow01": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/osc_x_t_shadow01.tres"
+}
+},
+"nodes": {
+"PATH:stg102_b01_Mesh_0000": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=0

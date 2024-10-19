@@ -1,0 +1,109 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://hifuctouefvo"
+path="res://.godot/imported/01Opening.glb-d6a2a04812fc57d2d13ed8cd5a8cc102.scn"
+
+[deps]
+
+source_file="res://area/BK camelot castle/Act1/Environment/Model/01Opening.glb"
+dest_files=["res://.godot/imported/01Opening.glb-d6a2a04812fc57d2d13ed8cd5a8cc102.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=15
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"stg102_a01_Material_0000.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_a01_Material_0000.002.tres"
+},
+"stg102_b01_Material_0000.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_b01_Material_0000.002.tres"
+},
+"stg102_os01_Material_0000.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0000.002.tres"
+},
+"stg102_os01_Material_0001.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0001.002.tres"
+},
+"stg102_os01_Material_0002.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0002.002.tres"
+},
+"stg102_os01_Material_0003.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0003.002.tres"
+},
+"stg102_os01_Material_0004.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0004.002.tres"
+},
+"stg102_os01_Material_0005.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0005.002.tres"
+},
+"stg102_os01_Material_0006.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0006.002.tres"
+},
+"stg102_os01_Material_0007.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0007.002.tres"
+},
+"stg102_os01_Material_0008.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0008.002.tres"
+},
+"stg102_os01_Material_0009.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_os01_Material_0009.002.tres"
+},
+"stg102_p01_Material_0000.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_p01_Material_0000.002.tres"
+},
+"stg102_p01_Material_0001.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_p01_Material_0001.002.tres"
+},
+"stg102_p01_Material_0002.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_p01_Material_0002.002.tres"
+},
+"stg102_p01_Material_0003.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_p01_Material_0003.002.tres"
+},
+"stg102_p01_Material_0004.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_p01_Material_0004.002.tres"
+},
+"stg102_p01_Material_0005.002": {
+"use_external/enabled": true,
+"use_external/path": "res://area/BK camelot castle/Data/Material/stg102_p01_Material_0005.002.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=0

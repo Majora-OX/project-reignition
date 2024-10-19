@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://tqbjv0flw4v3"]
+
+[ext_resource type="Texture2D" uid="uid://b2t1kjo5j5gnx" path="res://area/BK camelot castle/Data/Texture/osc_o_m_barrista02.png" id="1_803c2"]
+
+[resource]
+resource_name = "osc_o_m_barrista02"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_803c2")
+roughness = 0.5

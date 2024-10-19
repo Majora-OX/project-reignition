@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cekrhrlumtiy8"]
+
+[ext_resource type="PackedScene" uid="uid://6ur06lxar60v" path="res://area/BK camelot castle/Act1/Environment/Model/sewer.glb" id="1_tkacn"]
+[ext_resource type="PackedScene" uid="uid://cw5aahqrlb12a" path="res://area/BK camelot castle/Act1/Environment/Model/CastleMountains2.glb" id="2_j37fx"]
+
+[node name="13Castlemountains2" type="Node3D"]
+
+[node name="Lights" type="Node3D" parent="."]
+visible = false
+
+[node name="Sun" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(-0.823719, -0.175288, 0.539223, 0.27586, 0.706972, 0.651223, -0.495367, 0.685175, -0.533991, 63.1512, 0.935509, 717.067)
+visible = false
+shadow_enabled = true
+shadow_bias = 0.2
+directional_shadow_mode = 0
+
+[node name="sewer" parent="." instance=ExtResource("1_tkacn")]
+
+[node name="CastleMountains2" parent="." instance=ExtResource("2_j37fx")]

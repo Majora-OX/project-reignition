@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://baeft6lmyeokh"]
+
+[ext_resource type="Texture2D" uid="uid://cnvhiyq8yfvs5" path="res://area/BK camelot castle/Data/Skybox/Model/Textures/osc_z_m_cloud01a.png" id="1_j4ddj"]
+
+[resource]
+resource_name = "stg101_sky_Material_0002"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_j4ddj")
+metallic = 1.0

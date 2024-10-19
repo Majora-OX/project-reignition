@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://csjtiuwr7xw3v"]
+
+[ext_resource type="PackedScene" uid="uid://hifuctouefvo" path="res://area/BK camelot castle/Act1/Environment/Model/01Opening.glb" id="1_5a4qk"]
+[ext_resource type="PackedScene" uid="uid://cxgg2cjfeyijb" path="res://area/BK camelot castle/Act1/Environment/Model/01Opening01-2.glb" id="2_uiimt"]
+[ext_resource type="PackedScene" uid="uid://d0xw7s1exay3f" path="res://area/BK camelot castle/Act1/Environment/Model/CastleEntrance.glb" id="3_77vwi"]
+[ext_resource type="PackedScene" uid="uid://bicj7ihu1sol0" path="res://area/BK camelot castle/Act1/Environment/Model/CastleTown.glb" id="4_1i6q2"]
+
+[node name="02CastleEntrance" type="Node3D"]
+
+[node name="01Opening" parent="." instance=ExtResource("1_5a4qk")]
+visible = false
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="Sun" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(-0.823719, -0.175288, 0.539223, 0.27586, 0.706972, 0.651223, -0.495367, 0.685175, -0.533991, 63.1512, 0.935509, 717.067)
+visible = false
+shadow_enabled = true
+shadow_bias = 0.2
+directional_shadow_mode = 0
+
+[node name="01Opening01-2" parent="." instance=ExtResource("2_uiimt")]
+visible = false
+
+[node name="CastleEntrance" parent="." instance=ExtResource("3_77vwi")]
+visible = false
+
+[node name="CastleTown" parent="." instance=ExtResource("4_1i6q2")]

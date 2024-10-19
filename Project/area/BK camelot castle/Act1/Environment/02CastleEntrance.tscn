@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://csgaevmlph17"]
+
+[ext_resource type="PackedScene" uid="uid://d0xw7s1exay3f" path="res://area/BK camelot castle/Act1/Environment/Model/CastleEntrance.glb" id="3_61jse"]
+
+[node name="02CastleEntrance" type="Node3D"]
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="Sun" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(-0.823719, -0.175288, 0.539223, 0.27586, 0.706972, 0.651223, -0.495367, 0.685175, -0.533991, 63.1512, 0.935509, 717.067)
+visible = false
+shadow_enabled = true
+shadow_bias = 0.2
+directional_shadow_mode = 0
+
+[node name="CastleEntrance" parent="." instance=ExtResource("3_61jse")]

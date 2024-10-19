@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://5mesmnmqab20"]
+
+[ext_resource type="Texture2D" uid="uid://cs75vkndl0nxk" path="res://area/BK camelot castle/Data/Texture/osc_k_m_water01.png" id="1_ygd7y"]
+
+[resource]
+resource_name = "osc_k_m_water01"
+transparency = 4
+cull_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ygd7y")
