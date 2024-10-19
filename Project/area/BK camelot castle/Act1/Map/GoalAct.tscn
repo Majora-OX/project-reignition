@@ -15631,17 +15631,20 @@ saveVisibilityOnCheckpoint = true
 
 [node name="JumpCamera" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("35_3umj2")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.4
 settings = ExtResource("36_midr8")
 previousSettings = ExtResource("37_27axl")
 
 [node name="SpringJumpCamera" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("35_3umj2")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.4
 settings = ExtResource("38_a3nwq")
 
 [node name="SpringCamera" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("35_3umj2")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("39_tvc7b")
 previousSettings = ExtResource("37_27axl")
@@ -15651,6 +15654,7 @@ script = ExtResource("40_ysb4y")
 
 [node name="JumpEndCamera" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("35_3umj2")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.4
 settings = ExtResource("41_8jw0i")
 
