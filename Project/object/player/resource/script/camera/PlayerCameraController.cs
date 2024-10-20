@@ -270,7 +270,6 @@ public partial class PlayerCameraController : Node3D
 			CameraBlendList[blendIndex].BlendSpeed * PhysicsManager.physicsDelta);
 			CameraBlendList[blendIndex].SetInfluence(influence);
 			
-		}
 	}
 
 	private void UpdateGameplayCamera()

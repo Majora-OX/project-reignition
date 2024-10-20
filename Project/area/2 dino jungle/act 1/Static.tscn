@@ -1031,6 +1031,7 @@ path = NodePath("../../../../Path/CavePath")
 [node name="Camera" type="Node3D" parent="Trigger/Object/CaveRejoinTrigger"]
 transform = Transform3D(0.999884, 0, 0.0152704, 0, 1, 0, -0.0152704, 0, 0.999884, -0.112183, 0.0325928, 0.0930786)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("37_lloeo")
 previousSettings = ExtResource("37_lloeo")
@@ -1112,6 +1113,7 @@ affectCamera = false
 
 [node name="Camera" type="Node3D" parent="Trigger/Object/LogAutomationTrigger"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("23_pnpt3")
 previousSettings = ExtResource("34_qb2qj")
@@ -1163,7 +1165,7 @@ libraries = {
 }
 
 [node name="Head" type="BoneAttachment3D" parent="Trigger/Object/Apatos1/ActivateTrigger/EventTrigger"]
-transform = Transform3D(-0.984788, -0.173647, -0.0063563, 0.00640272, 0.000292879, -0.999979, 0.173645, -0.984808, 0.000823389, -4.24603, -18.4884, 3.43817)
+transform = Transform3D(0.999979, -9.37621e-07, 0.00640272, 0.00640272, 0.000292879, -0.999979, -9.37621e-07, 1, 0.000292879, 1.06802e-05, 19.7418, 38.526)
 bone_name = "head"
 bone_idx = 1
 use_external_skeleton = true
@@ -1199,10 +1201,11 @@ forceConsistentHeight = true
 [node name="Camera" type="Node3D" parent="Trigger/Object/Apatos1/ActivateTrigger"]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 29.1186, -20.5381, 11.5186)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 deactivationTransitionTime = 0.5
+UpdateEveryFrame = true
 settings = ExtResource("28_7w0ww")
 previousSettings = ExtResource("29_eqruc")
-UpdateEveryFrame = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Object/Apatos1/ActivateTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
@@ -1252,6 +1255,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10352e-05, 30, -6)
 [node name="Camera" type="Node3D" parent="Trigger/Object/Apatos2/RecenterTrigger"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("30_gtpto")
 previousSettings = ExtResource("37_lloeo")
@@ -1316,7 +1320,7 @@ libraries = {
 }
 
 [node name="Head" type="BoneAttachment3D" parent="Trigger/Object/Apatos2/Event"]
-transform = Transform3D(0.999979, -9.23872e-07, 0.00640272, 0.00640272, 0.000292879, -0.999979, -9.23872e-07, 1, 0.000292879, 6.10352e-05, 19.7418, 38.5259)
+transform = Transform3D(0.999979, -9.37621e-07, 0.00640272, 0.00640272, 0.000292879, -0.999979, -9.37621e-07, 1, 0.000292879, 1.06802e-05, 19.7418, 38.526)
 bone_name = "head"
 bone_idx = 1
 use_external_skeleton = true
@@ -1633,7 +1637,7 @@ bones/16/rotation = Quaternion(0.941786, 6.88404e-08, 1.2379e-07, 0.336214)
 autoplay = "para-stand"
 
 [node name="Head" parent="Trigger/Object/DinoParaGroup/DinoPara1" index="3"]
-transform = Transform3D(1, 4.47035e-08, -4.32134e-07, -4.16082e-07, -0.185597, -0.982626, -8.9407e-08, 0.982626, -0.185597, 0.00012207, 6.40689, 8.30835)
+transform = Transform3D(1, 2.68441e-08, -4.28509e-07, -4.16082e-07, -0.185597, -0.982626, -1.05908e-07, 0.982626, -0.185597, 3.64975e-07, 6.40692, 8.30832)
 
 [node name="DinoPara2" parent="Trigger/Object/DinoParaGroup" instance=ExtResource("41_ak0dc")]
 transform = Transform3D(0.955961, 0, -1.36525, 0, 1.66667, 0, 1.36525, 0, 0.955961, 11.3036, 0, 11.6873)
@@ -1656,7 +1660,7 @@ bones/16/rotation = Quaternion(0.941786, 6.88404e-08, 1.2379e-07, 0.336214)
 autoplay = "event-deactivate"
 
 [node name="Head" parent="Trigger/Object/DinoParaGroup/DinoPara2" index="3"]
-transform = Transform3D(1, 2.98023e-08, -4.24683e-07, -4.16082e-07, -0.185597, -0.982626, -1.19209e-07, 0.982626, -0.185597, 0, 6.40689, 8.30835)
+transform = Transform3D(1, 2.68441e-08, -4.28509e-07, -4.16082e-07, -0.185597, -0.982626, -1.05908e-07, 0.982626, -0.185597, 3.64975e-07, 6.40692, 8.30832)
 
 [node name="FeedingRecenterTrigger" type="Node3D" parent="Trigger/Object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -670.544, -283.473, -1075.94)
@@ -1697,6 +1701,7 @@ transform = Transform3D(0.752691, 0, -0.658374, 0, 1, 0, 0.658374, 0, 0.752691, 
 [node name="Cam" type="Node3D" parent="Trigger/Object/IslandRecenterTrigger/StartTrigger"]
 transform = Transform3D(0.990212, 0, 0.13957, 0, 1, 0, -0.13957, 0, 0.990212, 0.234131, 0.16922, 5.67874)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("47_q66r8")
 
@@ -1768,6 +1773,7 @@ OneShot = true
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/ChaseCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 transitionType = 1
 settings = ExtResource("35_ib3lh")
@@ -1783,6 +1789,7 @@ transform = Transform3D(-1, -1.51808e-08, -8.60946e-08, 0, 0.984808, -0.173648, 
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/ChaseReverseCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 transitionType = 1
 enableInputBlending = true
@@ -1800,11 +1807,12 @@ transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808
 [node name="Camera" type="Node3D" parent="Trigger/Camera/ChaseStaticCam"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 0.999999, 0, -1.04308e-07, 0, 1, 0.0419121, 2.7, 18.8021)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 transitionType = 1
+UpdateEveryFrame = true
 enableInputBlending = true
 settings = ExtResource("28_7w0ww")
-UpdateEveryFrame = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/ChaseStaticCam"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
@@ -1818,6 +1826,7 @@ transform = Transform3D(-0.087156, 0, -0.996195, 0, 1, 0, 0.996195, 0, -0.087156
 [node name="Camera" type="Node3D" parent="Trigger/Camera/ChaseFollowCam"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, -1.04308e-07, 0, 1, -0.779327, 2.7, 18.8776)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("37_wq224")
 
@@ -1832,6 +1841,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -154.6
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/Chase2Cam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("35_ib3lh")
 
@@ -1847,10 +1857,11 @@ transform = Transform3D(-0.71877, 0, -0.695248, 0, 1, 0, 0.695248, 0, -0.71877, 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/ChaseStatic2Cam"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, -1.49012e-07, 0, 1, -9.50684, -0.727667, 14.5464)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 transitionType = 1
-settings = ExtResource("28_7w0ww")
 UpdateEveryFrame = true
+settings = ExtResource("28_7w0ww")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/ChaseStatic2Cam"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
@@ -1862,6 +1873,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -362.8
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/CaveCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("37_lloeo")
 
@@ -1876,6 +1888,7 @@ transform = Transform3D(-0.999079, 0, -0.0429044, 0, 1, 0, 0.0429044, 0, -0.9990
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/CaveLeftCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("27_aqrt3")
 
@@ -1890,6 +1903,7 @@ transform = Transform3D(-0.991538, 0, -0.129817, 0, 1, 0, 0.129817, 0, -0.991538
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/CaveRightCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("27_h0ugs")
 
@@ -1904,6 +1918,7 @@ transform = Transform3D(-0.944325, 0, 0.329015, 0, 1, 0, -0.329015, 0, -0.944325
 [node name="Camera" type="Node3D" parent="Trigger/Camera/SpiralCam1"]
 transform = Transform3D(-0.975312, 0, 0.220834, 0, 1, 0, -0.220834, 0, -0.975312, -2.34045, -1.30722, 10.6233)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 transitionType = 1
 settings = ExtResource("28_7w0ww")
@@ -1918,6 +1933,7 @@ transform = Transform3D(-0.978267, 0, 0.207348, 0, 1, 0, -0.207348, 0, -0.978267
 [node name="Camera" type="Node3D" parent="Trigger/Camera/SpiralCam2"]
 transform = Transform3D(0.999999, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 0.999999, 4.79718, -8.70001, 0.355835)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 settings = ExtResource("28_7w0ww")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/SpiralCam2"]
@@ -1929,6 +1945,7 @@ transform = Transform3D(-0.964193, 0, -0.265203, 0, 1, 0, 0.265203, 0, -0.964193
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/SpiralCam3"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 settings = ExtResource("30_ju7m7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/SpiralCam3"]
@@ -1940,6 +1957,7 @@ transform = Transform3D(-0.920723, 0, -0.390217, 0, 1, 0, 0.390217, 0, -0.920723
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/CaveExitCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("34_qb2qj")
 
@@ -1953,6 +1971,7 @@ transform = Transform3D(-0.698416, 0, 0.715693, 0, 1, 0, -0.715693, 0, -0.698416
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/LogWallCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("35_mtslr")
 previousSettings = ExtResource("34_qb2qj")
@@ -1969,6 +1988,7 @@ transform = Transform3D(-0.698416, 0, 0.715693, 0, 1, 0, -0.715693, 0, -0.698416
 [node name="Camera" type="Node3D" parent="Trigger/Camera/DinoCrossingCam"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("36_hewn5")
 previousSettings = ExtResource("35_mtslr")
@@ -1985,6 +2005,7 @@ transform = Transform3D(0.397148, 0, 0.917755, 0, 1, 0, -0.917755, 0, 0.397148, 
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/LogCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("29_jpgcf")
 
@@ -2000,6 +2021,7 @@ transform = Transform3D(-0.663926, 0, 0.747798, 0, 1, 0, -0.747798, 0, -0.663926
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/FlyingPotCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("38_j47cl")
 previousSettings = ExtResource("36_hewn5")
@@ -2016,6 +2038,7 @@ transform = Transform3D(-0.986856, 0, -0.161604, 0, 1, 0, 0.161604, 0, -0.986856
 [node name="Camera" type="Node3D" parent="Trigger/Camera/DinoCrossingCam2"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("36_hewn5")
 previousSettings = ExtResource("29_eqruc")
@@ -2032,6 +2055,7 @@ transform = Transform3D(-0.0993197, 0, -0.995056, 0, 1, 0, 0.995056, 0, -0.09931
 [node name="Camera" type="Node3D" parent="Trigger/Camera/SidleCam"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("44_d1e8a")
 
@@ -2046,6 +2070,7 @@ transform = Transform3D(-0.981084, 0, -0.193584, 0, 1, 0, 0.193584, 0, -0.981084
 [node name="Camera" type="Node3D" parent="Trigger/Camera/FeedingTunnelCam"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("37_lloeo")
 
@@ -2061,6 +2086,7 @@ transform = Transform3D(0.998279, 0, -0.0586443, 0, 1, 0, 0.0586443, 0, 0.998279
 
 [node name="Cam" type="Node3D" parent="Trigger/Camera/DinoFeedingRocksBitesCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("52_tpulw")
 
@@ -2077,6 +2103,7 @@ transform = Transform3D(0.590071, 0, -0.807352, 0, 1, 0, 0.807352, 0, 0.590071, 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/BackstepWallCam"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("45_r78fw")
 
@@ -2092,6 +2119,7 @@ transform = Transform3D(-0.515038, 0, -0.857167, 0, 1, 0, 0.857167, 0, -0.515038
 
 [node name="Cam" type="Node3D" parent="Trigger/Camera/FirstEndIslandCamWall"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("48_brq7k")
 
@@ -2106,6 +2134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -813.384, -266.901, -1064.96)
 
 [node name="Cam" type="Node3D" parent="Trigger/Camera/2ndEndIslandFieldCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.4
 settings = ExtResource("51_3eohj")
 
@@ -2119,6 +2148,7 @@ transform = Transform3D(-0.981084, 0, -0.193584, 0, 1, 0, 0.193584, 0, -0.981084
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/EndIslandCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("46_oc3qf")
 
@@ -2133,6 +2163,7 @@ transform = Transform3D(-0.239177, 0, -0.970976, 0, 1, 0, 0.970976, 0, -0.239177
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/EndFollowCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("47_cd0o2")
 
@@ -2147,6 +2178,7 @@ transform = Transform3D(0.946436, 0, -0.322894, 0, 1, 0, 0.322894, 0, 0.946436, 
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/EndCam"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 settings = ExtResource("47_6j2j6")
 
@@ -2161,6 +2193,7 @@ transform = Transform3D(-0.315368, 0, 0.94897, 0, 1, 0, -0.94897, 0, -0.315368, 
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/EndFollowCam2"]
 script = ExtResource("36_8t574")
+"Additional Blend Settings/Blend By Distance" = false
 transitionTime = 0.5
 deactivationTransitionTime = 0.2
 settings = ExtResource("47_cd0o2")
