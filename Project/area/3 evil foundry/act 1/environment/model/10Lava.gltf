@@ -1,6 +1,6 @@
 {
     "asset" : {
-        "generator" : "Khronos glTF Blender I/O v3.3.27",
+        "generator" : "Khronos glTF Blender I/O v3.3.36",
         "version" : "2.0"
     },
     "extensionsUsed" : [
@@ -945,7 +945,7 @@
         {
             "alphaCutoff" : 0.5,
             "alphaMode" : "MASK",
-            "name" : "Common Window Clip",
+            "name" : "Common Window",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 35
@@ -1859,7 +1859,7 @@
         {
             "bufferView" : 214,
             "mimeType" : "image/png",
-            "name" : "common window clip"
+            "name" : "common window"
         },
         {
             "bufferView" : 221,

@@ -249,6 +249,7 @@ public partial class PlayerController : CharacterBody3D
 		KinematicCollision3D collision = MoveAndCollide(-UpDirection * distance, true);
 		if (collision == null) return;
 
+		IsOnGround = true;
 		MoveAndCollide(-UpDirection * distance);
 		Animator.SnapToGround();
 	}
@@ -286,7 +287,7 @@ public partial class PlayerController : CharacterBody3D
 					return;
 				}
 
-				Skills.CallDeferred(CharacterSkillManager.MethodName.ToggleSpeedBreak);
+				Skills.CallDeferred(PlayerSkillController.MethodName.ToggleSpeedBreak);
 			}
 
 			if (WallRaycastHit.distance <= CollisionSize.X + CollisionPadding)
@@ -681,7 +682,6 @@ public partial class PlayerController : CharacterBody3D
 	public void StartBounce(bool isUpwardBounce = true)
 	{
 		IsBouncing = true;
-		GD.PrintT("Bouncing", isUpwardBounce);
 		bounceState.IsUpwardBounce = isUpwardBounce;
 		StateMachine.ChangeState(bounceState);
 	}
@@ -704,6 +704,7 @@ public partial class PlayerController : CharacterBody3D
 	{
 		EmitSignal(SignalName.Knockback); // Emit signal FIRST so external controllers can be alerted
 
+		if (IsTeleporting || IsDefeated) return;
 		if (IsInvincible && !settings.ignoreInvincibility) return;
 		if (ExternalController != null && !settings.ignoreMovementState) return;
 
@@ -723,7 +724,7 @@ public partial class PlayerController : CharacterBody3D
 			if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.PearlRespawn) && Skills.IsSoulGaugeCharged)
 			{
 				// Lose soul power and continue
-				Skills.ModifySoulGauge(-CharacterSkillManager.MinimumSoulPower);
+				Skills.ModifySoulGauge(-PlayerSkillController.MinimumSoulPower);
 			}
 			else
 			{
@@ -976,6 +977,38 @@ public partial class PlayerController : CharacterBody3D
 		ExternalParent = null;
 		UpdateOrientation();
 		EmitSignal(SignalName.ExternalControlCompleted);
+	}
+
+	public void Activate()
+	{
+		Visible = true;
+		ProcessMode = ProcessModeEnum.Inherit;
+
+		Camera.Camera.Current = true; // Reactivate camera (for cutscenes)
+		Lockon.IsReticleVisible = true;
+
+		if (Stage.IsControlTest)
+			return;
+
+		HeadsUpDisplay.Instance.Visible = true;
+		Interface.PauseMenu.AllowPausing = true;
+	}
+
+	public void Deactivate()
+	{
+		if (Skills.IsUsingBreakSkills)
+			Skills.CancelBreakSkills();
+
+		Visible = false;
+		ProcessMode = ProcessModeEnum.Disabled;
+
+		Lockon.IsReticleVisible = false;
+
+		if (Stage.IsControlTest)
+			return;
+
+		HeadsUpDisplay.Instance.Visible = false;
+		Interface.PauseMenu.AllowPausing = false;
 	}
 	#endregion
 }

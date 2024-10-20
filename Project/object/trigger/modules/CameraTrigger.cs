@@ -59,64 +59,55 @@ public partial class CameraTrigger : StageTriggerModule
 	#endregion
 
 	/// <summary> How long the transition is (in seconds). Use a transition time of 0 to perform an instant cut. </summary>
-	[Export(PropertyHint.Range, "0,2,0.1")]
-	public float transitionTime;
+	[Export(PropertyHint.Range, "0,5,0.1,or_greater")]
+	public float transitionTime = 0.5f;
 	/// <summary> Override to have a different blend time during deactivation. </summary>
 	[Export(PropertyHint.Range, "-1,2,0.1")]
-	public float deactivationTransitionTime = -1;
-	[Export]
-	public TransitionType transitionType;
-	public enum TransitionType
-	{
-		Blend, // Interpolate between states
-		Crossfade, // Crossfade states
-	}
-	/// <summary>Does this trigger blend between two camera settings based off distance?</summary>
-	private bool BlendByDistance = false;
-	/// <summary>How far away would the blend/tranisition complete?</summary>
-	private int blendDistance = 100;
-	/// <summary>The point where the camera would fully tranisition to setting 2 when blending by distance</summary>
-	public Vector3 BlendFinishPoint => GlobalPosition + (this.Back() * blendDistance);
-
-	/// <summary> Update static position/rotations every frame? </summary>
-	[Export]
-	public bool UpdateEveryFrame { get; private set; }
-
-	[Export]
-	public bool enableInputBlending;
+	public float deactivationTransitionTime = -1f;
+	[Export] public CameraTransitionType transitionType;
+	[Export] public bool enableInputBlending;
 
 	/// <summary> Must be assigned to something. </summary>
-	[Export]
-	public CameraSettingsResource settings;
+	[Export] public CameraSettingsResource settings;
 	/// <summary> Reference to the camera data that was being used when this trigger was entered. </summary>
-	[Export]
-	private CameraSettingsResource previousSettings;
-	/// <summary> If blending two settings by distance, the second camera setting data that is used for the blend </summary>
-	private CameraSettingsResource DistanceBlendSetting;
-	[Export]
-	private Camera3D referenceCamera;
+	[Export] private CameraSettingsResource previousSettings;
 
+	[ExportGroup("Transform Overrides")]
+	/// <summary> Update positions and rotations every frame? </summary>
+	[Export] public bool UpdateEveryFrame { get; private set; }
+	[Export(PropertyHint.NodePathValidTypes, "Node3D")] private NodePath followObject;
+	private Node3D _followObject;
+	private Camera3D _referenceCamera;
+	private bool IsOverridingCameraTransform => settings.copyPosition || settings.copyRotation || settings.copyRotation;
+
+	private bool cachedPreviousSettings;
 	private Vector3 previousStaticPosition;
 	private Basis previousStaticRotation;
 	private PlayerCameraController Camera => Player.Camera;
 
+	public override void _Ready()
+	{
+		if (!IsOverridingCameraTransform)
+			return;
+
+		_followObject = followObject?.IsEmpty == false ? GetNode<Node3D>(followObject) : this;
+
+		if (_followObject is Camera3D)
+			_referenceCamera = _followObject as Camera3D;
+	}
+
 	public void UpdateStaticData(CameraBlendData data)
 	{
-		if (data.SettingsResource != settings) return;
+		if (data.SettingsResource != settings || !IsOverridingCameraTransform) return;
 
-		if (data.SettingsResource.useStaticPosition)
-		{
-			if (data.SettingsResource.copyPosition)
-				data.StaticPosition = GlobalPosition;
-			else
-				data.StaticPosition = data.SettingsResource.staticPosition;
-		}
+		if (data.SettingsResource.copyPosition)
+			data.Position = GlobalPosition;
 
 		if (data.SettingsResource.copyRotation)
 			data.RotationBasis = GlobalBasis;
 
-		if (data.SettingsResource.copyFov && referenceCamera != null)
-			data.Fov = referenceCamera.Fov;
+		if (data.SettingsResource.copyFov && _referenceCamera != null)
+			data.Fov = _referenceCamera.Fov;
 	}
 
 	public override void Activate()
@@ -127,11 +118,12 @@ public partial class CameraTrigger : StageTriggerModule
 			return;
 		}
 
-		if (previousSettings == null)
+		if (!cachedPreviousSettings)
 		{
-			previousSettings = Camera.ActiveSettings;
-			previousStaticPosition = Camera.ActiveBlendData.StaticPosition; // Cache static position
+			previousSettings ??= Camera.ActiveSettings;
+			previousStaticPosition = Camera.ActiveBlendData.Position; // Cache static position
 			previousStaticRotation = Camera.ActiveBlendData.RotationBasis; // Cache static rotation
+			cachedPreviousSettings = true;
 		}
 
 		if (Camera.ActiveSettings == settings &&
@@ -145,7 +137,7 @@ public partial class CameraTrigger : StageTriggerModule
 			BlendsOverDistance = false,
 			BlendTime = transitionTime,
 			SettingsResource = settings,
-			IsCrossfadeEnabled = transitionType == TransitionType.Crossfade,
+			TransitionType = transitionType,
 			Trigger = this
 		}, enableInputBlending);
    
@@ -180,7 +172,7 @@ public partial class CameraTrigger : StageTriggerModule
 		{
 			BlendTime = Mathf.IsEqualApprox(deactivationTransitionTime, -1) ? transitionTime : deactivationTransitionTime,
 			SettingsResource = previousSettings,
-			StaticPosition = previousStaticPosition, // Restore cached static position
+			Position = previousStaticPosition, // Restore cached static position
 			RotationBasis = previousStaticRotation // Restore cached static rotation
 		}, enableInputBlending);
 	}
