@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_428vp")
-"Static Camera Enabled" = false
-Distance/Distance = 7.3
+"Copy Position" = false
+"Copy Rotation" = false
+Distance/Distance = 4.7
 "Distance/Backstep Distance" = 1.4
 "Distance/Ignore Homing Attack" = false
 "Distance/Distance Calculation Mode" = 2
@@ -14,13 +15,13 @@ Distance/Distance = 7.3
 "Tracking/Vertical Tracking Mode" = 0
 "Tracking/Hall Width" = 0.0
 "Tracking/Hall Rotation Tracking Strength" = 0.0
-"Rotation/Pitch Angle" = -38.0
-"Rotation/Yaw Angle" = -164.0
+"Rotation/Pitch Angle" = -46.0
+"Rotation/Yaw Angle" = -157.0
 "Rotation/Pitch Override Mode" = 1
 "Rotation/Yaw Override Mode" = 1
 "Rotation/Follow Path Tilt" = false
 "Rotation/Control Mode" = 0
 "Rotation/Control Influence" = 0.0
-View/Offset = Vector2(0, 0.33)
+View/Offset = Vector2(0, 0.845)
 "View/Copy Fov" = false
 View/FOV = 0.0

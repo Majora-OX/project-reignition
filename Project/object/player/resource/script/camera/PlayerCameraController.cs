@@ -20,7 +20,7 @@ public partial class PlayerCameraController : Node3D
 	[Signal]
 	public delegate void StartCompletionEventHandler();
 
-	public const float DefaultFov = 70;
+	public const float DefaultFov = 90;
 
 	[ExportGroup("Components")]
 	[Export] public Camera3D Camera { get; private set; }

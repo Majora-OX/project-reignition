@@ -1,4 +1,4 @@
-[gd_scene load_steps=196 format=3 uid="uid://cwkxxyxk7kd23"]
+[gd_scene load_steps=192 format=3 uid="uid://cwkxxyxk7kd23"]
 
 [ext_resource type="PackedScene" uid="uid://chyg4fd83jn8r" path="res://area/BK camelot castle/Act1/Static.tscn" id="1_4v24q"]
 [ext_resource type="Resource" uid="uid://4tgcoh0r12dq" path="res://resource/level data/BK Camelot Castle/Act1Goal.tres" id="2_23rva"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cbpudluma1oux" path="res://object/stage/destructable/Crate.tscn" id="25_g0cmj"]
 [ext_resource type="PackedScene" uid="uid://dsms0ivmnpaq8" path="res://area/1 sand oasis/object/Jar.tscn" id="26_rma6i"]
 [ext_resource type="PackedScene" uid="uid://c0wwow83r4jry" path="res://object/enemy/majin/data/sand oasis/BlueMajin.tscn" id="27_yalyw"]
+[ext_resource type="Resource" uid="uid://cbxmdycpcho6l" path="res://area/BK camelot castle/Act1/Camera/CastleTownJumpCamera.tres" id="28_2hcpv"]
 [ext_resource type="PackedScene" uid="uid://d4bv4ulvmin0y" path="res://object/enemy/majin/data/sand oasis/GreenMajin.tscn" id="28_5ur7m"]
 [ext_resource type="PackedScene" uid="uid://cx36fswvjfblm" path="res://object/stage/destructable/EnemyStone.tscn" id="29_mfd66"]
 [ext_resource type="PackedScene" uid="uid://b0uekqdfkbg6h" path="res://object/stage/common/ItemBox.tscn" id="30_vusp0"]
@@ -35,12 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://cyabnlg7vd3v6" path="res://area/1 sand oasis/object/grindrail/Grindrail04.tscn" id="33_4yr0h"]
 [ext_resource type="PackedScene" uid="uid://68st06xyjgvp" path="res://object/stage/pickups/RichRing.tscn" id="34_g1vjv"]
 [ext_resource type="Script" path="res://object/trigger/modules/CameraTrigger.cs" id="35_3umj2"]
-[ext_resource type="Resource" uid="uid://b76afia3csule" path="res://area/1 sand oasis/act 1/camera/IslandJumpCam.tres" id="36_midr8"]
-[ext_resource type="Resource" uid="uid://cg68afq5jr66c" path="res://area/1 sand oasis/act 1/camera/IslandCam.tres" id="37_27axl"]
-[ext_resource type="Resource" uid="uid://cdsq12mjp5rem" path="res://area/1 sand oasis/act 1/camera/IslandSpringJumpCam.tres" id="38_a3nwq"]
-[ext_resource type="Resource" uid="uid://bbt61isk2fytx" path="res://area/1 sand oasis/act 1/camera/IslandSpringCam.tres" id="39_tvc7b"]
 [ext_resource type="Script" path="res://object/trigger/modules/PathTrigger.cs" id="40_ysb4y"]
-[ext_resource type="Resource" uid="uid://bm0kd4uf60rv1" path="res://area/1 sand oasis/act 1/camera/IslandJumpEndCam.tres" id="41_8jw0i"]
 [ext_resource type="PackedScene" uid="uid://87lgwwefd4g4" path="res://object/stage/common/JumpPanel.tscn" id="42_ykhjl"]
 [ext_resource type="PackedScene" uid="uid://chwt62jenntgq" path="res://area/1 sand oasis/object/grindrail/Grindrail03.tscn" id="43_8uocv"]
 [ext_resource type="PackedScene" uid="uid://c85xw5ix60fe8" path="res://object/stage/common/Switch.tscn" id="44_yifc4"]
@@ -14742,10 +14738,16 @@ saveVisibilityOnCheckpoint = true
 
 [node name="JumpPanel1" parent="MainAct/CastleTown" node_paths=PackedStringArray("sfxPlayer") instance=ExtResource("42_ykhjl")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 39.1087, 14.4684, -133.926)
-middleHeight = 10.75
+middleHeight = 16.895
 finalHeight = -16.25
 distance = 64.41
 sfxPlayer = NodePath("../../Island/JumpPanel1/SFX")
+
+[node name="TriggerData" type="Node3D" parent="MainAct/CastleTown"]
+
+[node name="JumpCamera" type="Node3D" parent="MainAct/CastleTown/TriggerData"]
+script = ExtResource("35_3umj2")
+settings = ExtResource("28_2hcpv")
 
 [node name="Plain" type="Node3D" parent="MainAct"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, -40.999, -226)
@@ -15631,32 +15633,18 @@ saveVisibilityOnCheckpoint = true
 
 [node name="JumpCamera" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("35_3umj2")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.4
-settings = ExtResource("36_midr8")
-previousSettings = ExtResource("37_27axl")
 
 [node name="SpringJumpCamera" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("35_3umj2")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.4
-settings = ExtResource("38_a3nwq")
 
 [node name="SpringCamera" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("35_3umj2")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
-settings = ExtResource("39_tvc7b")
-previousSettings = ExtResource("37_27axl")
 
 [node name="SpringPath" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("40_ysb4y")
 
 [node name="JumpEndCamera" type="Node3D" parent="MainAct/Island/TriggerData"]
 script = ExtResource("35_3umj2")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.4
-settings = ExtResource("41_8jw0i")
 
 [node name="JumpPanel1" parent="MainAct/Island" instance=ExtResource("42_ykhjl")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.8859, 0, 132.889)
@@ -20925,8 +20913,8 @@ shape = SubResource("65")
 [connection signal="Activated" from="MainAct/CullingMap/BeachUnload-EndLoad" to="MainAct/End" method="Activate"]
 [connection signal="Deactivated" from="MainAct/CullingMap/BeachUnload-EndLoad" to="MainAct/Beach" method="Activate"]
 [connection signal="Deactivated" from="MainAct/CullingMap/BeachUnload-EndLoad" to="MainAct/End" method="Deactivate"]
-[connection signal="Activated" from="MainAct/CastleTown/JumpPanel1" to="MainAct/Island/TriggerData/JumpCamera" method="Activate"]
-[connection signal="Deactivated" from="MainAct/CastleTown/JumpPanel1" to="MainAct/Island/TriggerData/JumpCamera" method="Deactivate"]
+[connection signal="Activated" from="MainAct/CastleTown/JumpPanel1" to="MainAct/CastleTown/TriggerData/JumpCamera" method="Activate"]
+[connection signal="Deactivated" from="MainAct/CastleTown/JumpPanel1" to="MainAct/CastleTown/TriggerData/JumpCamera" method="Deactivate"]
 [connection signal="area_entered" from="MainAct/Plain/MajinActivation" to="MainAct/Plain/BlueMajin1" method="Spawn"]
 [connection signal="Defeated" from="MainAct/Plain/BlueMajin1" to="MainAct/Plain/GreenMajin1" method="Spawn"]
 [connection signal="Defeated" from="MainAct/Plain/GreenMajin1" to="MainAct/Plain/GreenMajin2" method="Spawn"]

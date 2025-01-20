@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_51h5x")
-"Static Camera Enabled" = false
-Distance/Distance = 3.7
+"Copy Position" = false
+"Copy Rotation" = false
+Distance/Distance = 1.5
 "Distance/Backstep Distance" = 1.4
 "Distance/Ignore Homing Attack" = false
 "Distance/Distance Calculation Mode" = 2
@@ -21,6 +22,6 @@ Distance/Distance = 3.7
 "Rotation/Follow Path Tilt" = false
 "Rotation/Control Mode" = 0
 "Rotation/Control Influence" = 0.0
-View/Offset = Vector2(0, 0.775)
+View/Offset = Vector2(0, 0.405)
 "View/Copy Fov" = false
-View/FOV = 90.0
+View/FOV = 0.0
