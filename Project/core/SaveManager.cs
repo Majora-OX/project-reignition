@@ -111,6 +111,7 @@ public partial class SaveManager : Node
 		new(640, 360), // 360p
 		new(854, 480), // 480p
 		new(1280, 720), // 720p
+		//new(1280, 800), // 800p (Steam Deck resolution)
 		new(1600, 900), // 900p
 		new(1920, 1080), // 1080p
 		new(2560, 1440), // 1440p
@@ -140,7 +141,7 @@ public partial class SaveManager : Node
 		public int renderScale = 100;
 		public RenderingServer.ViewportScaling3DMode resizeMode = RenderingServer.ViewportScaling3DMode.Bilinear;
 		public int antiAliasing = 1; // Default to FXAA
-		public bool useHDBloom = true;
+		public QualitySetting bloomMode = QualitySetting.High;
 		public bool useMotionBlur = true;
 		public bool useScreenShake = true;
 		public int screenShake = 100;
@@ -161,7 +162,7 @@ public partial class SaveManager : Node
 		// Controls
 		public float deadZone = .5f;
 		public ControllerType controllerType = ControllerType.Automatic;
-		public Dictionary inputConfiguration = new();
+		public Dictionary inputConfiguration = [];
 
 		// Language
 		public bool subtitlesEnabled = true;
@@ -184,7 +185,7 @@ public partial class SaveManager : Node
 				{ nameof(renderScale), renderScale },
 				{ nameof(resizeMode), (int)resizeMode },
 				{ nameof(antiAliasing), antiAliasing },
-				{ nameof(useHDBloom), useHDBloom },
+				{ nameof(bloomMode), (int)bloomMode },
 				{ nameof(softShadowQuality), (int)softShadowQuality },
 				{ nameof(postProcessingQuality), (int)postProcessingQuality },
 				{ nameof(reflectionQuality), (int)reflectionQuality },
@@ -236,8 +237,8 @@ public partial class SaveManager : Node
 				resizeMode = (RenderingServer.ViewportScaling3DMode)(int)var;
 			if (dictionary.TryGetValue(nameof(antiAliasing), out var))
 				antiAliasing = (int)var;
-			if (dictionary.TryGetValue(nameof(useHDBloom), out var))
-				useHDBloom = (bool)var;
+			if (dictionary.TryGetValue(nameof(bloomMode), out var))
+				bloomMode = (QualitySetting)(int)var;
 			if (dictionary.TryGetValue(nameof(softShadowQuality), out var))
 				softShadowQuality = (QualitySetting)(int)var;
 			if (dictionary.TryGetValue(nameof(postProcessingQuality), out var))
@@ -367,7 +368,7 @@ public partial class SaveManager : Node
 		RenderingServer.ViewportSetScreenSpaceAA(viewportRid, targetSSAA);
 		RenderingServer.ViewportSetMsaa3D(viewportRid, targetMSAA);
 
-		RenderingServer.EnvironmentGlowSetUseBicubicUpscale(Config.useHDBloom);
+		RenderingServer.EnvironmentGlowSetUseBicubicUpscale(Config.bloomMode == QualitySetting.High);
 
 		int targetShadowAtlasSize = 4096;
 		bool use16BitShadowAtlas = Config.softShadowQuality == QualitySetting.High;
@@ -549,6 +550,8 @@ public partial class SaveManager : Node
 	/// <summary> Maximum number of save slots that can be created. </summary>
 	public const int SaveSlotCount = 9;
 
+	/// <summary> Maximum number of preset slots
+	public const int PresetCount = 20;
 	/// <summary> Saves active game data to a file. </summary>
 	public static void SaveGameData()
 	{
@@ -578,6 +581,18 @@ public partial class SaveManager : Node
 			{
 				GameSaveSlots[i].FromDictionary((Dictionary)Json.ParseString(file.GetAsText()));
 				file.Close();
+			}
+
+			if (GameSaveSlots[i].presetNames == null &&
+				GameSaveSlots[i].presetSkills == null &&
+				GameSaveSlots[i].presetSkillAugments == null)
+			{
+				for (int j = 0; j < PresetCount; j++)
+				{
+					GameSaveSlots[i].presetNames.Add(null);
+					GameSaveSlots[i].presetSkills.Add(null);
+					GameSaveSlots[i].presetSkillAugments.Add(null);
+				}
 			}
 		}
 	}
@@ -624,6 +639,10 @@ public partial class SaveManager : Node
 		public int exp;
 		/// <summary> Total playtime, in seconds. </summary>
 		public float playTime;
+
+		public Array<string> presetNames;
+		public Array<Array<SkillKey>> presetSkills;
+		public Array<Dictionary<SkillKey, int>> presetSkillAugments;
 
 		public Array<SkillKey> equippedSkills;
 		public Dictionary<SkillKey, int> equippedAugments;
@@ -835,21 +854,15 @@ public partial class SaveManager : Node
 		/// <summary> Creates a dictionary based on GameData. </summary>
 		public Dictionary ToDictionary()
 		{
-			Dictionary<string, int> augmentDictionary = [];
+			Array<Array<string>> presetDictionary = [];
+			presetDictionary.Resize(presetSkills.Count);
+			for (int i = 0; i < presetDictionary.Count; i++)
+				presetDictionary[i] = SaveSkills(presetSkills[i]);
 
-			for (int i = 0; i < equippedAugments.Keys.Count; i++)
-			{
-				SkillKey key = equippedAugments.Keys.ToArray()[i];
-				augmentDictionary.Add(key.ToString(), equippedAugments[key]);
-			}
-
-			Array<string> skillDictionary = [];
-
-			for (int i = 0; i < equippedSkills.Count; i++)
-			{
-				SkillKey key = equippedSkills[i];
-				skillDictionary.Add(key.ToString());
-			}
+			Array<Dictionary<string, int>> augmentDictionary = [];
+			augmentDictionary.Resize(presetSkillAugments.Count);
+			for (int i = 0; i < augmentDictionary.Count; i++)
+				augmentDictionary[i] = SaveAugments(presetSkillAugments[i]);
 
 			return new()
 			{
@@ -864,8 +877,11 @@ public partial class SaveManager : Node
 				{ nameof(level), level },
 				{ nameof(exp), exp },
 				{ nameof(playTime), Mathf.RoundToInt(playTime) },
-				{ nameof(equippedSkills), skillDictionary },
-				{ nameof(equippedAugments), augmentDictionary },
+				{ nameof(equippedSkills), SaveSkills(equippedSkills) },
+				{ nameof(equippedAugments), SaveAugments(equippedAugments) },
+				{ nameof(presetNames), presetNames},
+				{ nameof(presetSkills), presetDictionary},
+				{ nameof(presetSkillAugments), augmentDictionary},
 			};
 		}
 
@@ -897,6 +913,7 @@ public partial class SaveManager : Node
 				for (int i = 0; i < worlds.Count; i++)
 					worldRingsCollected.Add((WorldEnum)worlds[i]);
 			}
+
 			if (dictionary.TryGetValue(nameof(stagesUnlocked), out var) && var.VariantType == Variant.Type.Array)
 				stagesUnlocked = (Array<string>)var;
 
@@ -910,29 +927,33 @@ public partial class SaveManager : Node
 			if (dictionary.TryGetValue(nameof(playTime), out var))
 				playTime = (float)var;
 
+			// Load Skill Ring
 			if (dictionary.TryGetValue(nameof(equippedSkills), out var))
-			{
-				equippedSkills.Clear();
-
-				Array<string> skills = (Array<string>)var;
-				for (int i = 0; i < skills.Count; i++)
-				{
-					if (Enum.TryParse(skills[i], out SkillKey key))
-						equippedSkills.Add(key);
-				}
-			}
+				equippedSkills = LoadSkills((Array<string>)var);
 
 			if (dictionary.TryGetValue(nameof(equippedAugments), out var))
-			{
-				equippedAugments.Clear();
-				Dictionary<string, int> augments = (Dictionary<string, int>)var;
-				string[] augmentKeys = [.. augments.Keys];
+				equippedAugments = LoadAugments((Dictionary<string, int>)var);
 
-				for (int i = 0; i < augmentKeys.Length; i++)
-				{
-					if (Enum.TryParse(augmentKeys[i], out SkillKey key))
-						equippedAugments.Add(key, augments[augmentKeys[i]]);
-				}
+			// Load Presets
+			if (dictionary.TryGetValue(nameof(presetNames), out var))
+				presetNames = (Array<string>)var;
+
+			if (dictionary.TryGetValue(nameof(presetSkills), out var))
+			{
+				Array<Array<string>> presets = (Array<Array<string>>)var;
+				presetSkills.Clear();
+				presetSkills.Resize(presets.Count);
+				for (int i = 0; i < presetSkills.Count; i++)
+					presetSkills[i] = LoadSkills(presets[i]);
+			}
+
+			if (dictionary.TryGetValue(nameof(presetSkillAugments), out var))
+			{
+				Array<Dictionary<string, int>> presetAugments = (Array<Dictionary<string, int>>)var;
+				presetSkillAugments.Clear();
+				presetSkillAugments.Resize(presetAugments.Count);
+				for (int i = 0; i < presetSkillAugments.Count; i++)
+					presetSkillAugments[i] = LoadAugments(presetAugments[i]);
 			}
 
 			// Update runtime data based on save data
@@ -947,6 +968,59 @@ public partial class SaveManager : Node
 						FireSoulCount++;
 				}
 			}
+		}
+
+		/// <summary> Converts an array of SkillKeys to an array of strings for index-agnostic saving. </summary>
+		private Array<string> SaveSkills(Array<SkillKey> skillArray)
+		{
+			Array<string> stringArray = [];
+
+			for (int i = 0; i < skillArray.Count; i++)
+			{
+				SkillKey key = skillArray[i];
+				stringArray.Add(key.ToString());
+			}
+
+			return stringArray;
+		}
+
+		private Dictionary<string, int> SaveAugments(Dictionary<SkillKey, int> augmentDictionary)
+		{
+			Dictionary<string, int> stringDictionary = [];
+
+			for (int i = 0; i < augmentDictionary.Keys.Count; i++)
+			{
+				SkillKey key = augmentDictionary.Keys.ToArray()[i];
+				stringDictionary.Add(key.ToString(), augmentDictionary[key]);
+			}
+
+			return stringDictionary;
+		}
+
+		private Array<SkillKey> LoadSkills(Array<string> stringArray)
+		{
+			Array<SkillKey> skills = [];
+
+			for (int i = 0; i < stringArray.Count; i++)
+			{
+				if (Enum.TryParse(stringArray[i], out SkillKey key))
+					skills.Add(key);
+			}
+
+			return skills;
+		}
+
+		private Dictionary<SkillKey, int> LoadAugments(Dictionary<string, int> stringDictionary)
+		{
+			string[] augmentKeys = [.. stringDictionary.Keys];
+			Dictionary<SkillKey, int> augmentDictionary = [];
+
+			for (int i = 0; i < augmentKeys.Length; i++)
+			{
+				if (Enum.TryParse(augmentKeys[i], out SkillKey key))
+					augmentDictionary.Add(key, stringDictionary[augmentKeys[i]]);
+			}
+			return augmentDictionary;
 		}
 
 		private void UpdateMedals(int rank, int oldRank = 0)
@@ -968,6 +1042,9 @@ public partial class SaveManager : Node
 				worldRingsCollected = [],
 				worldsUnlocked = [],
 				stagesUnlocked = [],
+				presetNames = [],
+				presetSkills = [],
+				presetSkillAugments = [],
 				equippedSkills = [],
 				equippedAugments = [],
 				level = 0,
@@ -978,6 +1055,13 @@ public partial class SaveManager : Node
 			data.UnlockStage("so_a1_main");
 			data.UnlockWorld(WorldEnum.LostPrologue);
 			data.UnlockWorld(WorldEnum.SandOasis); // Lock this in the final build
+
+			for (int i = 0; i < PresetCount; i++)
+			{
+				data.presetNames.Add(null);
+				data.presetSkills.Add(null);
+				data.presetSkillAugments.Add(null);
+			}
 
 			return data;
 		}

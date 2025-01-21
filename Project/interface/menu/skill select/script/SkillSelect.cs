@@ -39,7 +39,7 @@ public partial class SkillSelect : Menu
 
 	private int cursorPosition;
 	private Vector2 cursorVelocity;
-	private const float CursorSmoothing = .2f;
+	private const float CursorSmoothing = .1f;
 
 	private int scrollAmount;
 	private float scrollRatio;
@@ -105,6 +105,17 @@ public partial class SkillSelect : Menu
 
 		Vector2 targetContainerPosition = new(optionContainer.Position.X, -scrollAmount * ScrollInterval);
 		optionContainer.Position = optionContainer.Position.SmoothDamp(targetContainerPosition, ref containerVelocity, ScrollSmoothing);
+	}
+
+	protected override void ProcessMenu()
+	{
+		if (Input.IsActionJustPressed("button_pause"))
+		{
+			OpenPresetMenu();
+			return;
+		}
+
+		base.ProcessMenu();
 	}
 
 	protected override void Cancel()
@@ -211,7 +222,7 @@ public partial class SkillSelect : Menu
 				cursorPosition += inputSign;
 
 			scrollAmount = Mathf.Clamp(scrollAmount, 0, listSize - PageSize);
-			scrollRatio = (float)VerticalSelection / (currentSkillOptionList.Count - 1);
+			scrollRatio = (float)VerticalSelection / (listSize - 1);
 			cursorPosition = Mathf.Clamp(cursorPosition, 0, PageSize - 1);
 		}
 	}
@@ -226,8 +237,7 @@ public partial class SkillSelect : Menu
 	{
 		animator.Play("select");
 		animator.Seek(0, true);
-		if (!isSelectionScrolling || IsEditingAugment)
-			StartSelectionTimer();
+		StartSelectionTimer();
 	}
 
 	public override void ShowMenu()
@@ -255,8 +265,29 @@ public partial class SkillSelect : Menu
 			UpdateAugmentHierarchy(skillOptionList[i]);
 		}
 
-		Redraw();
-		base.ShowMenu();
+		if (menuMemory[MemoryKeys.PresetsOpen] == 1)
+			animator.Play("show-from-preset");
+		else
+			base.ShowMenu();
+
+		menuMemory[MemoryKeys.PresetsOpen] = 0; // Reset memory
+	}
+
+	public void ShowSkills()
+	{
+		for (int i = 0; i < skillOptionList.Count; i++)
+			skillOptionList[i].Visible = true;
+
+		description.Visible = true;
+	}
+
+	private void OpenPresetMenu()
+	{
+		if (IsAlertMenuActive)
+			return;
+
+		menuMemory[MemoryKeys.PresetsOpen] = 1; // Set flag so we can play the correct animation later
+		animator.Play("enter-skill-preset");
 	}
 
 	protected override void Confirm()
@@ -281,10 +312,13 @@ public partial class SkillSelect : Menu
 			return;
 
 		UpdateAugmentHierarchy(SelectedSkill);
+
 		Redraw();
 	}
 
-	private void Redraw()
+	public override void OpenSubmenu() => _submenus[0].ShowMenu();
+
+	public void Redraw()
 	{
 		skillPointLabel.Text = ActiveSkillRing.TotalCost.ToString("000") + "/" + ActiveSkillRing.MaxSkillPoints.ToString("000");
 		skillPointFill.Scale = new(ActiveSkillRing.TotalCost / (float)ActiveSkillRing.MaxSkillPoints, skillPointFill.Scale.Y);

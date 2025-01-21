@@ -63,18 +63,19 @@ public partial class DriftTrigger : Area3D
 		if (Player.IsMovingBackward)
 			return;
 
-		if (Player.PathFollower.Progress > Player.PathFollower.GetProgress(GlobalPosition))
-			return;
-
 		if (Player.Stats.GroundSettings.GetSpeedRatio(Player.MoveSpeed) < EntranceSpeedRatio)
 			return;
 
-		if (Player.ExternalController != null)
+		if (Player.ExternalController != null || Player.ExternalParent != null)
 			return; // Player is already busy
 
 		// Check for any obstructions
-		RaycastHit hit = Player.CastRay(Player.CollisionPosition, Player.PathFollower.Forward() * slideDistance, Runtime.Instance.environmentMask);
-		if (hit && !hit.collidedObject.IsInGroup("level wall"))
+		Vector3 targetCastPosition = Player.CollisionPosition + Player.PathFollower.GlobalPlayerPositionDelta.RemoveVertical();
+		targetCastPosition += Player.PathFollower.Forward() * slideDistance;
+		Vector3 castVector = Player.CollisionPosition - targetCastPosition;
+		RaycastHit hit = Player.CastRay(Player.CollisionPosition, castVector, Runtime.Instance.environmentMask);
+		DebugManager.DrawRay(Player.CollisionPosition, castVector, Colors.Green);
+		if (hit && !hit.collidedObject.IsInGroup("level wall") && hit.collidedObject.IsInGroup("wall"))
 			return;
 
 		Player.StartDrift(this);
@@ -98,7 +99,11 @@ public partial class DriftTrigger : Area3D
 		sfx.Play();
 	}
 
-	public void Deactivate() => EmitSignal(SignalName.DriftCompleted);
+	public void Deactivate()
+	{
+		sfx.Stop();
+		EmitSignal(SignalName.DriftCompleted);
+	}
 
 	/// <summary> Tracks whether drift bonus was already applied. </summary>
 	private bool wasBonusApplied;
@@ -126,13 +131,7 @@ public partial class DriftTrigger : Area3D
 			return;
 
 		isInteractingWithPlayer = false;
-		if (!Player.IsDrifting)
+		if (!Player.IsDrifting && Player.PathFollower.IsAheadOfPoint(GlobalPosition))
 			ApplyBonus(false); // Invalid drift, skip bonus (if possible)
-
-		/*
-		{
-			driftStatus = DriftStatus.Inactive; // Reset to inactive state
-		}
-		*/
 	}
 }

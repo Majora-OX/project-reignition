@@ -44,13 +44,15 @@ public partial class PlayerInputController : Node
 	public float InputHorizontal { get; private set; }
 	public float InputVertical { get; private set; }
 
-	/// <summary> Maximum angle that counts as holding a direction. </summary>
-	private readonly float MaximumHoldDelta = Mathf.Pi * .4f;
 	/// <summary> Minimum angle from PathFollower.ForwardAngle that counts as backstepping/moving backwards. </summary>
 	private readonly float MinBackStepAngle = Mathf.Pi * .6f;
+	/// <summary> Maximum angle that counts as holding a direction. </summary>
+	private const float MaximumHoldDelta = Mathf.Pi * .4f;
 
 	/// <summary> Maximum amount the player can turn when running at full speed. </summary>
 	public readonly float TurningDampingRange = Mathf.Pi * .35f;
+	/// <summary> Rotation amount to just flat-out ignore player input. </summary>
+	public readonly float TurningDeadzone = Mathf.Pi * .05f;
 
 	public void ProcessInputs()
 	{
@@ -64,12 +66,16 @@ public partial class PlayerInputController : Node
 		{
 			UpdateJumpBuffer();
 			UpdateActionBuffer();
+			return;
 		}
+
+		// Allow player to jump out of certain lockouts (i.e. DriftLockout)
+		if (Player.ActiveLockoutData.resetFlags.HasFlag(LockoutResource.ResetFlags.OnJump))
+			UpdateJumpBuffer();
 		else
-		{
 			ResetJumpBuffer();
-			ResetActionBuffer();
-		}
+
+		ResetActionBuffer();
 	}
 
 	private void UpdateJumpBuffer()
@@ -94,14 +100,37 @@ public partial class PlayerInputController : Node
 		actionBuffer = Mathf.MoveToward(actionBuffer, 0, PhysicsManager.physicsDelta);
 	}
 
+	public bool IsBrakeHeld()
+	{
+		if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.ChargeJump))
+			return Input.IsActionPressed("button_action");
+
+		return SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.Autorun) &&
+			Input.IsActionPressed("button_brake");
+	}
+
 	/// <summary> Returns the angle between the player's input angle and movementAngle. </summary>
 	public float GetTargetMovementAngle() => CalculateLockoutForwardAngle(GetTargetInputAngle());
+
+	public float CalculatePathControlAmount()
+	{
+		if (IsStrafeModeActive || Player.IsLockoutActive)
+			return 0; // Don't use path influence during speedbreak/autorun
+
+		return Player.PathTurnInfluence;
+	}
+
+	/// <summary> Returns whether the player is currently in strafing mode. </summary>
+	public bool IsStrafeModeActive => Player.Skills.IsSpeedBreakActive ||
+			SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.Autorun) ||
+			(Player.IsLockoutActive &&
+			Player.ActiveLockoutData.movementMode == LockoutResource.MovementModes.Strafe);
 
 	/// <summary> Returns the automaticly calculated input angle based on the game's settings and skills. </summary>
 	public float GetTargetInputAngle()
 	{
-		if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.Autorun))
-			return NonZeroInputAxis.Rotated(Player.PathFollower.ForwardAngle).AngleTo(Vector2.Down);
+		if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.Autorun) && InputAxis.IsZeroApprox())
+			return Player.PathFollower.ForwardAngle;
 
 		return NonZeroInputAxis.Rotated(-XformAngle).AngleTo(Vector2.Down);
 	}
@@ -131,7 +160,7 @@ public partial class PlayerInputController : Node
 					break;
 			}
 
-			if (resource.allowReversing)
+			if (resource.allowReversing && !Player.Skills.IsSpeedBreakActive)
 			{
 				float backwardsAngle = forwardAngle + Mathf.Pi;
 				if ((!Mathf.IsZeroApprox(Player.MoveSpeed) && Player.IsMovingBackward) ||
@@ -147,11 +176,11 @@ public partial class PlayerInputController : Node
 		if (Player.Skills.IsSpeedBreakActive)
 			return GetStrafeAngle();
 
-		if (Mathf.IsZeroApprox(GetInputStrength()))
-			return Player.MovementAngle;
-
 		if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.Autorun))
 			return GetStrafeAngle(true);
+
+		if (Mathf.IsZeroApprox(GetInputStrength()))
+			return Player.MovementAngle;
 
 		return inputAngle;
 	}
@@ -160,14 +189,17 @@ public partial class PlayerInputController : Node
 	{
 		CameraSettingsResource.ControlModeEnum controlMode = Player.Camera.ActiveSettings.controlMode;
 		Vector2 inputs = InputAxis;
+		float baseAngle = Player.PathFollower.ForwardAngle;
 
 		if (controlMode == CameraSettingsResource.ControlModeEnum.Sidescrolling)
-			GD.PushWarning("Sidescrolling Control Mode Hasn't Been Implemented!");
+		{
+			int rotationDirection = Mathf.Sign(ExtensionMethods.SignedDeltaAngleRad(XformAngle, baseAngle));
+			inputs = inputs.Rotated(rotationDirection * Mathf.Pi * .5f);
+		}
 
 		if (controlMode == CameraSettingsResource.ControlModeEnum.Reverse) // Transform inputs based on the control mode
 			inputs.X *= -1;
 
-		float baseAngle = Player.PathFollower.ForwardAngle;
 		if (allowBackstep && SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.Autorun)) // Check for backstep
 		{
 			if (controlMode == CameraSettingsResource.ControlModeEnum.Reverse) // Transform inputs based on the control mode
@@ -185,10 +217,10 @@ public partial class PlayerInputController : Node
 	}
 
 	/// <summary> Checks whether the player is holding a particular direction. </summary>
-	public bool IsHoldingDirection(float inputAngle, float referenceAngle)
+	public bool IsHoldingDirection(float inputAngle, float referenceAngle, float maximumDelta = MaximumHoldDelta)
 	{
 		float deltaAngle = ExtensionMethods.DeltaAngleRad(inputAngle, referenceAngle);
-		return deltaAngle <= MaximumHoldDelta;
+		return deltaAngle <= maximumDelta;
 	}
 
 	/// <summary> Returns how far the player's input is from the reference angle, normalized to MinBackStepAngle. </summary>
@@ -207,7 +239,9 @@ public partial class PlayerInputController : Node
 			return inputAngle;
 
 		float deltaAngle = ExtensionMethods.SignedDeltaAngleRad(inputAngle, referenceAngle);
-		if (Mathf.Abs(deltaAngle) < TurningDampingRange)
+		if (Mathf.Abs(deltaAngle) < TurningDeadzone)
+			inputAngle -= deltaAngle;
+		else if (Mathf.Abs(deltaAngle) < TurningDampingRange)
 			inputAngle -= deltaAngle * .5f;
 
 		return inputAngle;

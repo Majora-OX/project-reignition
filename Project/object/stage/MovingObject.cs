@@ -11,11 +11,10 @@ namespace Project.Gameplay;
 public partial class MovingObject : Node3D
 {
 	/// <summary> Emitted when the object starts to leave its initial position. </summary>
-	[Signal]
-	public delegate void OnLeaveEventHandler();
+	[Signal] public delegate void OnLeaveEventHandler();
 	/// <summary> Emitted when the object starts to return to its initial position. </summary>
-	[Signal]
-	public delegate void OnReturnEventHandler();
+	[Signal] public delegate void OnReturnEventHandler();
+	[Signal] public delegate void DamagedPlayerEventHandler();
 
 	#region Editor
 	public override Array<Dictionary> _GetPropertyList()
@@ -32,7 +31,7 @@ public partial class MovingObject : Node3D
 
 			if (movementMode == MovementModes.Linear)
 			{
-				properties.Add(ExtensionMethods.CreateProperty("Movement/Distance", Variant.Type.Float, PropertyHint.Range, "0,32,.1"));
+				properties.Add(ExtensionMethods.CreateProperty("Movement/Distance", Variant.Type.Float, PropertyHint.Range, "0,100,.1"));
 				properties.Add(ExtensionMethods.CreateProperty("Movement/Angle", Variant.Type.Float, PropertyHint.Range, "-180,180,5"));
 			}
 			else
@@ -160,15 +159,16 @@ public partial class MovingObject : Node3D
 	/// <summary> Current travel direction (Linear only). </summary>
 	private int travelDirection;
 	/// <summary> Set this if you want a non-linear travel time. Only works on Linear movement modes. </summary>
-	[Export]
-	private Curve timeCurve;
-	[Export]
-	private bool startPaused;
-	[Export]
-	private bool smoothPausing;
+	[Export] private Curve timeCurve;
+	[Export] private bool startPaused;
+	[Export] private bool smoothPausing;
 	/// <summary> Is movement paused? </summary>
 	private bool isPaused;
 	private const float PauseSmoothing = .1f;
+
+	/// <summary> Enable this to have objects move to their starting position. </summary>
+	[Export] private bool lockToStartingPosition;
+	public void SetStartingLock(bool value) => lockToStartingPosition = value;
 
 	[Export(PropertyHint.NodePathValidTypes, "Node3D")]
 	private NodePath root;
@@ -204,14 +204,22 @@ public partial class MovingObject : Node3D
 	{
 		if (Engine.IsEditorHint()) return;
 		if (IsMovementInvalid()) return; // No movement
+
 		if (isPaused && !smoothPausing) return;
 
-		if (smoothPausing)
+		if (smoothPausing || StageSettings.Player.IsInvincible)
 			TimeScale = Mathf.Lerp(TimeScale, isPaused ? 0 : 1, PauseSmoothing);
 
-		currentTime += PhysicsManager.physicsDelta * Mathf.Sign(cycleLength) * TimeScale;
-		if (Mathf.Abs(currentTime) > Mathf.Abs(cycleLength)) // Rollover
-			currentTime -= Mathf.Sign(cycleLength) * Mathf.Abs(cycleLength) * Mathf.Sign(cycleLength);
+		if (lockToStartingPosition)
+		{
+			currentTime = Mathf.MoveToward(currentTime, StartingOffset * Mathf.Abs(cycleLength), PhysicsManager.physicsDelta * TimeScale);
+		}
+		else
+		{
+			currentTime += PhysicsManager.physicsDelta * Mathf.Sign(cycleLength) * TimeScale;
+			if (Mathf.Abs(currentTime) > Mathf.Abs(cycleLength)) // Rollover
+				currentTime -= Mathf.Sign(cycleLength) * Mathf.Abs(cycleLength) * Mathf.Sign(cycleLength);
+		}
 
 		if (Root?.IsInsideTree() == true)
 			Root.GlobalPosition = InterpolatePosition(currentTime / Mathf.Abs(cycleLength));
@@ -238,6 +246,12 @@ public partial class MovingObject : Node3D
 
 		if (Root?.IsInsideTree() == true)
 			Root.GlobalPosition = InterpolatePosition(currentTime);
+	}
+
+	public void DamagePlayer()
+	{
+		GD.Print("Damaging Player");
+		EmitSignal(SignalName.DamagedPlayer);
 	}
 
 	public Vector3 InterpolatePosition(float ratio)
@@ -291,6 +305,6 @@ public partial class MovingObject : Node3D
 		if (verticalOrientation)
 			targetPosition = targetPosition.Rotated(Vector3.Right, Mathf.Pi * .5f);
 
-		return GlobalPosition + (GlobalTransform.Basis * targetPosition);
+		return GlobalPosition + (GlobalTransform.Basis.Orthonormalized() * targetPosition);
 	}
 }

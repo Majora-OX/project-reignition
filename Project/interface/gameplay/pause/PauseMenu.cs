@@ -91,7 +91,7 @@ public partial class PauseMenu : Node
 			skillContainer.AddChild(pauseSkill);
 		}
 
-		TransitionManager.instance.TransitionStarted += DisablePause;
+		TransitionManager.instance.TransitionProcess += DisablePause;
 	}
 
 	public override void _PhysicsProcess(double _)
@@ -286,8 +286,12 @@ public partial class PauseMenu : Node
 		{
 			for (int i = 0; i < fireSoulSprites.Length; i++)
 			{
-				bool isCollected = SaveManager.ActiveGameData.IsFireSoulCollected(Stage.Data.LevelID, i + 1);
-				fireSoulSprites[i].RegionRect = new(new(isCollected ? 450 : 400, fireSoulSprites[i].RegionRect.Position.Y), fireSoulSprites[i].RegionRect.Size);
+				bool isSaveCollected = SaveManager.ActiveGameData.IsFireSoulCollected(Stage.Data.LevelID, i + 1);
+				bool isCheckpointCollected = StageSettings.Instance.fireSoulCheckpoints[i];
+				GD.Print(isCheckpointCollected);
+
+				fireSoulSprites[i].RegionRect = new(new(isSaveCollected || isCheckpointCollected ? 450 : 400, fireSoulSprites[i].RegionRect.Position.Y), fireSoulSprites[i].RegionRect.Size);
+				fireSoulSprites[i].SelfModulate = isCheckpointCollected ? new(1f, 1f, 1f, .5f) : Colors.White;
 			}
 		}
 
@@ -413,7 +417,7 @@ public partial class PauseMenu : Node
 			unpausedSpeed = (float)Engine.TimeScale;
 			Engine.TimeScale = 1.0f;
 		}
-		else
+		else if (!TransitionManager.IsTransitionActive)
 		{
 			Engine.TimeScale = unpausedSpeed;
 		}
@@ -421,7 +425,7 @@ public partial class PauseMenu : Node
 
 	private void DisablePause()
 	{
-		if (GetTree().Paused)
+		if (isActive)
 			TogglePause();
 	}
 

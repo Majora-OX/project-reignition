@@ -59,17 +59,28 @@ public partial class PlayerCameraController : Node3D
 
 		sampler.GetParent().RemoveChild(sampler);
 		StageSettings.Instance.AddChild(sampler);
+		if (StageSettings.Instance.Data.CompletionAnimation == LevelDataResource.CompletionAnimationType.ThumbsUp)
+			StageSettings.Instance.LevelSuccess += StartThumbsUpCamera;
+
 		Runtime.Instance.EventInputed += ReceiveInput;
 	}
 
 	public void Respawn()
 	{
 		SnapXform();
+
 		// Revert camera settings
+		CameraSettingsResource resource;
+		if (Player.IsDebugRespawn)
+			resource = DebugManager.Instance.DebugCheckpoint.CameraSettings;
+		else
+			resource = StageSettings.Instance.CurrentCheckpoint.CameraSettings;
+
 		UpdateCameraSettings(new()
 		{
-			SettingsResource = StageSettings.Instance.CurrentCheckpoint.CameraSettings,
+			SettingsResource = resource,
 		});
+
 		SnapFlag = true;
 	}
 
@@ -134,7 +145,7 @@ public partial class PlayerCameraController : Node3D
 	/// <summary> Enabled when the camera should freeze due to a DeathTrigger. </summary>
 	public bool IsDefeatFreezeActive { get; set; }
 	/// <summary> Used to focus onto multi-HP enemies, bosses, etc. Not to be confused with CharacterLockon.Target. </summary>
-	public Node3D LockonTarget { get; set; }
+	public Node3D LockonTarget { get; private set; }
 	private bool IsLockonCameraActive => LockonTarget != null || Player.IsHomingAttacking || Player.IsBouncing;
 	/// <summary> [0 -> 1] ratio of how much to use the lockon camera. </summary>
 	private float lockonBlend;
@@ -142,17 +153,25 @@ public partial class PlayerCameraController : Node3D
 	/// <summary> [0 -> 1] ratio of how much to focus onto LockonTarget. </summary>
 	private float lockonTargetBlend;
 	private float lockonTargetBlendVelocity;
+	/// <summary> Amount when blending between different lockon targets. Reset whenever the lockon target changes. </summary>
+	private float lockonTargetTransitionBlend;
+	private float lockonTargetTransitionBlendVelocity;
 	/// <summary> Snappier blend when lockon is active to keep things in frame. </summary>
 	private const float LockonBlendInSmoothing = 5.0f;
 	/// <summary> More smoothing/slower blend when resetting lockonBlend. </summary>
 	private const float LockonBlendOutSmoothing = 20.0f;
 	/// <summary> How much extra distance to add when performing a homing attack. </summary>
 	private const float LockonDistance = 3f;
+	public void SetLockonTarget(Node3D lockonTarget)
+	{
+		if (LockonTarget == lockonTarget) return;
+
+		LockonTarget = lockonTarget;
+		lockonTargetTransitionBlend = 0;
+	}
+
 	private void UpdateLockonTarget()
 	{
-		if (LockonTarget?.IsInsideTree() == false) // Invalid LockonTarget
-			LockonTarget = null;
-
 		float targetBlend = 0;
 		float smoothing = LockonBlendOutSmoothing;
 
@@ -164,7 +183,10 @@ public partial class PlayerCameraController : Node3D
 		}
 
 		lockonBlend = ExtensionMethods.SmoothDamp(lockonBlend, targetBlend, ref lockonBlendVelocity, smoothing * PhysicsManager.physicsDelta);
-		lockonTargetBlend = ExtensionMethods.SmoothDamp(lockonTargetBlend, LockonTarget == null ? 0 : 1, ref lockonTargetBlendVelocity, LockonBlendOutSmoothing * PhysicsManager.physicsDelta);
+		lockonTargetBlend = ExtensionMethods.SmoothDamp(lockonTargetBlend, LockonTarget == null ? 0f : 1f, ref lockonTargetBlendVelocity, LockonBlendOutSmoothing * PhysicsManager.physicsDelta);
+
+		if (LockonTarget != null)
+			lockonTargetTransitionBlend = ExtensionMethods.SmoothDamp(lockonTargetTransitionBlend, 1f, ref lockonTargetTransitionBlendVelocity, LockonBlendInSmoothing * PhysicsManager.physicsDelta);
 	}
 
 	#region Gameplay Camera
@@ -173,15 +195,17 @@ public partial class PlayerCameraController : Node3D
 	/// <summary> Determines whether the camera's distance will be limited by its path. </summary>
 	public bool LimitToPathDistance { get; set; }
 
-	[Export]
 	/// <summary> Default camera settings to use when nothing is set. </summary>
-	public CameraSettingsResource defaultSettings;
+	[Export] public CameraSettingsResource defaultSettings;
 	/// <summary> Reference to active CameraBlendData. </summary>
 	public CameraBlendData ActiveBlendData => CameraBlendList[^1];
 	/// <summary> Reference to active CameraSettingsResource. </summary>
 	public CameraSettingsResource ActiveSettings => ActiveBlendData.SettingsResource;
 	/// <summary> A list of all camera settings that are influencing camera. </summary>
 	private readonly List<CameraBlendData> CameraBlendList = [];
+
+	/// <summary> Camera setting to use when performing the thumbs-up animation. </summary>
+	[Export] public CameraSettingsResource thumbsUpSettings;
 
 	public bool UsingCompletionCamera { get; private set; }
 	public void StartCompletionCamera()
@@ -190,11 +214,31 @@ public partial class PlayerCameraController : Node3D
 		UsingCompletionCamera = true;
 	}
 
+	public void StartThumbsUpCamera()
+	{
+		UpdateCameraSettings(new()
+		{
+			BlendTime = 1f,
+			SettingsResource = thumbsUpSettings,
+			TransitionType = CameraTransitionType.Time,
+			Trigger = null
+		});
+	}
+
 	/// <summary> Changes the current camera settings. </summary>
 	public void UpdateCameraSettings(CameraBlendData data, bool enableXformBlend = false)
 	{
 		if (UsingCompletionCamera) return;
 		if (data.SettingsResource == null) return; // Invalid data
+
+		if (CameraBlendList.Count != 0 && ActiveSettings == data.SettingsResource &&
+			!(data.SettingsResource.copyPosition || data.SettingsResource.copyRotation) &&
+			data.Trigger?.transitionType != CameraTransitionType.Distance)
+		{
+			// When the same data is used for multiple different triggers (except for distance triggers)
+			ActiveBlendData.Trigger = data.Trigger; // Simply update the current trigger
+			return;
+		}
 
 		if (Mathf.IsZeroApprox(data.BlendTime)) // Cut transition
 		{
@@ -261,7 +305,6 @@ public partial class PlayerCameraController : Node3D
 		// Don't automatically update influence when using distance blending
 		if (CameraBlendList[blendIndex].UseDistanceBlending)
 		{
-			CameraTrigger trigger = CameraBlendList[blendIndex].Trigger;
 			CameraBlendList[blendIndex].CalculateInfluence(Player.PathFollower);
 			return;
 		}
@@ -507,7 +550,8 @@ public partial class PlayerCameraController : Node3D
 			globalDelta = LockonTarget.GlobalPosition.Lerp(Player.CenterPosition, .5f) - data.precalculatedPosition;
 			localDelta = data.offsetBasis.Inverse() * globalDelta;
 			localDelta.X = 0; // Ignore x axis for pitch tracking
-			data.blendData.lockonPitchTracking = localDelta.Normalized().AngleTo(localDelta.RemoveVertical().Normalized()) * Mathf.Sign(localDelta.Y);
+			float targetLockonPitchTracking = localDelta.Normalized().AngleTo(localDelta.RemoveVertical().Normalized()) * Mathf.Sign(localDelta.Y);
+			data.blendData.lockonPitchTracking = Mathf.Lerp(data.blendData.lockonPitchTracking, targetLockonPitchTracking, lockonTargetTransitionBlend);
 		}
 		data.pitchTracking += data.blendData.lockonPitchTracking * lockonTargetBlend;
 
@@ -558,7 +602,13 @@ public partial class PlayerCameraController : Node3D
 		if (settings.yawOverrideMode == CameraSettingsResource.OverrideModeEnum.Add)
 			targetYawAngle += ExtensionMethods.CalculateForwardAngle(sampler.Forward(), sampler.Up());
 		if (settings.pitchOverrideMode == CameraSettingsResource.OverrideModeEnum.Add)
-			targetPitchAngle += sampler.Forward().AngleTo(sampler.Forward().RemoveVertical().Normalized()) * Mathf.Sign(sampler.Forward().Y);
+		{
+			Vector3 forwardDirection = sampler.Forward();
+			if (Mathf.Abs(forwardDirection.Dot(Vector3.Up)) > 0.9f)
+				forwardDirection = sampler.Up() * Mathf.Sign(-forwardDirection.Y);
+
+			targetPitchAngle += sampler.Forward().AngleTo(forwardDirection.RemoveVertical().Normalized()) * Mathf.Sign(sampler.Forward().Y);
+		}
 
 		// Calculate slope rotation blending
 		switch (settings.distanceCalculationMode)
@@ -584,6 +634,7 @@ public partial class PlayerCameraController : Node3D
 		// Interpolate angles
 		data.blendData.yawAngle = Mathf.LerpAngle(targetYawAngle, sampledTargetYawAngle, data.blendData.SampleBlend);
 		data.blendData.pitchAngle = Mathf.Lerp(targetPitchAngle, sampledTargetPitchAngle, data.blendData.SampleBlend);
+		PathFollower.TiltEnabled = settings.followPathTilt;
 		if (settings.followPathTilt) // Calculate tilt
 			data.blendData.tiltAngle = sampler.Right().SignedAngleTo(-PathFollower.SideAxis, sampler.Forward()) * yawSamplingFix;
 	}
@@ -752,7 +803,7 @@ public partial class PlayerCameraController : Node3D
 				continue;
 			}
 
-			Vector3 rotationAmount = shakeSettings[i].SimulateShake(PhysicsManager.physicsDelta);
+			Vector3 rotationAmount = shakeSettings[i].SimulateShake(PhysicsManager.physicsDelta, cameraRoot.GlobalPosition);
 			cameraRoot.Rotation += rotationAmount * screenShakeRatio;
 		}
 	}
@@ -773,7 +824,7 @@ public partial class PlayerCameraController : Node3D
 		public float maximumDistance;
 
 		/// <summary> Should this camera shake continue even after being respawned? </summary>
-		public bool persistBetweenRespawns = false;
+		public bool persistBetweenRespawns;
 
 		/// <summary> Camera's current time. </summary>
 		public float currentTime;
@@ -798,7 +849,7 @@ public partial class PlayerCameraController : Node3D
 				Runtime.randomNumberGenerator.Randf() * Mathf.Tau);
 		}
 
-		public Vector3 SimulateShake(float deltaTime)
+		public Vector3 SimulateShake(float deltaTime, Vector3 cameraPosition)
 		{
 			// Update times and phase offsets
 			currentTime += deltaTime;
@@ -809,7 +860,7 @@ public partial class PlayerCameraController : Node3D
 			// Sample sin wave
 			Vector3 shake = new(Mathf.Sin(phaseOffset.X), Mathf.Sin(phaseOffset.Y), Mathf.Sin(phaseOffset.Z));
 			shake *= magnitude;
-			return shake * CalculateRatio();
+			return shake * CalculateRatio() * CalculateDistanceRatio(cameraPosition);
 		}
 
 		private float CalculateRatio()
@@ -822,6 +873,15 @@ public partial class PlayerCameraController : Node3D
 			ratio = Mathf.Clamp(ratio, 0f, 1f);
 			ratio = Mathf.Pow(ratio, 2.0f);
 			return ratio;
+		}
+
+		private float CalculateDistanceRatio(Vector3 cameraPosition)
+		{
+			if (Mathf.IsZeroApprox(maximumDistance))
+				return 1f;
+
+			float distance = cameraPosition.DistanceTo(origin);
+			return 1f - Mathf.Clamp(distance / maximumDistance, 0f, 1f);
 		}
 	}
 	#endregion
@@ -1057,7 +1117,7 @@ public partial class CameraBlendData : GodotObject
 	/// <summary> Current tilt angle. </summary>
 	public float tiltAngle;
 
-	/// <summary> Last frame's lockon pitch tracking </summary>
+	/// <summary> Last frame's lockon pitch tracking. </summary>
 	public float lockonPitchTracking;
 
 	/// <summary> How far the camera should be. </summary>

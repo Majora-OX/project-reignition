@@ -1,19 +1,19 @@
 id	en	en_US	ja	es	fr	it	de	pt_BR	pl	zh
 										
-Sonic & Shahra's lines must end in '_so' & '_sh' respectively.	Localization from the original retail game.	Windii's + Akai's Japanese-accurate translation.	Retail Japanese Translation	Akai's Spanish Translation	s3nkuuv's French Translation 			Skyer & Tio Illuminati's Brazilian Portuguese Translation	Bartek's (spaceofsilliness) Polish Translation	Vexion's Chinese Translation
+Sonic & Shahra's lines must end in '_so' & '_sh' respectively.	Retail English Translation.	Windii's + Aoi's Japanese-accurate translation.	Retail Japanese Translation	Aoi's Spanish Translation	s3nkuuv's French Translation 			Skyer & Tio Illuminati's Brazilian Portuguese Translation	Bartek's (spaceofsilliness) Polish Translation	Vexion's Chinese Translation
 										
 										
-secret_rings_title	Sonic and the Secret Rings		ソニックと秘密のリング	Sonic y los Anillos Secretos	Sonic and the Secret Rings 				Sonic and the Secret Rings	音速小子與秘密戒指
+secret_rings_title	Sonic and the Secret Rings		ソニックと秘密のリング	Sonic y los Anillos Secretos	Sonic and the Secret Rings 				Sonic and the Secret Rings	音速小子與秘密的戒指
 										
 system										
 										
-load_level	Loading Mission		ミーションロードする	Cargando Misión						任務載入中
-load_probes	Loading Light Probes		光をロードする	Cargando Sondas de Luz						光探頭載入中
-load_cache	Loading Shader Cache		Shaderをロードする	Cargando la Caché de los Sombreadores	Chargement du cache des shaders			Carregando Shaders em Cache	Wczytywanie pamięci podręcznej shaderów	著色器快取載入中
-load_lighting	Calculating Light Changes			Calculando Cambios en la Iluminación						計算光變
-shader_cache_finished	Finished Loading Shader Cache			La Caché de los Sombreadores Ha Terminado de Cargar	Chargement du cache des shaders terminé 			Carregamento de Shaders Finalizado	Ukończono wczytywanie pamięci podręcznej shaderów	完成載入著色器快取
+load_level	Loading Mission		ミーションロードする	Cargando Misión					Wczytywanie Misji	任務載入中
+load_probes	Loading Light Probes		光をロードする	Cargando Sondas de Luz					Wczytywanie Próbek Światła	光探頭載入中
+load_cache	Loading Shader Cache		Shaderをロードする	Cargando la Caché de los Sombreadores	Chargement du cache des shaders			Carregando Shaders em Cache	Wczytywanie Cache'u Shaderów	著色器快取載入中
+load_lighting	Calculating Light Changes			Calculando Cambios en la Iluminación					Obliczanie Zmian Oświetlenia	計算光變
+shader_cache_finished	Finished Loading Shader Cache			La Caché de los Sombreadores Ha Terminado de Cargar	Chargement du cache des shaders terminé 			Carregamento de Shaders Finalizado	Ukończono wczytywanie Cache'u Shaderów	完成載入著色器快取
 										
-sys_skill	Edit Skills		チェンジスキル	Habilidades	Modifier les compétences			Habilidades	Edytuj Umiejętności	修改技能
+sys_skill	Edit Skills		チェンジスキル	Habilidades	Modifier les compétences			Habilidades	Edytuj Talenty	修改技能
 sys_select	Select		けってい	Seleccionar	Selection 			Selecionar	Wybierz	選擇
 sys_cancel	Cancel		もどる	Atrás	Retour			Cancelar	Anuluj	取消
 sys_delete	Delete		デリート	Borrar				Deletar	Usuń	刪除
@@ -23,14 +23,22 @@ sys_next	Next		つぎへ	Continuar	Suivant 			Próximo	Dalej	繼續
 sys_return	Return		もどる	Volver	Retour			Voltar	Powrót	返回
 sys_quit	Quit		やめる	Salir	Quitter 			Sair	Wyjdź	退出
 sys_quit_description	Quit the Game?		ゲームをやめてします。\nよろしいですか?	¿Quieres Salir del Juego?	Quitter le jeu ? 			Sair do Jogo?	Wyjść z gry?	退出遊戲？
+sys_presets	Presets									
+sys_save	Save									
+sys_overwrite	Overwrite									
+sys_load	Load									
+sys_rename	Rename									
+sys_skill_total	Skill Total									
+sys_skill_cost	Skill Cost									
 										
-sys_reset	Reset		リセット	Restablecer					Zresetuj	重置
-sys_reset_description	Are you sure you want to reset this preset?			¿Deseas restablecer este conjunto de habilidades?					Czy na pewno chcesz zmienić ten wzór we wiór?	您確定要重置此一預設？
-sys_create_preset	Create New Preset			Crear Nuevo Conjunto					Stwórz Nowy Szablon	創造新的預設？
-sys_new_preset	New Preset			Conjunto Nuevo					Nowy Szablon	新預設
-sys_edit_preset	Edit Preset			Editar Habilidades					Edytuj Szablon	修改預設
-sys_delete_preset	Delete Preset			Eliminar Conjunto					Usuń Szablon	刪除預設
-sys_delete_preset_description	Are you sure you want to delete this preset?			¿Deseas borrar este conjunto de habilidades?					Czy na pewno chcesz usunąć ten szablon?	您確定要刪除此預設？
+sys_reset	Reset		リセット	Restablecer				Redefinir	Zresetuj	重置
+sys_reset_description	Are you sure you want to reset this preset?			¿Deseas restablecer este conjunto de habilidades?				Quer mesmo redefinir este conjunto?	Czy na pewno chcesz zmienić ten wzór we wiór?	您確定要重置此一預設？
+sys_create_preset	Create New Preset			Crear Nuevo Conjunto				Criar Novo Conjunto	Stwórz Nowy Szablon	創造新的預設？
+sys_new_preset	New Preset			Conjunto Nuevo				Novo Conjunto	Nowy Szablon	新預設
+sys_edit_preset	Edit Preset			Editar Habilidades				Editar Conjunto	Edytuj Szablon	修改預設
+sys_delete_preset	Delete Preset			Eliminar Conjunto				Apagar Conjunto	Usuń Szablon	刪除預設
+sys_delete_preset_description	Are you sure you want to delete this preset?			¿Deseas borrar este conjunto de habilidades?				Quer mesmo excluir este conjunto?	Czy na pewno chcesz usunąć ten szablon?	您確定要刪除此預設？
+										
 										
 sys_pause	Pause		ポーズ	Pausa	Pause			Pausar	Pauza	暫停
 pause_continue	Continue		コンティニュー	Continuar	Continuer 			Continuar	Kontynuuj	繼續
@@ -38,10 +46,10 @@ pause_restart	Restart		リスタート	Reiniciar	Recommencer			Reiniciar	Zrestar
 pause_status	Status		ステータス	Estado	Stats			Status	Status	狀態
 pause_quit	Quit		やめる	Salir	Quitter 			Sair	Wyjdź	退出
 pause_mission	Mission		ミッション	Misión	Mission 			Missão	Misja	任務
-pause_skill	Skills		スキル	Habilidades	Compétences			Habilidades	Umiejętności	技能
+pause_skill	Skills		スキル	Habilidades	Compétences			Habilidades	Talenty	技能
 pause_status_description	Here is Sonic's current status.		現在のソニックのステータスです。	Aquí está el estado actual de Sonic.	Stats actuelles de Sonic 			Aqui está o estado atual de Sonic.	Oto obecny status Sonica.	索尼克的目前狀態。
 pause_mission_description	Here is information on\nyour current mission.		現在プレイ中のミッション\n内容を表示します。	Aquí hay información\nsobre la misión actual.	Informations de la quête 			Aqui contém informações\nda sua missão atual.	Oto informacje o\nbieżącej misji.	目前任務的資訊。
-pause_skill_description	Here is information on\nyour currently equipped skills.		現在プレイ中のスキルリストです。	Aquí hay información\nsobre las habilidades equipadas.	Informations de tes équipements actuels 			Aqui contém informações das\nsuas habilidades equipadas atualmente.	Oto informacje o\nobecnie używanych umiejętnościach.	目前裝備的技能。
+pause_skill_description	Here is information on\nyour currently equipped skills.		現在プレイ中のスキルリストです。	Aquí hay información\nsobre las habilidades equipadas.	Informations de tes équipements actuels 			Aqui contém informações das\nsuas habilidades equipadas atualmente.	Oto informacje o\nobecnie używanych talentach.	目前裝備的技能。
 pause_lv	Level		レベル	Nivel	Niveau 			Nível	Poziom	等級
 pause_high_score	High Score		ハイスコア	Mejor Puntuación	Score le plus élevé 			Melhor Pontuação	Najlepszy Wynik	最高分數
 pause_score	Score		スコア	Puntuación	Score le plus élevé 			Pontuação	Wynik	分數
@@ -49,10 +57,10 @@ pause_best_time	Best Time		ベストタイム	Mejor Tiempo	Meilleur temps			Melh
 pause_time	Time		タイム	Tiempo	Temps			Tempo	Czas	時間
 pause_stage_exp	Stage EXP		ステージ EXP	EXP del Nivel	XP du niveau 			EXP de Nível	PD Etapu	關卡獲得EXP
 pause_total_exp	Total EXP		トータル EXP	EXP Total	XP total 			EXP Total	Suma PD	總共EXP
-pause_gauge	Soul Gauge		ソウルゲージ	Barra de Almas	Jauge d'Âme			Barra de Almas	Duszomierz	魂力槽
+pause_gauge	Soul Gauge		ソウルゲージ	Barra de Almas	Jauge d'Âme			Barra de Almas	Duszomierz	魂力量表
 pause_fire_soul	Fire Soul		ファイヤーソウル	Alma Ígnea	Âme de Feu 			Alma de Fogo	Ognista Dusza	焰魂
 pause_medal	Medal		メダル	Medalla	Médaille 			Medalha	Medal	獎牌
-pause_no_skill	No skills are currently equipped.		スキルは装備していない。	No tienes equipada ninguna habilidad.	Aucune compétence est équipée actuellement 			Nenhuma habilidade está equipada no momento.	Obecnie żadna umiejętność nie jest używana.	目前沒有裝備技能
+pause_no_skill	No skills are currently equipped.		スキルは装備していない。	No tienes equipada ninguna habilidad.	Aucune compétence est équipée actuellement 			Nenhuma habilidade está equipada no momento.	Obecnie żaden talent nie jest używany.	目前沒有裝備技能
 										
 										
 sys_world_locked	You cannot select this world yet.		このステージは　まだ選択できません。	Aún no puedes seleccionar este mundo.	Tu ne peux pas choisir ce monde 			Você ainda não pode selecionar este mundo.	Nie możesz jeszcze wybrać tego świata.	您還不能選擇此世界。
@@ -61,8 +69,8 @@ sys_mode_party	Play with up to 4 of your friends\nin this full-scale minigame mo
 sys_mode_book	You can view the pages\nyou've collected here.		これまで獲得したページを\n見る事ができます。	Aquí puedes ver las páginas\nque has coleccionado.	Tu peux afficher les pages que tu à collecter ici			Você pode ver as páginas que\ncoletou aqui.	Możesz tu poprzeglądać\nwcześniej zdobyte strony.	您可以在此觀賞收集到的書頁。
 sys_mode_option	Change the game's settings.		ゲーム中の設定を変更できます。	Ajusta los parámetros del juego.	Modifie les paramètres du jeu 			Mudar as configurações do jogo.	Zmień ustawienia gry.	調整遊戲設定。
 										
-sys_save_select	Please select the file\nyou would like to play.		始めたいデータを選択してください。	Selecciona el archivo de\nguardado que quieres cargar.	Sélectionne le ficher que tu souhaites utiliser 			Selecione o progresso\nque deseja jogar.	Wybierz zapis\n, na ktorym chcesz grać.	請選擇要遊玩的存檔資料。
-sys_new	New		New	Nuevo				Novo	Nowy	New
+sys_save_select	Please select the file\nyou would like to play.		始めたいデータを選択してください。	Selecciona el archivo de\nguardado que quieres cargar.	Sélectionne le ficher que tu souhaites utiliser 			Selecione o progresso\nque deseja jogar.	Wybierz zapis,\nna ktorym chcesz grać.	請選擇要遊玩的存檔資料。
+sys_new	New		New	Nuevo				Novo	Nowość	New
 										
 										
 sys_options	Options		設定	Opciones	Options			Opções	Ustawienia	設定
@@ -90,7 +98,7 @@ option_target_fps	Target Framerate		フレームレート	FPS deseados				Limite
 option_unlimited_fps	Unlimited		制限なし	Ilimitados				Ilimitado	Nieograniczony	無限制
 option_fps	0 FPS		0 FPS	0 FPS				0 FPS	0 KL./S	0 FPS
 option_vsync	V-Sync		垂直同期	Sincronización Vertical	V-Sync			V-Sync	Synchronizacja pionowa	V-Sync垂直同步
-option_render_scale	Render Scale		レンダリング精度	Escala de Renderizado	Échelle de Rendu			Escala de Renderização	Skala renderowania	
+option_render_scale	Render Scale		レンダリング精度	Escala de Renderizado	Échelle de Rendu			Escala de Renderização	Skala renderowania	渲染比例
 option_resize_mode	Resize Mode		リサイズモード	Agrandamiento de la Imagen	Mode redimensionné			Modo de Redimensionamento	Tryb skalowania	大小調整模式
 option_antialiasing	Anti-Aliasing		アンチエイリアス	Suavizado de Imagen	Anti-Aliasing 			Anti-Aliasing	Anti-Aliasing	反鋸齒
 option_post_processing	Post-Processing		ポストプロセス	Postprocesamiento	Post-Traitement 			Pós-Processamento	Przetwarzanie końcowe	後處理
@@ -102,7 +110,7 @@ option_motion_blur	Motion Blur		モーションブラー	Desenfoque por Movimien
 										
 option_main_vol	Main Volume		ゲームボリューム	Volumen General	Volume général			Volume Principal	Głowna głośność	主音量
 option_bgm_vol	Music Volume		音楽ボリューム	Volumen de la Música	Volume de la musique 			Música	Głośność muzyki	音樂音量
-option_sfx_vol	SFX Volume		SFXボリューム	Volumen de los Efectos	Volume des effets			Efeitos Sonoros	Głośność efektow specjalnych	音效音量
+option_sfx_vol	SFX Volume		SFXボリューム	Volumen de los Efectos	Volume des effets			Efeitos Sonoros	Głośność efektów specjalnych	音效音量
 option_voice_vol	Voice Volume		声ボリューム	Volumen de las Voces	Volume des voix 			Voz	Głośność głosów	語音音量
 										
 option_sub_toggle	Subtitles		サブタイトル	Subtítulos	Sous-titres			Legendas	Napisy	字幕
@@ -113,12 +121,12 @@ option_controller_ui	Button Type		ボタンタイプ	Interfaz de los Botones	Typ
 option_deadzone	Axis Dead Zone		デッドゾーン	Zona Muerta del Eje	Axe de la Zone Morte 			Zona Morta dos Analógicos	Martwa strefa osi	軸桿死區
 option_mapping	Change Mapping		チェンジコンフィグ	Cambiar Asignaciones	Changer la cartographie 			Mudar Mapeamento	Zmień kontrolki	更改操控按鍵
 option_mapping_test	Test Controls		コントロールテースト	Probar los Controles	Test des touches			Testar Controles	Przetestuj kontrolki	測試控制
-option_controller_auto	Auto Detect		オート	Detección Automática				Detecção Automática		自動偵測
+option_controller_auto	Auto Detect		オート	Detección Automática				Detecção Automática	Autodetekcja	自動偵測
 option_controller_ps	PlayStation		PlayStation	PlayStation	Playstation			PlayStation	PlayStation	PlayStation
 option_controller_xbox	Xbox		Xbox	Xbox	Xbox			Xbox	Xbox	Xbox
 option_controller_nintendo	Nintendo		Nintendo	Nintendo	Nintendo			Nintendo	Nintendo	任天堂
 option_controller_steam	Steam		Steam	Steam	Steam			Steam	Steam	Steam
-option_awaiting_input	Awaiting Input...		入力してください...	Pulsa una Tecla...	En atttente de saisie 			Aperte um botão...	Oczekiwanie na działanie...	等待輸入操控...
+option_awaiting_input	Awaiting Input...		入力してください...	Pulsa una Tecla...	En atttente de saisie 			Aperte um botão...	Oczekiwanie na działanie...	請輸入操控...
 										
 										
 move_up	Up		上	Arriba	Haut			Cima	Góra	上
@@ -128,8 +136,8 @@ move_right	Right		右	Derecha	Droite			Direita	Prawo	右
 button_jump	Jump		ジャンプ	Saltar	Saut			Pular	Skok	跳躍
 button_action	Action		アクション	Acción Especial	Action			Ação	Akcja	動作
 button_brake	Brake		ブレーキ	Frenar				Frear	Hamulec	煞停
-button_speedbreak	Speed Break		スピードブレイク	Impulso	Speed Break			Impulso Veloz	Rozdarcie pędu	Speed Break
-button_timebreak	Time Break		タイムブレイク	Ralentización	Time Break			Quebra Temporal	Rozdarcie czasu	Time Break
+button_speedbreak	Speed Break		スピードブレイク	Impulso	Speed Break			Impulso Veloz	Rozdarcie pędu	速度突破
+button_timebreak	Time Break		タイムブレイク	Ralentización	Time Break			Quebra Temporal	Rozdarcie czasu	時間突破
 button_pause	Pause		ポーズ	Pausa	Pause			Pausar	Pauza	暫停
 										
 										
@@ -142,15 +150,15 @@ lang_it	Italian		イタリア語	Italiano	Italien	Italiano		Italiano	Włoski	義
 lang_de	German		ドイツ語	Alemán	Allemend		Deutsch	Alemão	Niemiecki	德文
 lang_pt_BR	Brazilian Portuguese		ブラジルポルトガル語	Portugués (Brasil)	Brésillien / Portugais			Português Brasileiro	Brazylijski Portugalski	巴西葡萄牙文
 lang_pl	Polish		ポーランド語	Polaco				Polonês	Polski	波蘭文
-lang_zh	Chinese		中国語							繁體中文
+lang_zh	Chinese		中国語						Chiński	繁體中文
 										
-action_jump	Jump			Saltar						
-action_exit	Exit			Salir						
-action_launch	Launch			Lanzar						
-action_ascend	Ascend			Ascender						
-action_shuffle	Shuffle			Truco en Raíl						
-action_grindstep	Grind Step			Salto entre Raíles						
-action_stomp	Stomp			Caída Rápida						
+action_jump	Jump		ジャンプ	Saltar				Pular	Skok	跳躍
+action_exit	Exit		でる	Salir				Sair	Wyjście	退出
+action_launch	Launch		とばす	Lanzar				Lançar	Wystrzał	投射
+action_ascend	Ascend		のぼる	Ascender				Ascender	Wzlot	上升
+action_shuffle	Shuffle		シャッフル	Truco en Raíl				Manobra	Trik na Szynie	踏軌加速
+action_grindstep	Grind Step		ステップ	Salto entre Raíles				Troca de Trilho	Manewr Międzyszynowy	換軌
+action_stomp	Stomp		ストンピング	Caída Rápida				Pisão	Przytup	重踏
 										
 unlock_mission	A new mission has been unlocked!			¡Has desbloqueado una nueva misión!	Une nouvelle mission à été débloquée !			Uma nova missão foi desbloqueada!	Odblokowano nową misję!	解鎖新任務！
 unlock_skill	A new skill has been unlocked!			¡Has desbloqueado una nueva habilidad!	Une nouvelle compétence à été débloquée !			Uma nova habilidade foi desbloqueada!	Odblokowano nową umiejętność!	解鎖新技能！
@@ -170,10 +178,10 @@ unlock_ring_pirate_storm	You got the Water World Ring!			¡Has obtenido el Anill
 unlock_ring_skeleton_dome	You got the White World Ring!			¡Has obtenido el Anillo Secreto Blanco!	Tu à obtenu le Ring Secret Blanc !			Você obteve o Anel Secreto Branco!	Zdobyto Biały Pierścień Świata!	獲得白色世界之戒！
 unlock_ring_night_palace	You got the Purple World Ring!			¡Has obtenido el Anillo Secreto Púrpura!	Tu à obtenu le Ring Secret Violet ! 			Você obteve o Anel Secreto Roxo!	Zdobyto Fioletowy Pierścień Świata!	獲得紫色世界之戒！
 unlock_minigame	A new mini-game has been\nadded to the Party Mode.			Has desbloqueado un nuevo\nminijuego del modo multijugador.	Un nouveau mini-jeu dans le mode multijoueurs.			Um novo mini-game foi\nadicionado ao Modo Festa.	Nowa mini-gra została\ndodana do trybu imprezowego.	派對模式新增一項小遊戲。
-unlock_fire_soul	You got a Fire S@ul!		Fire S@ul ゲット！	¡Has obtenido un Alma Ígnea! @	Tu à obtenu une Âme de Feu !			Você obteve uma Alma de F@go!	Zdobyto @gnistą Duszę!	得到一枚焰魂@！
+unlock_fire_soul	You got a Fire S@ul!		Fire S@ul ゲット!	¡Has obtenido un Alma Ígnea! @	Tu à obtenu une Âme de Feu !			Você obteve uma Alma de F@go!	Zdobyto @gnistą Duszę!	得到一枚焰魂@!
 										
 										
-mission_tutorial_01	Paragraph 01		第1節	Parágrafo 01	Paragraphe 01			Parágrafo 01	Paragraf 01	第1節
+mission_tutorial_01	Paragraph 01		第1節	Parágrafo 01	Paragraphe 01			Parágrafo 01	Paragraf 01	第01節
 mission_locked	??????		??????	¿¿¿???	??????			??????	??????	??????
 mission_goal	Go for the Goal		ゴー　フォー　ザ　ゴール	Llega a la Meta	Va à l'objectif !			Chegue ao Objetivo	Osiągnij cel	前往終點
 mission_special	Special Challenge		スペシャル　チャレンジ	Desafío Especial	Mission Spéciale !			Desafio Especial	Wyzwanie specjalne	特殊挑戰
@@ -182,7 +190,7 @@ mission_perfect	Perfect Challenge		パーフェクト　チャレンジ	Desafío
 mission_time	Beat the Clock		ビート　ザ　クロック	Contrarreloj	Bats le contre-la-montre 			Vença o Relógio	Walka z czasem	限時挑戰
 mission_enemy	Rampage		ランページ！	Combate	Carnage 			Fúria	Rozróba	亂鬥
 mission_enemyless	Stealth Attack		ステルス　アタック	Incursión Sigilosa	Attaque furtive			Ataque Sorrateiro	Skradanka	奇襲
-mission_race	Head to Head		ヘード　トゥ　ヘード	Cara a cara	Tête à tête			Confronto Direto	Łeb w łeb	賽跑
+mission_race	Head to Head		ヘード　トゥ　ヘード	Cara a cara	Tête à tête			Confronto Direto	Łeb w łeb	競賽
 mission_ring	Collect Rings		コレクト　リング	Acumula Anillos	Collecte les rings 			Colete Anéis	Zbierz pierścienie	收集金環
 mission_ringless	Hands Off		ハンド　オフ	Suelta Eso	Ne touche pas			Mãos Vazias	Łapy precz	不碰金環
 mission_ring_chain	Chain of Rings		チェイン　オブ　リングス	Cadenas de Anillos	Chaîne de Rings 			Sequência de Anéis	Łańcuch pierścieni	連續獲得金環
@@ -191,47 +199,47 @@ mission_boss	Defeat the Boss		ディフィート　ザ　ボス	Derrota al Jefe	
 mission_last	Last Chapter		ラスト　チャプター	Capítulo Final	Dernier Chapitre 			Último Capítulo	Ostatni rozdział	最終章
 										
 										
-mission_description_locked	This mission is not available yet.		このミッションはオープンされていません。	Esta misión aún no está disponible.	Cettte mission n'est pas disponible pour le moment 			Esta missão ainda não está disponível.	Ta misja nie jest jeszcze dost?pna.	此任務尚未開放。
-mission_description_deathless	Don't Get Defeated!		1度もたおれずに進め！	¡No Seas Derrotado!	Ne perds pas!			Mantenha-se Vivo!	Nie daj się pokonać	別被擊倒！
-mission_description_perfect	Don't Take Any Damage!		ダメージをうけずに進め！	¡No Sufras Ningún Daño!	Ne prends aucun dégât !			Não Tome Dano!	Nie przyjmij żadnych obrażeń	別受到任何攻擊！
-mission_description_race	Beat Uhu to the Goal!		ウーフーより先にゴールへ！	¡Llega a la Meta antes que Uhu!	Bats Uhu le génie du vent !			Vença Uhu na Corrida!	Pokonaj Uhu w wyścigu!	比烏福先到終點！
-mission_description_ringless	Finish With 0 Rings!		リング0個でゴールへ進め！	¡Cruza la Meta con 0 Anillos!	Termine avec 0 Rings !			Termine Com 0 Anéis!	Skończ z 0 pierścieniami!	以0枚金環通關！
-mission_description_pearless	Don't Collect Any Pearls!		パールを取らずに進め！	¡No Obtengas Ninguna Perla!	Ne récupère aucune perle !			Não Colete Nenhuma Pérola!	Nie zbierz żadnej perły!	別收集任何魂珠！
-mission_description_enemyless	Don't Defeat Any Enemies!		マジンをたおさずにいそげ！	¡No Derrotes a Ningún Enemigo!	Ne bat aucun ennemi !			Não Derrote Nenhum Inimigo!	Nie pokonaj  żadnego przeciwnika!	別擊倒任何敵人！
+mission_description_locked	This mission is not available yet.		このミッションはオープンされていません。	Esta misión aún no está disponible.	Cettte mission n'est pas disponible pour le moment 			Esta missão ainda não está disponível.	Ta misja nie jest jeszcze dostępna.	此任務尚未開放。
+mission_description_deathless	Don't Get Defeated!		1度もたおれずに進め！	¡No Seas Derrotado!	Ne perds pas!			Mantenha-se Vivo!	Nie Daj Się Pokonać!	別被擊倒！
+mission_description_perfect	Don't Take Any Damage!		ダメージをうけずに進め！	¡No Sufras Ningún Daño!	Ne prends aucun dégât !			Não Tome Dano!	Nie Odnieś Żadnych Obrażeń!	別受到任何攻擊！
+mission_description_race	Beat Uhu to the Goal!		ウーフーより先にゴールへ！	¡Llega a la Meta antes que Uhu!	Bats Uhu le génie du vent !			Vença Uhu na Corrida!	Pokonaj Uhu w Wyścigu!	比烏福先到終點！
+mission_description_ringless	Finish With 0 Rings!		リング0個でゴールへ進め！	¡Cruza la Meta con 0 Anillos!	Termine avec 0 Rings !			Termine Com 0 Anéis!	Skończ z 0 Pierścieniami!	以0枚金環通關！
+mission_description_pearless	Don't Collect Any Pearls!		パールを取らずに進め！	¡No Obtengas Ninguna Perla!	Ne récupère aucune perle !			Não Colete Nenhuma Pérola!	Nie Zbierz Żadnej Perły!	別收集任何魂珠！
+mission_description_enemyless	Don't Defeat Any Enemies!		マジンをたおさずにいそげ！	¡No Derrotes a Ningún Enemigo!	Ne bat aucun ennemi !			Não Derrote Nenhum Inimigo!	Nie Pokonaj Żadnego Przeciwnika!	別擊敗任何敵人！
 										
-mission_description_enemy_1	Defeat 1 Enemy!		マジンを1体たおせ！	¡Derrota a un Enemigo!	Bats 1 ennemi !			Derrote 1 Inimigo!	Pokonaj 1 przeciwnika!	擊敗1個敵人！
-mission_description_enemy_10	Defeat 10 Enemies!		マジンを10体たおせ！	¡Derrota a 10 Enemigos!	Bats 10 ennemis !			Derrote 10 Inimigos!	Pokonaj 10 przeciwników!	擊敗10個敵人！
-mission_description_enemy_15	Defeat 15 Enemies!		マジンを15体たおせ！	¡Derrota a 15 Enemigos!	Bats 15 ennemis			Derrote 15 Inimigos!	Pokonaj 15 przeciwników!	擊敗15個敵人！
-mission_description_enemy_20	Defeat 20 Enemies!		マジンを20体たおせ！	¡Derrota a 20 Enemigos!	Bats 20 ennemis !			Derrote 20 Inimigos!	Pokonaj 20 przeciwników!	擊敗20個敵人！
-mission_description_enemy_40	Defeat 40 Enemies!		マジンを40体たおせ！	¡Derrota a 40 Enemigos!	Bats 40 ennemis !			Derrote 40 Inimigos!	Pokonaj 40 przeciwników!	擊敗40個敵人！
+mission_description_enemy_1	Defeat 1 Enemy!		マジンを1体たおせ！	¡Derrota a un Enemigo!	Bats 1 ennemi !			Derrote 1 Inimigo!	Pokonaj 1 Przeciwnika!	擊敗1個敵人！
+mission_description_enemy_10	Defeat 10 Enemies!		マジンを10体たおせ！	¡Derrota a 10 Enemigos!	Bats 10 ennemis !			Derrote 10 Inimigos!	Pokonaj 10 Przeciwników!	擊敗10個敵人！
+mission_description_enemy_15	Defeat 15 Enemies!		マジンを15体たおせ！	¡Derrota a 15 Enemigos!	Bats 15 ennemis			Derrote 15 Inimigos!	Pokonaj 15 Przeciwników!	擊敗15個敵人！
+mission_description_enemy_20	Defeat 20 Enemies!		マジンを20体たおせ！	¡Derrota a 20 Enemigos!	Bats 20 ennemis !			Derrote 20 Inimigos!	Pokonaj 20 Przeciwników!	擊敗20個敵人！
+mission_description_enemy_40	Defeat 40 Enemies!		マジンを40体たおせ！	¡Derrota a 40 Enemigos!	Bats 40 ennemis !			Derrote 40 Inimigos!	Pokonaj 40 Przeciwników!	擊敗40個敵人！
 										
-mission_description_ring_10	Gather 10 Rings!		リングを10個あつめろ！	¡Acumula 10 Anillos!	Récupère 10 Rings !			Colete 10 Anéis!	Zbierz 10 pierścieni!	收集10枚金環！
-mission_description_ring_50	Gather 50 Rings!		リングを50個あつめろ！	¡Acumula 50 Anillos!	Récupère 50 Rings !			Colete 50 Anéis!	Zbierz 50 pierścieni!	收集50枚金環！
-mission_description_ring_80	Gather 80 Rings!		リングを80個あつめろ！	¡Acumula 80 Anillos!	Récupère 80 Rings !			Colete 80 Anéis!	Zbierz 80 pierścieni!	收集80枚金環！
-mission_description_ring_99	Gather 99 Rings!		リングを99個あつめろ！	¡Acumula 99 Anillos!	Récupère 99 Rings !			Colete 99 Anéis!	Zbierz 99 pierścieni!	收集99枚金環！
-mission_description_ring_100	Gather 100 Rings!		リングを100個あつめろ！	¡Acumula 100 Anillos!	Récupère 100 Rings 			Colete 100 Anéis!	Zbierz 100 pierścieni!	收集100枚金環！
+mission_description_ring_10	Gather 10 Rings!		リングを10個あつめろ！	¡Acumula 10 Anillos!	Récupère 10 Rings !			Colete 10 Anéis!	Zbierz 10 Pierścieni!	收集10枚金環！
+mission_description_ring_50	Gather 50 Rings!		リングを50個あつめろ！	¡Acumula 50 Anillos!	Récupère 50 Rings !			Colete 50 Anéis!	Zbierz 50 Pierścieni!	收集50枚金環！
+mission_description_ring_80	Gather 80 Rings!		リングを80個あつめろ！	¡Acumula 80 Anillos!	Récupère 80 Rings !			Colete 80 Anéis!	Zbierz 80 Pierścieni!	收集80枚金環！
+mission_description_ring_99	Gather 99 Rings!		リングを99個あつめろ！	¡Acumula 99 Anillos!	Récupère 99 Rings !			Colete 99 Anéis!	Zbierz 99 Pierścieni!	收集99枚金環！
+mission_description_ring_100	Gather 100 Rings!		リングを100個あつめろ！	¡Acumula 100 Anillos!	Récupère 100 Rings 			Colete 100 Anéis!	Zbierz 100 Pierścieni!	收集100枚金環！
 										
-mission_description_ring_chain_30	Chain Together 30 Rings!		リングチェインを30チェイン決めろ！	¡Encadena 30 Anillos!	Enchaîne 30 Rings ! 			Sequencie 30 Anéis!	Zgarnij kombo 30 pierścieni!	連續獲得30枚金環吧！
-mission_description_ring_chain_50	Chain Together 50 Rings!		リングチェインを50チェイン決めろ！	¡Encadena 50 Anillos!	Enchaîne 50 Rings ! 			Sequencie 50 Anéis!	Zgarnij kombo 50 pierścieni!	連續獲得50枚金環吧！
-mission_description_ring_chain_60	Chain Together 60 Rings!		リングチェインを60チェイン決めろ！	¡Encadena 60 Anillos!	Enchaîne 60 Rings ! 			Sequencie 60 Anéis!	Zgarnij kombo 60 pierścieni!	連續獲得60枚金環吧！
-mission_description_ring_chain_100	Chain Together 100 Rings!		リングチェインを100チェイン決めろ！	¡Encadena 100 Anillos!	Enchaîne 100 Rings ! 			Sequencie 100 Anéis!	Zgarnij kombo 100 pierścieni!	連續獲得100枚金環吧！
+mission_description_ring_chain_30	Chain Together 30 Rings!		リングチェインを30チェイン決めろ！	¡Encadena 30 Anillos!	Enchaîne 30 Rings ! 			Sequencie 30 Anéis!	Zgarnij Kombo 30 Pierścieni!	連續獲得30枚金環吧！
+mission_description_ring_chain_50	Chain Together 50 Rings!		リングチェインを50チェイン決めろ！	¡Encadena 50 Anillos!	Enchaîne 50 Rings ! 			Sequencie 50 Anéis!	Zgarnij Kombo 50 Pierścieni!	連續獲得50枚金環吧！
+mission_description_ring_chain_60	Chain Together 60 Rings!		リングチェインを60チェイン決めろ！	¡Encadena 60 Anillos!	Enchaîne 60 Rings ! 			Sequencie 60 Anéis!	Zgarnij Kombo 60 Pierścieni!	連續獲得60枚金環吧！
+mission_description_ring_chain_100	Chain Together 100 Rings!		リングチェインを100チェイン決めろ！	¡Encadena 100 Anillos!	Enchaîne 100 Rings ! 			Sequencie 100 Anéis!	Zgarnij Kombo 100 Pierścieni!	連續獲得100枚金環吧！
 										
-mission_description_time_45	Finish Within 45 Seconds!		45秒以内に進め！	¡Llega a la Meta en menos de 45 Segundos!	Termine en moins de 45 secondes !			Termine em 45 Segundos!	Ukończ w 45 sekund!	45秒以內完成關卡！
-mission_description_time_90	Finish Within 90 Seconds!		90秒以内に進め！	¡Llega a la Meta en menos de 90 Segundos!	Termine en moins de 90 secondes !			Termine em 90 Segundos!	Ukończ w 90 sekund!	90秒以內完成關卡！
-mission_description_time_100	Finish Within 100 Seconds!		100秒以内に進め！	¡Llega a la Meta en menos de 100 Segundos!	Termine en moins de 100 secondes !			Termine em 100 Segundos!	Ukończ w 100 sekund!	100秒以內完成關卡！
-mission_description_time_120	Finish Within 120 Seconds!		120秒以内に進め！	¡Llega a la Meta en menos de 120 Segundos!	Termine en moins de 120 secondes !			Termine em 120 Segundos!	Ukończ w 120 sekund!	120秒以內完成關卡！
+mission_description_time_45	Finish Within 45 Seconds!		45秒以内に進め！	¡Llega a la Meta en menos de 45 Segundos!	Termine en moins de 45 secondes !			Termine em 45 Segundos!	Ukończ w 45 Sekund!	45秒以內完成關卡！
+mission_description_time_90	Finish Within 90 Seconds!		90秒以内に進め！	¡Llega a la Meta en menos de 90 Segundos!	Termine en moins de 90 secondes !			Termine em 90 Segundos!	Ukończ w 90 Sekund!	90秒以內完成關卡！
+mission_description_time_100	Finish Within 100 Seconds!		100秒以内に進め！	¡Llega a la Meta en menos de 100 Segundos!	Termine en moins de 100 secondes !			Termine em 100 Segundos!	Ukończ w 100 Sekund!	100秒以內完成關卡！
+mission_description_time_120	Finish Within 120 Seconds!		120秒以内に進め！	¡Llega a la Meta en menos de 120 Segundos!	Termine en moins de 120 secondes !			Termine em 120 Segundos!	Ukończ w 120 Sekund!	120秒以內完成關卡！
 										
 mission_description_so_main	Head to King Shahryar's Palace!		シャフリヤール王宮へいそげ！	¡Dirígete al Palacio del Sultán Shahriar!	Part au Palais du Roi Shahyar ! 			Encontre o Rei Shahryah!	Znajdź Króla Szahrijara!	趕往山魯亞爾國王的宮殿！
 mission_description_so_jar	Break 5 Jars!		ツボを5個こわせ！	¡Rompe 5 Jarrones!	Casse 5 jarres 			Quebre 5 Vasos!	Zniszcz 5 dzbankow!	打破5個陶壺！
-mission_description_so_jarless	Don't Break Any Jars!		ツボをわらずに進め！	¡No Rompas Ningún Jarrón!	Ne casse aucune jarre !			Não Quebre Nenhum Vaso!	Nie stłucz Żadnego dzbanka!	不要打破任何陶壺！
+mission_description_so_jarless	Don't Break Any Jars!		ツボをわらずに進め！	¡No Rompas Ningún Jarrón!	Ne casse aucune jarre !			Não Quebre Nenhum Vaso!	Nie Stłucz Żadnego Dzbanka!	不要打破任何陶壺！
 mission_description_so_boss	Battle! Sand Scorpion!		対決!サンドスコーピオン！	¡Lucha contra el Escorpión de las Arenas!	Bats le Scrorpion de Sable ! 			Derrote o Escorpião da Areia!	Bitwa! Piaskoskorpion!	對決！沙蠍！
 										
-mission_description_dj_main	Follow the Pterosaur!		いそいで翼竜を追え！	¡Sigue al Pterosaurio!	Suis le Ptétosaure ! 			Siga o Pterossauro!	Podążaj za pterozaurem!	追上翼龍！
-mission_description_dj_genie_eggs	Smash 5 Spirit Eggs!		マジンの卵を5個こわせ！	¡Rompe 5 Huevos de Espíritu!	Brise 5 Esprits d'oeufs ! 			Esmague 5 Ovos Espirituais!	Rozbij 5 Jaj Dusz!	打碎5個魔神蛋！
+mission_description_dj_main	Follow the Pterosaur!		いそいで翼竜を追え！	¡Sigue al Pterosaurio!	Suis le Ptétosaure ! 			Siga o Pterossauro!	Podążaj za Pterozaurem!	追上翼龍！
+mission_description_dj_genie_eggs	Smash 5 Spirit Eggs!		マジンの卵を5個こわせ！	¡Rompe 5 Huevos de Espíritu!	Brise 5 Esprits d'oeufs ! 			Esmague 5 Ovos Espirituais!	Rozbij 5 Duchowych Jaj!	打碎5個魔神蛋！
 mission_description_dj_dino_eggs	Return the Dinosaur Eggs to their nests!		恐竜の巣に卵を運べ！	¡Recupera los Huevos de Dinosaurio!	Remettez les œufs de dinosaures dans leurs nids !			Restaure os Ovos de Dinossauro!	Zwróć Jaja Dinozaurów do ich gniazd!	把恐龍蛋放回巢穴！
 										
 mission_description_ef_main	Head to the Center!		最深部へいそげ！	¡Dirígete al Núcleo!	Part au Centre ! 			Vá para o Centro!	Udaj się do Centrum!	趕往最深處！
-mission_description_ef_time	Find the Exit in Time!		時間内に出口へいそげ！	¡Llega a la Salida dentro del Tiempo Límite!	Trouve la sortie avant le temps imparti ! 			Encontre a Saída a Tempo!	Znajdź wyjście w porę!	在時限內趕往出口！
+mission_description_ef_time	Find the Exit in Time!		時間内に出口へいそげ！	¡Llega a la Salida dentro del Tiempo Límite!	Trouve la sortie avant le temps imparti ! 			Encontre a Saída a Tempo!	Znajdź Wyjście w Porę!	在時限內趕往出口！
 mission_description_ef_boss	Battle! Ifrit Golem!		対決!イフリートゴーレム！	¡Lucha contra el Golem Ifrit!	Bats le Golem d'Ifrit ! 			Derrote o Golem Ifrit!	Walka! Golem Ifrita!	對決！伊弗力特巨像！
 										
 mission_description_lr_main	Find Sinbad!		シンドバッドを探しだせ！	¡Encuentra a Simbad!	Trouve Sinbad ! 			Encontre Sinbad!	Znajdź Sindbada!	尋找辛巴達！
@@ -243,7 +251,7 @@ mission_description_ps_boss	Battle! Captain Bemoth!		対決!キャプテンベ�
 mission_description_sd_main	Find King Solomon!		ソロモン王をさがせ！	¡Encuentra al Rey Salomón!	Trouve le Roi Solomon 			Encontre o Rei Solomon!	Znajdź Króla Salomona!	尋找所羅門王！
 mission_description_sd_bones	Find the King's Bones!		骸骨王の骨をあつめろ！	¡Encuentra los Huesos del Rey!	Suis les os du Roi ! 			Encontre os Ossos do Rei!	Znajdź Królewskie Truchło!	尋找骷髏王的骨骸！
 										
-mission_description_np_main	Sneak Into the Palace!		宮殿の最深部へ突入しろ！	¡Infíltrate en el Palacio!	Infiltre toi dans le Palais ! 			Invada o Palácio!	Zakradnij się do pałacu!	潛入宮殿的最深處！
+mission_description_np_main	Sneak Into the Palace!		宮殿の最深部へ突入しろ！	¡Infíltrate en el Palacio!	Infiltre toi dans le Palais ! 			Invada o Palácio!	Zakradnij się do Pałacu!	潛入宮殿的最深處！
 mission_description_np_boss	Battle! Erazor Djinn!		対決!イレイザー・ジン！	¡Lucha contra el Erazor el Yinn!	Affronte Erazor Djinn ! 			Derrote o Erazor Djinn!	Walka! Erazor Dżinn!	對決！伊萊薩！
 mission_description_np_last	It's the Final Battle!		ラスト　チャプター！	¡La Batalla Final!	Le Combat Final !			A Batalha Final!	Czas na Bitwę Ostateczną!	最終對決！
 										
@@ -280,7 +288,7 @@ common_collect_so	Heh, I'll take that!			¡Ja! ¡Eso me lo quedo!	Hé , je prend
 common_collect_sh	Good job!			¡Bien hecho!	C'est du travail !			Bom trabalho!	Dobra robota!	做得好！
 common_caution_so	Shahra, watch out!			¡Cuidado, Shara!	Shahra regarde !			Shahra, cuidado!	Shahra, uważaj!	夏拉，小心！
 common_caution_sh	Ahhh!			¡Aaah!	Ahhh! J'ai le vertige !!			Ahhh!	Ahhh!	啊啊啊！
-common_jump_so	Jump!		とぶぜ！	¡Salta!	Saute ! 			Pula!	Skok!	跳！
+common_jump_so	Jump!		とぶぜ！	¡Salta!	Saute ! 			Pula!	Skacz!	跳！
 common_jump2_so	Yahoo!			¡Toma ya!	Yahoo!			Yahoo!	Jupi!	呀呼！
 common_jump_sh	Okay!		ＯＫ！	¡Bien!	Ok ! 			Ok!	Okej!	OK！
 common_jump2_sh	Hyahhh!			¡Aaah!	Ahhh! J'ai le vertige !!			Hyahhh!	Hyahhh!	哈呀啊啊！
@@ -296,7 +304,7 @@ common_worry_so	Hey, don't worry!			Hey, ¡no te preocupes!				Ei, não se preoc
 common_worry_sh	Sonic, are you alright?			Sonic, ¿estás bien?				Sonic, você está bem?	Sonic, wszystko w porządku?	索尼克，你還好嗎？
 common_lap_sh	That's one lap!		一周したわね	¡Ya llevas una vuelta!				Essa já foi uma volta!	Jedno okrążenie za nami!	一圈完成！
 common_lap_so	One down, more to go!		みたいだな！	Esa es la primera;\n¡a por la siguiente!				Um já foi, e lá vem mais!	Jedno mniej, a trochę jeszcze przed nami!	再來繼續把剩下的跑完！
-common_end_so	All right!		ＡＬＬ　ＲＩＧＨＴ！	¡Nada mal!				Beleza!	Świetnie!	好耶！
+common_end_so	All right!		ＡＬＬ　ＲＩＧＨＴ！	¡Nada mal!				Beleza!	Jasne!	好耶！
 common_end_sh	Just a little more, Sonic!		あと少しよソニック！	¡Ya casi está. Sonic!				Só mais um pouco, Sonic!	Jeszcze tylko troszkę, Sonic!	就快了索尼克！
 common_halfway_so	Roger that!			¡Vale!				Entendido!	Przyjąłem!	收到！
 common_halfway_sh	We're about halfway!			¡Vamos por la mitad!				Estamos na metade do caminho!	Jesteśmy mniej więcej w połowie!	我們剩一半了！
@@ -311,7 +319,7 @@ common_enemy5_so	Whoa! They're over here too?		おっと！　こっちにもお
 common_enemy6_so	Looks like we've got our hands full.		まとめて相手になってやるぜ！	Vaya... enemigos, ¡qué no falten!				Parece que a gente se atarefou.	Chyba mamy pełne ręce roboty.	看樣子要忙得不可開交了。
 common_enemy7_so	How many of these guys are there?!		ゾロゾロでてきやがって！	¿Los enemigos no se acaban nunca, o qué?				Quantos destes caras tem aqui!?	Ilu ich się tu porobiło?!	到底有多少人啊？！
 common_enemy8_so	Aha! Trying to block my way, huh?			¡Ajá! Conque bloqueando el camino, ¿eh?				Ahá! Tentando bloquear meu caminho, é?	Aha! Chcesz mi zablokować drogę, co?	啊哈！想要擋路是吧？
-common_enemy_sh	Erazor's henchmen!		イレイザーの手下よ！	¡Los esbirros de Erazor!				Cavaleiros de Erazor!	Sługus Erazora!	是伊萊薩的手下！
+common_enemy_sh	Erazor's henchmen!		イレイザーの手下よ！	¡Los esbirros de Erazor!				Cavaleiros de Erazor!	Sługusy Erazora!	是伊萊薩的手下！
 common_enemy2_sh	Look out, Sonic!		気をつけてソニック！	¡Cuidado, Sonic!				Cuidado, Sonic!	Uważaj, Sonic!	索尼克要小心啊！
 common_enemy3_sh	Go get them, Sonic!			¡A por ellos, Sonic!				Pegue eles, Sonic!	Dorwij ich, Sonic!	打倒它們吧，索尼克！
 common_enemy4_sh	Don't get too cocky, Sonic.			No te confíes demasiado, Sonic.				Não seja tão convencido, Sonic!	Nie lekceważ ich, Sonic!	別太過自信囉，索尼克！
@@ -330,12 +338,12 @@ common_victory3_sh	Sonic, are you hurt?			Sonic, ¿estás bien?				Sonic, você 
 common_victory4_sh	Way to go, Sonic!			¡Nada mal, Sonic!				É isso aí, Sonic!	Tak trzymać, Sonic!	做得好，索尼克！
 common_victory5_sh	Sonic, that one was pretty close!			Sonic; ¡por los pelos!				Sonic, essa foi quase!	Sonic, było bardzo blisko!	索尼克，剛才真是好險！
 										
-common_red_majin_sh	Watch out, the red spirits can breath fire.		赤いマジン炎を吐くから\n気をつけて！	Ten cuidado,\nlos espíritus rojos escupen fuego.				Cuidado, os espíritos vermelhos cospem fogo.	Uważaj, czerwone dusze potrafią ziać ogniem.	小心！那些紅色魔神會噴火！
-common_enemy_pearl_sh	Sonic, you can get pearls\nby defeating those spirits!		マジンを倒すとパールが手に入るわよソニック	¡Sonic, puedes obtener perlas\nderrotando a espíritus!				Sonic, você pode pegar \npérolas ao derrotar espíritos!	Sonic, możesz zdobywać perły, pokonując te dusze!	索尼克，你可以從那些被打倒的魔神中獲得魂珠！
-common_enemy_lock_sh	You need to defeat the spirits, Sonic.			Tienes que derrotar a los espíritus, Sonic.				Você precisa derrotar os espíritos, Sonic.	Musisz pokonać te dusze, Sonic.	你得打敗那些魔神。
-common_enemy_lock2_sh	Defeat all the spirits first, Sonic.			Primero vence a todos los espíritus, Sonic.				Derrote todos os espíritos primeiro, Sonic.	Najpierw pokonaj wszystkie dusze, Sonic.	索尼克，先把那些魔神打倒。
+common_red_majin_sh	Watch out, the red spirits can breath fire.		赤いマジン炎を吐くから\n気をつけて！	Ten cuidado,\nlos espíritus rojos escupen fuego.				Cuidado, os espíritos vermelhos cospem fogo.	Uważaj, czerwone duchy potrafią ziać ogniem.	小心！那些紅色魔神會噴火！
+common_enemy_pearl_sh	Sonic, you can get pearls\nby defeating those spirits!		マジンを倒すとパールが手に入るわよソニック	¡Sonic, puedes obtener perlas\nderrotando a espíritus!				Sonic, você pode pegar \npérolas ao derrotar espíritos!	Sonic, możesz zdobywać perły, pokonując te duchy!	索尼克，你可以從那些被打倒的魔神中獲得魂珠！
+common_enemy_lock_sh	You need to defeat the spirits, Sonic.			Tienes que derrotar a los espíritus, Sonic.				Você precisa derrotar os espíritos, Sonic.	Musisz pokonać te duchy, Sonic.	你得打敗那些魔神。
+common_enemy_lock2_sh	Defeat all the spirits first, Sonic.			Primero vence a todos los espíritus, Sonic.				Derrote todos os espíritos primeiro, Sonic.	Najpierw pokonaj wszystkie duchy, Sonic.	索尼克，先把那些魔神打倒。
 										
-common_hint_ring_sh	If you have at least one ring,\nyou can get hit without being hurt.		このリングが一個でもあれば\nダメージをうけてもミスにならないわよ	Siempre que te quede algún anillo,\npuedes recibir daños sin ser derrotado.				Se você tiver ao menos 1 anel,\nvocê pode ser atingido sem sofrer dano.	Posiadając jeden pierścień, możesz zostać trafiony i nie otrzymać żadnych obrażeń.	如果你至少有一個金環，就能被攻擊而不被打倒。
+common_hint_ring_sh	If you have at least one ring,\nyou can get hit without being hurt.		このリングが一個でもあれば\nダメージをうけてもミスにならないわよ	Siempre que te quede algún anillo,\npuedes recibir daños sin ser derrotado.				Se você tiver ao menos 1 anel,\nvocê pode ser atingido sem sofrer dano.	Posiadanie nawet jednego pierścienia, uchroni cię\nod otrzymania obrażeń wskutek trafienia.	如果你至少有一個金環，就能被攻擊而不被打倒。
 common_hint_fire_soul_sh	This red ring is a Fire Soul.		この赤いリングはファイヤーソウルよ	Ese anillo rojo es un Alma Ígnea.				Este anel vermelho é uma Alma de Fogo.	Ten czerwony pierścień to Ognista Dusza.	那個紅環叫做焰魂。
 common_hint_treasure_sh	That is a Treasure Box.\nOpen it up and see what's inside!		アレは宝箱よ\n中身は開けてのお楽しみ！	¡Un Cofre del Tesoro!\n¡Ábrelo y mira que hay dentro!				Isto é um Baú de Tesouro!\nAbra-o e veja o que tem dentro!	Tam jest skrzynia skarbów.\nOtwórz ją i zobacz, co jest w środku!	這是一個藏寶箱，打開來看裡面有什麼吧！
 common_hint_thorn_spring_sh	You can use your Homing Attack\non the balls that don't have spikes.		あの鉄球　トゲのないほうは\nホーミングアタックできそうよ	Puedes usar tu Ataque Teledirigido\nen las bolas sin pinchos.				Você pode usar seu Ataque Teleguiado\nnas esferas sem espinhos.	Możesz użyć Ataku Naprowadzającego\nna kulach, które nie mają kolców.	你可以對沒有尖刺的鐵球使用追蹤攻擊。
@@ -343,14 +351,14 @@ common_hint_pot_sh	Move the Wii Remote\nup and down to fly upwards.		Ｗｉｉ�
 common_hint_pot_exit_sh	Press the Jump Button to get off of the Flying Pot.		壺から出るときはジャンプボタンね	Pulsa el botón de Saltar para salir del jarrón.				Pressione o Botão de Pulo para sair do jarro voador.	Naciśnij Przycisk Skoku, aby wyjść z Fruwającej Wazy.	按下跳躍鍵來跳出飛天陶壺。
 common_hint_catapult_sh	Get on the catapult and tilt the Wii Remote towards yourself.		これに乗ってからＷｉｉリモコンを\n手前に傾けて　思いっきり前にふれば	Sube a la catapulta e inclina el Mando de Wii hacia ti mismo.					Wejdź na katapultę i przechyl Wiilota do siebie.	搭上投石機後，將WII搖桿向前傾向自己。
 common_hint_catapult2_sh	Quickly move it forward again to launch yourself off.		遠くまで飛んでいけそうよ	Muévelo de nuevo rápidamente para salir disparado.					Szybko rusz nim do przodu, aby się wystrzelić.	再快速往前移動就能將你飛射出去。
-common_hint_catapult3_sh	This catapult looks like it works at a different angle than the last.		さっきのカタパルト　傾ける角度で\nズイブン飛距離が違うみたいね	Esta catapulta parace funcionar con\nun ángulo diferente a la anterior.				Parece que esta catapulta funciona\ncom um ângulo diferente da anterior.	Wygląda na to, że ta katapulta działa pod innym kątem niż poprzednia.	剛才的投石機，飛行距離似乎會根據傾斜角度而改變。
+common_hint_catapult3_sh	This catapult looks like it works at a different angle than the last.		さっきのカタパルト　傾ける角度で\nズイブン飛距離が違うみたいね	Esta catapulta parace funcionar con\nun ángulo diferente a la anterior.				Parece que esta catapulta funciona\ncom um ângulo diferente da anterior.	Wygląda na to, że ta katapulta działa\npod innym kątem niż poprzednia.	剛才的投石機，飛行距離似乎會根據傾斜角度而改變。
 common_hint_jump_carpet_sh	If you do a Homing Attack while flying\nhigh up on the carpet,		高く跳ね上がったときに\nホーミングアタックすると	Si realizas un Ataque Teledirigido\nmientras vuelas en la alfombra,				Se você realizar um Ataque Teleguiado\nenquanto estiver no tapete,	Jeśli wykonasz Atak Naprowadzający,\nlecąc wysoko na dywanie,	如果你在高空中對飛毯使出追蹤攻擊，
 common_hint_jump_carpet2_sh	You can make it go even higher.		さらに高く跳ね上がっていくみたいよ\nこの絨毯	Podrás llevarla aún más alto.				você poderá ir ainda mais alto.	Możesz wznieść się jeszcze wyżej.	就能讓你跳得更高。
 common_hint_majin_stone_sh	This stone is full of genie magic.		これはマジンの魔法が掛かった石よ	Esta piedra está llena de\nmagia espiritual.				Esta pedra está cheia\nde magia espiritual.	Ten kamień jest przepełniony magią dżina.	這顆石頭充滿著魔神的魔法。
 										
 										
 common_hint_uhu_sh	(Murmur...\nHey Sonic, listen to this.)		（ヒソヒソ…\nねぇねぇソニック、ちょっと耳をかして）	(Murmuro...\nEh, Sonic, escúchame un segundo.)				(Murmuro...\nEi Sonic, escute isso.)	(Szmer...\nHej Sonic, słuchaj tego).	（輕聲細語…\n欸欸索尼克，耳朵借我一下。）
-common_hint_uhu2_sh	(This orb of light, it's the Wind Genie\nUhu, known for his speed.)		（この光の球が、\n最速と名高い\n風マジン「ウーフー」ね…）	(Este orbe de luz es el Genio del Viento,\nUhu, conocido por su velocidad.)				(Este orbe de luz é o Gênio do Vento,\nUhu, conhecido por sua velocidade.)	(Ta kula światła, to Dżin Wiatru\nUhu, znany ze swojej szybkości)	（那顆光球啊，是號稱速度最快的風系精靈「烏福」。）
+common_hint_uhu2_sh	(This orb of light, it's the Wind Genie\nUhu, known for his speed.)		（この光の球が、\n最速と名高い\n風マジン「ウーフー」ね…）	(Este orbe de luz es el Genio del Viento,\nUhu, conocido por su velocidad.)				(Este orbe de luz é o Gênio do Vento,\nUhu, conhecido por sua velocidade.)	(Ta kula światła, to Dżin Wiatru\nUhu, znany ze swojej szybkości)	（那顆光球啊，是號稱速度最快的風系魔神「烏福」。）
 										
 										
 lost_prologue	Lost Prologue		ロスト　プロローグ	El Prólogo Perdido				O Prólogo Perdido	Zaginiony Prolog	失落序章
@@ -358,38 +366,38 @@ lost_prologue_description	The beginning of the end.		失われいく序章。	El
 										
 										
 sand_oasis	Sand Oasis		サンド　オアシス	Oasis de Arena				Oásis Desértico	Piaszczysta Oaza	沙漠綠洲
-sand_oasis_description	A desert strewn about with ruins.		砂漠にひろがる遺跡群。	Un desierto cubierto de ruinas.				Um deserto espalhado sobre as ruínas.	Pustynia usłana ruinami.	佈滿遺跡的沙漠
-oas_opening_so	First, let's find the king's palace.		まずは王宮を目指すんだよな	Busquemos el palacio del Sultán.				Primeiro, vamos achar o palácio do rei.	Wpierw, znajdźmy pałac króla.	首先，我們得找到王宮。
+sand_oasis_description	A desert strewn about with ruins.		砂漠にひろがる遺跡群。	Un desierto cubierto de ruinas.				Um deserto espalhado sobre as ruínas.	Pustynia usłana ruinami.	佈滿遺跡的沙漠。
+oas_opening_so	First, let's find the king's palace.		まずは王宮を目指すんだよな	Busquemos el palacio del Sultán.				Primeiro, vamos achar o palácio do rei.	Po pierwsze, znajdźmy pałac króla.	首先，我們得找到王宮。
 oas_opening_sh	Yes, let's hurry!		そう　急ぎましょ！	Sí, ¡démonos prisa!				Sim, vamos logo!	Tak jest, ale już!	沒錯，我們得動作快！
-oas_pillar_sh	That pillar is being manipulated by magic! Look out!		魔法で柱が動き始めています!\n気をつけて！	¡Cuidado! ¡Están manipulando los pilares con magia!				Aquele pilar está sendo manipulado por magia! Cuidado!	Ten filar jest manipulowany przez magię! Uważaj!	小心！柱子被魔法操控住了！
+oas_pillar_sh	That pillar is being manipulated by magic! Look out!		魔法で柱が動き始めています!\n気をつけて！	¡Cuidado! ¡Están manipulando los pilares con magia!				Aquele pilar está sendo manipulado por magia! Cuidado!	Te filary są manipulowane przez magię! Uważaj!	小心！柱子被魔法操控住了！
 oas_uturn_sh	It's a dead end!		ちょっ　この先は壁よ！	¡Un callejón sin salida!				É um beco sem saída!	To ślepy zaułek!	前面是死路啊！
 oas_uturn_so	Whoops! Time to make a U-turn!		ちょっとUターンするぜ	¡Ups! ¡Habrá que tomar una curva!				Oops! Hora de dar meia-volta!	Ups! Czas na mały U-nik!	嗚哇！那就讓我迴轉一下！
-oas_interior_sh	It should be cooler inside.		中は涼しいわね	Ahí dentro hará menos calor.				Devia ser mais fresco aqui dentro.	W środku powinno był chłodniej.	裡面應該會涼快點。
+oas_interior_sh	It should be cooler inside.		中は涼しいわね	Ahí dentro hará menos calor.				Devia ser mais fresco aqui dentro.	W środku powinno być chłodniej.	裡面應該會涼快點。
 oas_interior_so	Um...Doesn't quite look like it.		そーでも無いみたいだぜ	Pues... Me da que no.				Hm... Acho que não tá com muita cara disso.	Um... No tak średnio bym powiedział.	呃…看樣子並沒有。
-oas_sandfall_event_sh	Huh? What?		な　何！？	¿Eh? ¿Qué?				Hã? O quê?	Huh? Co?	欸？什麼！？
-oas_sandfall_event_so	Woah!		うぉー！	¡Hala!				Uou!	Woah!	嗚喔！
+oas_sandfall_event_sh	Huh? What?		な　何！？	¿Eh? ¿Qué?				Hã? O quê?	Hę? Co?	欸？什麼！？
+oas_sandfall_event_so	Woah!		うぉー！	¡Hala!				Uou!	Ło!	嗚喔！
 oas_sandfall_event2_so	Ha!		は!	¡Ja!				Há!	Ha!	哈！
-oas_sandfall_event3_so	Whew! That was a close one!		ヒュー！ 危機一髮だったな	¡Buf! ¡Por los pelos!				Ufa! Essa foi por pouco!	Uff! Mało brakowało!	呼！真是千鈞一髮呢！
+oas_sandfall_event3_so	Whew! That was a close one!		ヒュー！ 危機一髮だったな	¡Buf! ¡Por los pelos!				Ufa! Essa foi por pouco!	Uf! Mało brakowało!	呼！真是千鈞一髮呢！
 oas_pier_sh	Just past that pier is the town.		あの桟橋を過ぎれば　すぐ街よ	Tras cruzar el muelle, llegaremos a la ciudad.				Logo após aquele píer está a cidade.	Tuż za molo znajduje się miasto.	經過那個碼頭就到城鎮裡了。
-oas_town_so	A town! The king's palace must be close!		マジ？　そろそろ王宮を近いのか？	¿La ciudad?\nEstamos cerca del palacio, ¿no?				Uma cidade! O palácio do rei deve estar por perto!	Miasto! Pałac krola musi być blisko!	是城鎮！那宮殿肯定就在附近了！
+oas_town_so	A town! The king's palace must be close!		マジ？　そろそろ王宮を近いのか？	¿La ciudad?\nEstamos cerca del palacio, ¿no?				Uma cidade! O palácio do rei deve estar por perto!	Miasto! Pałac króla musi być blisko!	是城鎮！那宮殿肯定就在附近了！
 oas_palace_so	There it is! I see it!		見えた！あれだな	¡Ahí está! ¡Ya puedo verlo!				Lá está! Posso vê-lo!	Tam jest! Widzę go!	看啊！就是那個吧！
 oas_palace_sh	That's the king's palace!		あれ!あれが王宮よ	¡Ese!\n¡Ese es su palacio!				Aquele é o palácio do rei!	To pałac króla!	那個就是王宮了！
-oas_return_sh	Are you ready?		準備連動は済んだ?	¿Estás preparado?				Você está pronto?	Jesteś gotów?	準備好了嗎？
-oas_return_so	Shahra!\nLet me show you just how fast I am!		シャーラ!今からオレのスピードみせてやるぜ！	¡Shara,\nte enseñaré lo rapido que puedo llegar a ser!				Shahra!\nPermita-me mostrar o quão rápido eu sou!	Shahra!\nNiech no ci pokażę, jakie mam osiągi!	夏拉！\n現在就讓我秀給你看我有多快吧！
+oas_return_sh	Are you ready?		準備連動は済んだ?	¿Estás preparado?				Você está pronto?	Jesteś gotowy?	準備好了嗎？
+oas_return_so	Shahra!\nLet me show you just how fast I am!		シャーラ!今からオレのスピードみせてやるぜ！	¡Shara,\nte enseñaré lo rapido que puedo llegar a ser!				Shahra!\nPermita-me mostrar o quão rápido eu sou!	Shahra! Niech no ci\npokażę, jakie mam osiągi!	夏拉！\n讓我秀給你看我有多快吧！
 										
 										
 oas_boss_intro_so	Aha, he seems pretty tough.\nAll right, let's do this!		ふーん　強そうだな\nかかってきな！	¡Hum!, parece un rival formidable.\nAsí que, ¡a por todas!				Hah, ele tem cara de durão.\nBeleza, vamos nessa!	Aha, twardy orzech do zgryzienia.\nNo dobra, do dzieła!	啊哈，看樣子不好惹呢。\n好啊，來做吧！
-oas_boss_start_so	I don't suppose you'd listen if I asked you to stay away, huh?			No me harías ni caso si te pido que te marches, ¿eh?				Eu não acho que você se afastaria se eu pedisse, né?	Podejrzewam, że nie jesteś zainteresowany trzymaniem się z daleka, co?	我如果叫你走開，你應該不會照做，對吧？
+oas_boss_start_so	I don't suppose you'd listen if I asked you to stay away, huh?			No me harías ni caso si te pido que te marches, ¿eh?				Eu não acho que você se afastaria se eu pedisse, né?	Domniemam, że nie jesteś zainteresowany\ntrzymaniem się z daleka, co?	我如果叫你走開，你應該不會照做，對吧？
 oas_boss_start_sh	I don't think asking it nicely will make it stay back.			No creo que se aleje si solo se lo pedimos amablemente...				Eu não acho que pedir gentilmente iria fazer ele se afastar.	Zdaje się, że nici z uprzejmych próśb.	我不認為好聲好氣的求它，會讓它走開。
 oas_boss_hint1_sh	Watch out for its tail attack!		しっぽの攻撃に気をつけて！	¡Atento a sus ataques con la cola!				Cuidado com o ataque da cauda dele!	Uważaj na jego ogon!	小心它的尾巴攻擊！
-oas_boss_hint2_sh	The big eyeball on its back seems to be its weak point!		あの　背中の大きな目玉が\n弱点みたいよ！	¡El globo ocular de su espalda parece ser su punto débil!				Parece que o globo ocular enorme nas costas dele é o ponto fraco!	Ta wielka gałka oczna na jego plecach chyba jest jego słabym punktem!	它背上的大眼球看樣子是它的弱點！
+oas_boss_hint2_sh	The big eyeball on its back seems to be its weak point!		あの　背中の大きな目玉が\n弱点みたいよ！	¡El globo ocular de su espalda parece ser su punto débil!				Parece que o globo ocular enorme nas costas dele é o ponto fraco!	Ta wielka gałka oczna na jego\nplecach, chyba jest jego słabym punktem!	在它背上的大眼球似乎是它的弱點！
 oas_boss_hint3_sh	Try using the scorpion's tail to reach the eye on its back!		あのサソリのシッポを使って\n背中の目玉まで行けないかしら？	¡Prueba a ir por su cola para llegar al ojo de su espalda!				Tente usar a cauda do escorpião para chegar ao olho nas costas dele!	Sprobuj użyć ogona skorpiona, aby dostać się do oka na jego plecach!	利用蠍子的尾巴來攻擊背上的眼睛吧！
-oas_boss_hint4_sh	That huge eye just has to be its weak point.		やっぱり　あの大きな目玉が\n弱点なんじゃないかしら…？	Ese ojo tiene que ser su punto débil...				Aquele olho enorme tem que ser o ponto fraco.	To ogromne oko jak nic jest jego słabym punktem.	那顆大眼珠肯定是它的弱點。
+oas_boss_hint4_sh	That huge eye just has to be its weak point.		やっぱり　あの大きな目玉が\n弱点なんじゃないかしら…？	Ese ojo tiene que ser su punto débil...				Aquele olho enorme tem que ser o ponto fraco.	To ogromne oko jak nic jest jego słabym punktem.	那顆大眼球肯定是它的弱點。
 oas_boss_hit1_sh	Look, it's working!		すごい！	¡Genial!				Olha, tá funcionando!	Spójrz, to działa!	看啊，奏效了！
-oas_boss_hit1_so	That's it! The eye is its weak point!		やっぱりな!\nあの目が弱点ってわけか！	¡Lo sabía! ¡El ojo es su punto débil!				Isso! O olho é o ponto fraco dele!	To jest to! Oko jest jego słabym punktem!	果然！眼珠果然是弱點！
+oas_boss_hit1_so	That's it! The eye is its weak point!		やっぱりな!\nあの目が弱点ってわけか！	¡Lo sabía! ¡El ojo es su punto débil!				Isso! O olho é o ponto fraco dele!	To jest to! Oko jest jego słabym punktem!	幹得好！眼球果然就是弱點！
 oas_boss_hit2_so	This guy just doesn't give up!		クッ　しぶとい野郎だぜ！	¡No se da por vencido!				Esse cara não desiste!	Zawzięty się trafił!	這傢伙就是不肯放棄欸！
 oas_boss_hit3_so	Looks like he can't take much more of this!		そろそろ終わりにしようか！	¡Parece que no puede aguantar mucho más!				Parece que ele não vai durar muito!	Chyba już dłużej nie pociągnie!	看樣子它很快就要被打倒了！
-oas_boss_hit4_sh	Just one more hit!		もう一息ね！	¡Solo queda un último golpe!				Só mais um acerto!	Jeszcze jeden cios!	只要再一擊！
+oas_boss_hit4_sh	Just one more hit!		もう一息ね！	¡Solo queda un último golpe!				Só mais um acerto!	Jeszcze jeden cios!	再剩一擊！
 oas_boss_defeat_so	Sorry, but you were in my way.		悪いな\n後がつかえているんだ！	Siento derrotarte; ¡no haberte cruzado conmigo!				Foi mal, mas você estava no meu caminho.	Sorki, ale wszedłeś mi w drogę.	抱歉啦，但擋路的人是你。
 										
 oas_idle_heat_so	It's so hot! Even my quills are sweating!			¡Qué calor! ¡Me sudan hasta las púas!				Tá tão quente! Até meus espinhos estão suando!	Ale lampa! Mokro mam pod kolcami!	好熱啊！就連我的刺也都是汗！
@@ -401,43 +409,43 @@ oas_idle_sandfall_sh	Stay clear. This is no time for a sand bath!			¡Concéntra
 										
 										
 dinosaur_jungle	Dinosaur Jungle		ダイナソー　ジャングル	Jungla Dinosaurio				Selva Jurássica	Dżungla dinozaurów	恐龍叢林
-dinosaur_jungle_description	A forest dominated by ancient beasts.		恐竜が支配する森。	Un bosque dominado por bestias ancestrales.				Uma floresta dominada pelas bestas ancestrais.	Las opanowany przez pradawne bestie.	被恐龍支配的森林
-din_event_trio_so	Whoa! Something's after us!		ウワォ！　なんか追ってきたぜ！	¡Eh! ¡Algo nos persigue!				Uou! Tem alguma coisa atrás da gente!	Whoa! Co? nam siedzi na ogonie!	嗚喔！有什麼東西在追我們！
-din_event_trio_sh	They're triceratops!\nAnd they're very angry!		トリケラトプスよ！\nひどく怒ってる！	¡Son triceratops!\n¡Y no están de buen humor!				São triceratops!\nE eles estão muito zangados!	To triceratopsy!\nI do tego są bardzo wściekłe!	是三角龍！\n它們好像很火大！
+dinosaur_jungle_description	A forest dominated by ancient beasts.		恐竜が支配する森。	Un bosque dominado por bestias ancestrales.				Uma floresta dominada pelas bestas ancestrais.	Las opanowany przez pradawne bestie.	被恐龍支配的森林。
+din_event_trio_so	Whoa! Something's after us!		ウワォ！　なんか追ってきたぜ！	¡Eh! ¡Algo nos persigue!				Uou! Tem alguma coisa atrás da gente!	Ło! Coś nam siedzi na ogonie!	嗚喔！有什麼東西在追我們！
+din_event_trio_sh	They're triceratops!\nAnd they're very angry!		トリケラトプスよ！\nひどく怒ってる！	¡Son triceratops!\n¡Y no están de buen humor!				São triceratops!\nE eles estão muito zangados!	To triceratopsy! I do tego są\nbardzo wściekłe!	是三角龍！\n它們好像很火大！
 din_event_trio2_so	Wh-what did I do?		オレ　何かやったのか？	¿Y yo que he hecho?				O-o quê que eu faço?	C-Co ja im zrobiłem?	我— 我有做什麼事惹火它們嗎？
 din_event_trio2_sh	I don't know! Just run!		分からないわ！\n今はとにかく逃げましょう！！	¡No lo sé!; ¡tú corre!				Eu não sei! Só corra!	Nie wiem! Po prostu biegnij!	我不知道！總之快跑啊！
 din_event_trio3_so	They just don't give up!		しつこいヤツラだぜ！	¡Parece que no se rinden!				Eles não desistem!	No nie dadzą za wygraną!	它們真是死纏爛打欸！
 din_event_trio3_sh	If we can just get across the bridge\nup ahead, we should be okay!		この先の橋まで逃げきれば\nきっと大丈夫よ！	¡Su cruzamos el puente de ahí adelante\nestaremos a salvo!				Se nós passarmos pela ponte\nà frente, estaremos seguros!	Jeśli zdołamy się przedostać przez\nmost, to powinno być już dobrze!	我們若能逃到前面那座橋就沒事了！
 din_event_river_so	Uwaaah!\nNooooo!!		うわわわ！\nＮＯＯＯＯＯ！！	¡Aaaaah!\n¡¡Nooooo!!				Uaaaah!\nNãããão!	Uwaaah!\nNieeee!!	嗚啊啊啊！\n糟啦！！！
 din_event_river_sh	Sonic!		ソニック！	¡Sonic!				Sonic!	Sonic!	索尼克！
-din_event_river2_so	Whew! That was a close one!		ヒュー！危機一髮だぜ！	¡Uf! ¡Ha estado cerca!				Ufa! Essa foi quase!	Uff! O mały włos!	呼！真是千鈞一髮呢！
+din_event_river2_so	Whew! That was a close one!		ヒュー！危機一髮だぜ！	¡Uf! ¡Ha estado cerca!				Ufa! Essa foi quase!	Uf! O mały włos!	呼！真是千鈞一髮呢！
 din_event_river2_sh	Sonic, can't you swim?		ソニックってもしかして泳げないの？	Sonic, ¿no sabes nadar?				Sonic, você não sabe nadar?	Sonic, nie umiesz pływać?	索尼克，你難道不會游泳嗎？
 										
 din_split_sh	The road splits in two, here.		道が分かれてるわ	Aquí el camino se divide en dos.				O caminho aqui se divide em dois.	Droga nam się tutaj rozwidla.	這裡有岔路。
-din_split_so	Any advice on which way to go?			¿Tienes idea de por dónde ir?				Alguma dica pra onde ir?	Wiesz coś nie coś gdzie pójść?	能建議一下往哪裡走才好？
-din_flower_sh	A flower...spirit?		花の…マジン？	Un espíritu... ¿floral?				Um espírito... floral?	Kwiecista...dusza?	是花的…魔神？
+din_split_so	Any advice on which way to go?			¿Tienes idea de por dónde ir?				Alguma dica pra onde ir?	Wiesz coś nie coś gdzie pójść?	接下來該往哪邊走才好？
+din_flower_sh	A flower...spirit?		花の…マジン？	Un espíritu... ¿floral?				Um espírito... floral?	Kwiecisty... duch?	是花的…魔神？
 din_flower_so	Doesn't look very friendly.		厄介そうな面横えだぜ！	Me da que no está aquí para hacer amigos				Não tem cara de muitos amigos.	Nie wygląda zbyt przyjaźnie.	看起來不太友善。
 										
 din_event_apato_so	Oops!		Ｏｏｐｓ！	¡Ups!				Oops!	Ups!	糟了！
-din_event_apato2_so	Woah! Thanks!		いよっと！　サンキュー！	¡Vaya! ¡Gracias!				Uou! Valeu!	Woah! Dzięki!	嗚喔！謝啦！
+din_event_apato2_so	Woah! Thanks!		いよっと！　サンキュー！	¡Vaya! ¡Gracias!				Uou! Valeu!	Ło! Dzięki!	嗚喔！謝啦！
 										
 din_rex_sh	I've got a bad feeling about this.		嫌な予感がするわ	Tengo un mal presentimiento...				Tenho um mal pressentimento sobre isto.	Coś mi tu śmierdzi.	我有個不好的感覺。
-din_rex_so	Uhh. My quills are starting to tingle...		ああ　背中のトゲがビリビリするぜ	Hum. Siento un hormigueo en las púas...				Uhh. Meus espinhos tão formigando.	Uhh. Chyba mam gęsie kolce...	呃… 我的刺都在不斷顫抖…
-din_rex_lower_so	Whoooa! Out of the frying pan\nand into the fire, huh?		ウワーオ！\n一難去ってまた一難ってカンジ？	¡Hala! Esto se está\nponiendo de mal en peor, ¿eh?				Uoooou! Indo de mal a pior, hã?	Hooola! Jak woda w olej, co nie?	嗚哇！\n這就是一波未平一波又起的感覺嗎？
-din_rex_lower_sh	That about sums it up!		相当気が立ってるみたいね！	¡Tú lo has dicho!				Você disse tudo!	Dosłownie!	說的沒錯呢！
+din_rex_so	Uhh. My quills are starting to tingle...		ああ　背中のトゲがビリビリするぜ	Hum. Siento un hormigueo en las púas...				Uhh. Meus espinhos tão formigando.	Uhh. Chyba mam gęsie kolce...	呃… 我的刺開始在顫抖了…
+din_rex_lower_so	Whoooa! Out of the frying pan\nand into the fire, huh?		ウワーオ！\n一難去ってまた一難ってカンジ？	¡Hala! Esto se está\nponiendo de mal en peor, ¿eh?				Uoooou! Indo de mal a pior, hã?	Hooola! Jak śliwka w kompot, co nie?	嗚哇！\n這就是一波未平一波又起的感覺嗎？
+din_rex_lower_sh	That about sums it up!		相当気が立ってるみたいね！	¡Tú lo has dicho!				Você disse tudo!	No w sumie tak!	說的對！
 din_rex_tail_sh	Hey, look at its tail!		尻尾をよく見て！	¡Ten cuidado con su cola!				Ei, cuidado com a sua cauda!	Hej, spójrz na jego ogon!	注意它的尾巴！
 din_rex_tail_so	Got it!		わかってるって！	¡Sí, lo sé!				Saquei!	Przyjąłem!	知道了！
-din_rex_upper_so	He seems pretty hungry!		相当腹ペコらしいな！	¡Parece hambriento!				Ele parece bem esfomeado!	Ktoś tu nam zgłodniał!	它看樣子很餓！
-din_rex_upper_sh	Then make sure he doesn't decide\nthat you're a snack!		かみ使れないように気をつけてね！	¡Pues asegúrate de no convertirte\n en su próxima merienda!				Então tenha certeza que ele não\nvai achar que você é um lanche!	Ta? Tylko przypadkiem się nie stań\njego przekąską!	那就不要讓它認為你是點心！
+din_rex_upper_so	He seems pretty hungry!		相当腹ペコらしいな！	¡Parece hambriento!				Ele parece bem esfomeado!	Ktoś nam tu zgłodniał!	它看樣子很餓！
+din_rex_upper_sh	Then make sure he doesn't decide\nthat you're a snack!		かみ使れないように気をつけてね！	¡Pues asegúrate de no convertirte\n en su próxima merienda!				Então tenha certeza que ele não\nvai achar que você é um lanche!	Ta? Tylko przypadkiem\nnie stań się jego przekąską!	那就不要讓它以為你是點心！
 										
-din_flowers_so	So, feel like going\nto pick some flowers?		それじゃあお花摘みにでかけるか	Hum, podría pararme a recoger algunas flores.				Então, o que acha da gente\ncolher algumas flores?	Może cykniemy\njakiegoś kwiatka?	想要一起去摘花嗎？
+din_flowers_so	So, feel like going\nto pick some flowers?		それじゃあお花摘みにでかけるか	Hum, podría pararme a recoger algunas flores.				Então, o que acha da gente\ncolher algumas flores?	Może cykniemy\njakiegoś kwiatka?	想來一起摘些花嗎？
 din_flowers_sh	This is no time for goofing around!		もう！　ノンキなんだから！	¡No es momento para bromas!				Isso não é hora pra besteiras!	Nie mamy czasu na świrowanie!	沒時間胡鬧了！
-din_blendin_so	Ha! Trying to blend in\nwith the flowers, huh?			¡Ja! Tratando de esconderte\nentre las flores, ¿eh?				Há! Tentando se esconder entre as flores, hã?	Ha! Próbujesz się wtopić we kwiaty, czy co?	哈！
+din_blendin_so	Ha! Trying to blend in\nwith the flowers, huh?			¡Ja! Tratando de esconderte\nentre las flores, ¿eh?				Há! Tentando se esconder entre as flores, hã?	Ha! Próbujesz się wtopić we kwiaty, czy co?	哈！想跟那些花朵混在一起是吧？
 din_blendin_sh	If you attack, it will\nshow its true form!			Si lo atacas,\n¡mostrará su verdadero aspecto!				Se você atacar, a verdadeira forma irá aparecer!	Jeśli zaatakujesz go, to ujawni swoją prawdziwą formę!	攻擊它就能使它現出原形！
 din_flowerbed_so	Hey, isn't this a\npretty little flowerbed!		ヘーイ！\nたいそうなお花畑じゃないか！	¡Vaya! ¡No está nada mal\neste lugar tan florido!				Ei, este campo floral\nnão está nada mal!	Hej, obczaj ten\nładniusi kwietniczek!	嘿，這座小花田可真漂亮！
 din_flowerbed_sh	This is no time to relax, Sonic!		気を抜かないでねソニック！	¡No te lo tomes todo con\ntanta calma, Sonic!				Não é hora de relaxar, Sonic!	Przestań się bimbać, Sonic!	索尼克，這可不是放鬆的時候！
 										
-din_majin_egg_sh	It's a spirit egg!\nSonic, destroy it!		マジンの卵よ\n壊しておいてソニック！	¡Es un huevo espíritu!\nSonic, ¡destrúyelo!				Isto é um ovo espiritual!\nSonic, destrua-o!	To jajo dusz!\nSonic, zniszcz je!	是魔神蛋！索尼克，把它打碎吧！
+din_majin_egg_sh	It's a spirit egg!\nSonic, destroy it!		マジンの卵よ\n壊しておいてソニック！	¡Es un huevo espíritu!\nSonic, ¡destrúyelo!				Isto é um ovo espiritual!\nSonic, destrua-o!	To duchowe jajo!\nSonic, zniszcz je!	是魔神蛋！索尼克，把它打碎吧！
 din_egg_so	This is...		これ…	Esto es...				Isto é...	To jest...	這是…
 din_egg_sh	A dinosaur egg?\nI can carry it using my magic.		恐竜の卵ね？\nわたしが魔法で持っていくわ	¿Un huevo de dinosaurio?\nPuedo transportarlo usando mi magia.				Um ovo de dinossauro?\nEu posso carregá-lo usando minha magia.	Jajo dinozaura?\nMogę je przenosić moją magią. 	恐龍蛋？\n我能用魔法帶著它。
 din_nest_so	This must be a nest of dinosaur eggs.		これは恐竜の卵の巣…なのか？	Este debe de ser un nido\nde huevos de dinosaurio.				Isto deve ser um ninho de ovos de dinossauro.	To musi być gniazdo jaj dinozaurów.	這附近肯定有恐龍蛋的巢穴。
@@ -450,8 +458,8 @@ din_cacti_hint_sh	Watch out for the cacti!		サボテンには気をつけて！
 din_boat_hint_so	Tilt the Wii Remote left and right to change direction.		Ｗｉｉリモコンを左右に傾けて\n左右に移動するんだ！	Inclina el Mando de Wii de lado a lado\npara cambiar de dirección.					Machaj Willotem na lewo i prawo, aby zmieniać kierunek.	傾斜WII手把就能左右移動！
 din_boat_hint_sh	Tilt the Wii Remote left or right to change direction.		Ｗｉｉリモコンを左右に傾けて\n左右に移動するのよ！	Inclina el Mando de Wii a un lado o al otro\npara cambiar de dirección.					Machaj Willotem na lewo lub prawo, aby zmieniać kierunek. 	傾斜WII手把就能左右移動喔！
 din_damage_hint_so	Ouch!		アウチ！	¡Ay!				Ai!	Auć!	呀！
-din_damage_hint_sh	Sonic, are you okay?		大丈夫ソニック！？	Sonic, ¿estás bien?				Sonic, você está bem?	Sonic, wszystko gra?	索尼克你沒事吧！？
-din_ball_hint_sh	If those iron balls hit us,\nwe'll fall into the water!		鉄球に当たると水におちちゃうわよ	Si chocamos con alguna bola,\n¡nos hundiremos!				Se alguma destas esferas de ferro\nnos atingir, nós iremos cair na água!	Jeśli te żelazne kule w nas trafią,\nwpadniemy do wody!	如果被鐵球打到，我們就會跌入水裡！
+din_damage_hint_sh	Sonic, are you okay?		大丈夫ソニック！？	Sonic, ¿estás bien?				Sonic, você está bem?	Sonic, wszystko gra?	索尼克，你沒事吧？
+din_ball_hint_sh	If those iron balls hit us,\nwe'll fall into the water!		鉄球に当たると水におちちゃうわよ	Si chocamos con alguna bola,\n¡nos hundiremos!				Se alguma destas esferas de ferro\nnos atingir, nós iremos cair na água!	Jeśli te żelazne kule w nas\ntrafią, wpadniemy do wody!	如果被鐵球打到，我們就會跌入水裡！
 din_ball_hint_so	Gotta make sure I dodge\nthose iron balls.		鉄球に当たるとイチコロってカンジだな	Será mejor que esquive\nesas bolas de acero.				Eu não posso me bater nessas esferas!	Muszę uważać z wyprzedzeniem\nna te żelazne kule.	得小心避開那些鐵球。
 din_positioning_hint_so	It'll be tough to attack\nfrom that position.		あの位置からの攻撃は厄介だな	Va a estar difícil\natacarlo desde aquí.				Vai ser difícil atacar daqui!	Ciężko będzie atakować\nz tej pozycji.	從那個位置攻擊不容易。
 din_positioning_hint_sh	Use the enemy's attack, Sonic!		敵の攻撃を利用するのよソニック！	¡Utiliza los ataques\ndel enemigo, Sonic!				Use os ataques do inimigo, Sonic!	Wykorzystaj atak przeciwnika, Sonic!	利用敵人的攻擊吧，索尼克！
@@ -460,63 +468,73 @@ din_attack_hint_sh	Maybe we can use its attacks\nto get to the other side!		ア�
 din_seed_hint_so	I can probably hit the seeds\nthat thing shoots with a Homing Attack!		ヤツがはいってぐるたねはホーミングアタックできるみたいだな	¡Puede que el Ataque Teledirigido\nfuncione en las semillas que escupe!				Acho que posso bater as sementes que\nessa coisa atira com o Ataque Teleguiado!	Zdaje się, że dałoby radę trafić w nasiona, które\nto coś wystrzeliwuje za pomocą Ataku Naprowadzającego!	我應該能對那東西射出的種子使出追蹤攻擊。
 din_seed_hint_sh	Try hitting those seeds that it spits\nwith a homing attack!		アイツがはいってぐるたねはホーミングアタックでこわせるみたいよ	¡Golpea con ataques teledirigidos\nlas semillas que escupe!				Tente atingir aquelas sementes\ncuspidas com o Ataque Teleguiado!	Spróbuj trafić te nasiona, które to coś wypluwa,\natakiem naprowadzającym!	試著對它射出的種子使出追蹤攻擊。
 din_pot_hint_so	Can we use that to get across?		あれを使って向こうへ渡るか	¿Podremos usar eso para llegar al otro lado?				A gente pode usar isso pra atravessar?	Możemy tego użyć, aby się przedostać?	我們能用那東西過去嗎？
-din_pot_hint_sh	Maybe that flying pot can help us\nacross to the other side.		あの壺を使って向こうへ渡れないかしら	Puede que esa vasija flotante nos\nayude a llegar al otro lado				Talvez aquele vaso voador possa\nnos ajudar a ir para o outro lado.	Może ta fruwająca waza pomoże nam\ndostać się na drugą stronę.	或許那個飛天陶壺能帶我們過去。
-din_boulder_hint_so	Maybe I can get that big fella\nto smash that boulder for me.		ヤツにあの岩壊してもらうか！	Quizás pueda engañar a ese grandullón\npara que rompa esta piedra.				Talvez eu faça aquele grandalhão\nquebrar essa rocha pra mim.	Może uda mi się sprawić, żeby ten paker\nrozwalił dla nas ten głaz.	或許我能讓那個大塊頭把那些岩石擊碎。
+din_pot_hint_sh	Maybe that flying pot can help us\nacross to the other side.		あの壺を使って向こうへ渡れないかしら	Puede que esa vasija flotante nos\nayude a llegar al otro lado				Talvez aquele vaso voador possa\nnos ajudar a ir para o outro lado.	Może ta fruwająca waza pomoże\nnam dostać się na drugą stronę.	或許那個飛天陶壺能帶我們過去。
+din_boulder_hint_so	Maybe I can get that big fella\nto smash that boulder for me.		ヤツにあの岩壊してもらうか！	Quizás pueda engañar a ese grandullón\npara que rompa esta piedra.				Talvez eu faça aquele grandalhão\nquebrar essa rocha pra mim.	Może uda mi się sprawić, żeby\nten paker rozwalił dla nas ten głaz.	或許我能讓那個大塊頭把那些岩石擊碎。
 din_boulder_hint_sh	If you lead him over the boulder,\nmaybe he can break through the rock?		アイツをひきつけてあの岩に\n噛み使せればいいんじゃない？	¡Haz que te siga hasta las rocas\ny quizás él pueda romperlas!				Se você guiar ele até a rocha,\ntalvez ele consiga quebrá-la?	Jeśli podprowadzisz go do tego głazu,\nto może zdejmie nam go z drogi?	如果你把他引到岩石旁，他或許能打碎石頭？
-din_flower_hint_so	I can't hit it when the flower is closed!		花が閉じるときには\n攻撃が当たらないみたいだぜ	¡Cuando la flor está cerrada, mis ataques no le afectan!				Eu não consigo bater quando a flor tá fechada!	Zamkniętego kwiata, średnio można trafić!	花苞合起來時我無法對它造成傷害！
+din_flower_hint_so	I can't hit it when the flower is closed!		花が閉じるときには\n攻撃が当たらないみたいだぜ	¡Cuando la flor está cerrada, mis ataques no le afectan!				Eu não consigo bater quando a flor tá fechada!	Zamkniętego kwiata, średnio można trafić!	花苞合起來時，我無法對它造成傷害！
 din_flower_hint_sh	Sonic, you can't hit it\nwhen the flower is closed!		花が閉じるときには\n攻撃が当たらないわソニック！	Sonic, ¡tus ataques no afectan a\nla flor si cierra sus pétalos!				Sonic, você não consegue atingir\nquando a flor está fechada!	Sonic, nie dasz rady uderzyć tegot\nkwiata, gdy jest zamknięty!	索尼克，當花苞合起來時，你是無法對它造成傷害的。
 										
 										
 evil_foundry	Evil Foundry		イビル　ファウンドリー	Forja Maligna				Forja Maligna	Złowroga Odlewnia	萬惡鑄造廠
-evil_foundry_description	Infiltrate a fortress of flames.		侵食された灼熱の城。	Infíltrate en una fortaleza ardiente.				Invada uma fortaleza de chamas.	Zinfiltruj twierdzę płomieni.	被侵蝕的灼熱堡壘。
+evil_foundry_description	Infiltrate a fortress of flames.		侵食された灼熱の城。	Infíltrate en una fortaleza ardiente.				Invada uma fortaleza de chamas.	Zinfiltruj twierdzę płomieni.	入侵充滿火焰的堡壘。
 										
-evi_castle_sh	Is this a castle?			¿Es esto un castillo?						
-evi_castle_so	Yeah, but it's no ordinary castle.			Sí, pero no uno cualquiera.						
-evi_golem_so	Woah, who's the big guy?			¡Hala!, ¿quién es ese grandullón?						
-evi_golem_sh	I've never seen a spirit get that big!			¡Nunca había visto un espíruto tan grande!						
+evi_castle_sh	Is this a castle?		ここわお城？	¿Es esto un castillo?				Isto é um castelo?	Czy to jest zamek?	這是座城堡嗎？
+evi_castle_so	Yeah, but it's no ordinary castle.		ただの城じゃあないみたいだぜ！	Sí, pero no uno cualquiera.				É, mas não é dos fracos.	No, i to taki pełną parą.	沒錯，但這不像是普通的城堡。
+evi_golem_so	Woah, who's the big guy?		なんだ　あのでかいやつは！？	¡Hala!, ¿quién es ese grandullón?				Uou, quem é o grandão?	Ło, a co to za wielkolud?	哇那個大塊頭是誰？
+evi_golem_sh	I've never seen a spirit get that big!		あんな大きなマジン　見たことない ！	¡Nunca había visto un espíruto tan grande!				Eu nunca tinha visto um espírito tão grande!	Nigdy nie widziałam tak dużego ducha!	我從沒看過這麼大隻的魔神！
+evi_elevator_sh	Sonic, look up!		ソニック　上をみて！	¡Sonic, mira hacia arriba!				Sonic, olhe para cima!	Sonic, spójrz w górę!	索尼克，小心上面！
+evi_elevator_so	Let's keep going, Shahra!		このままいくぜ！　シャーラ！	Sigamos adelante, Sharah!				Vamos continuar, Shahra!	Nie zwalniajmy Shahra!	夏拉，我們繼續走吧！
+evi_factory_sh	This appears to be the center of the factory.		工場の中心部って感じね	Este parece ser el centro de la fábrica.				Este parece ser o centro da fábrica.	Zdaje się, że to jest centrum tej fabryki.	這裡似乎是工廠的中心。
+evi_factory_so	Just what are they making here?		あのマジン\nここで作られていたのか？	¿Qué es lo que están fabricando aquí?				O que tão fazendo aqui?	Tylko co oni tu wyrabiają?	這裡到底是在製造什麼東西？
+evi_vape_sh	Oh! The air is so hot in here!		うわ！　すごい熱気！	¡Buf! ¡Qué calor hace aquí!				Oh! O ar está tão quente aqui!	Oh! Ale tu duchota!	喔！裡面的空氣好熱！
+evi_vape_so	You're not going to evaporate,\nare you, Shahra?		シャーラ　溶けないように\n気をつけろよ！	No te irás a evaporar; ¿no, Sharah?				Você não vai evaporar, né, Shahra?	Z cukru nie jesteś, nie rozpuścisz się, Shahra.	夏拉，你不會蒸發不見吧？
+evi_timer_sh	Hurry! We have to get out of here!		はやく　ここから脱出しなきゃ！	¡Rápido! ¡Hemos de salir de aquí!				Rápido, temos que fugir daqui!	Szybko! Wynośmy się stąd!	快！我們得趕快離開這裡！
+evi_timer_so	Let's go, Shahra!		急ぐぞ！　シャーラ！	¡Vamos, Sharah!				Vamos nessa, Shahra!	Żwawo, Shahra!	夏拉，我們走！
+evi_exit_sh	Sonic, it's just a little further!		あと少しよ！　ソニック！	¡Sonic, ya casi lo hemos logrado!				Sonic, é logo ali na frente!	Sonic, jeszcze tylko troszkę!	索尼克，很快就到了！
+evi_exit_so	I think I see the exit!		出口はあそこか！	¡Creo ver la salida!				Acho que tô vendo a saída!	Chyba widzę wyjście!	我好像看見出口了！
 										
-evi_hint_furnace_so	That thing looks red hot!			¡Esa cosa está incandescente!						
-evi_hint_furnace_sh	That red tank is far too hot to touch.			Ese tanque rojo está demasiado caliente como para tocarlo. (PENDIENTE CONTEXTO)						
-evi_hint_golem_so	His weak point should be someplace on top.			Su punto débil debe de estar arriba.						
-evi_hint_golem_sh	That creature's weak point is its head!			¡Su punto débil es la cabeza!						
-evi_hint_golem_height_so	I should be able to reach his weak point\nif I can get up there!			¡Si soy capaz de llegar ahí arriba,\nalcanzaré su punto débil!						
-evi_hint_golem_height_sh	You can strike the creature\nin the head from someplace higher up.			Puedes golpear la cabeza de ese\ngólem desde un lugar elevado.						
-evi_hint_golem_deflect_so	Maybe I can deflect those tanks\nhe's throwing at me!			¡A lo mejor puedo desviar\nlos tanques que me lanza!						
-evi_hint_golem_deflect_sh	There might be a way to\ndeflect the tanks it's throwing.			Quizás haya alguna manera de\ndesviar los tanques que lanza.						
-evi_hint_tank_so	Maybe I can hit the tanks\nwith a Homing Attack!			¡Quizás pueda golpear los tanques con un Ataque Teledirigido!						
-evi_hint_tank_sh	Maybe you can hit the tanks\nwith a Homing Attack!			¡Puedes golpear los tanques con tu Ataque Teledirigido!						
-evi_hint_door_so	I can probably break through here\nwith a Speed Break!			¡Con un Impulso, puede que atraviese este obstáculo! (PENDIENTE CONTEXTO)						
-evi_hint_door_sh	A Speed Break should be able to\nsmash down this door.			Con un Impulso, debería ser capaz\nde tirar esta puerta abajo.						
-evi_hint_propeller_so	I probably shouldn't touch\nthose propeller blades!			¡No creo que sea buena idea\ntocar esas helices cortantes!						
-evi_hint_propeller_sh	Don't touch the propellers!			¡Evita las hélices!						
-evi_hint_levitate_so	I can use this to go up!			¡Con esto puedo llegar ahí arriba!						
-evi_hint_levitate_sh	You can use this to go up.			Puedes usar esto para subir.						
-evi_hint_homing_attack_so	I think I can get across using that machine!			¡Creo que puedo llegar al otro lado usando la maquinaria!						
-evi_hint_homing_attack_sh	You can use a homing attack on that machine.			Puedes usar un Ataque Teledirigido en ese mecanismo.						
-evi_hint_hot_so	Woah, that looks hot!			¡Uf, eso pinta caliente!						
-evi_hint_hot_sh	That seems hot to the touch.			Parece que está ardiendo.						
+evi_hint_furnace_so	That thing looks red hot!		あの赤いの\n触ったらわあつそうだな	¡Eso está incandescente!				Essa coisa tá brilhando de tão quente!	To coś jest rozżarzone do czerwoności!	那個東西看起來燙得好紅啊！
+evi_hint_furnace_sh	That red tank is far too hot to touch.		あの赤いタンク\n触ったら危ないわよ	Ese tanque rojo está demasiado\ncaliente como para tocarlo.				Esse tanque vermelho é quente demais para tocá-lo.	O ten czerwony zbiornik idzie sobie usmażyć ręce.	那個紅色的容器太燙了。
+evi_hint_golem_so	His weak point should be someplace on top.		あいつの弱点は\n高い所にやるそうだな	Su punto débil debe de estar arriba.				O ponto fraco dele deve estar lá em cima.	Jego słaby punkt powinien być gdzieś na górze.	它的弱點應該在上面某個高處。
+evi_hint_golem_sh	That creature's weak point is its head!		あのマジン頭が弱点みたいよ	¡Su punto débil es la cabeza!				O ponto fraco daquela criatura é a cabeça!	Słabym punktem tego stwora jest jego łeb!	那個怪物的弱點在它的頭部！
+evi_hint_golem_height_so	I should be able to reach his weak point\nif I can get up there!		高い所に上ればあいつの弱点を\nねらえるぜ！	¡Si soy capaz de llegar ahí arriba,\nalcanzaré su punto débil!				Talvez eu alcance o ponto fraco dele\nse eu conseguir subir até lá!	Powinno dać radę dostać się do jego słabego punktu\njeśli uda mi się tam wdrapać!	我如果能到上面就能擊中他的弱點！
+evi_hint_golem_height_sh	You can strike the creature\nin the head from someplace higher up.		高い所に上ればマジンの弱点を\nねらえるわ！	Puedes golpear la cabeza de ese\ngólem desde un lugar elevado.				Você pode atacar a criatura na cabeça\nde algum lugar elevado!	Jak wejdziesz gdzieś wyżej to powinieneś\ndać radę walnąć tego stwora w głowę.	你從高處攻擊就能擊中那個怪物的弱點。
+evi_hint_golem_deflect_so	Maybe I can deflect those tanks\nhe's throwing at me!		あいつが投げてくるタンク\nはじきっかいせないかな	¡A lo mejor puedo desviar\nlos tanques que me lanza!				Acho que posso desviar os tanques\nque ele tá tacando em mim!	Może da się odeprzeć te zbiorniki,\nktóre on we mnie rzuca!	我或許能把那些容器打回去！
+evi_hint_golem_deflect_sh	There might be a way to\ndeflect the tanks it's throwing.		どうにかしてあのタンク\nはじきっかいせないかしら	Quizás haya alguna manera de\ndesviar los tanques que lanza.				Talvez tenha uma maneira de\ndesviar os tanques que está lançando.	Wydaje mi się, że jesteś w stanie\nodeprzeć te zbiorniki, które on w ciebie rzuca.	應該有辦法把它丟過來的容器打回去。
+evi_hint_tank_so	Maybe I can hit the tanks\nwith a Homing Attack!		あのタンク　ホーミングアタックで\n飛ばせないかな	¡Quizás pueda golpear los tanques con un Ataque Teledirigido!				Acho que posso atingir os tanques\ncom um Ataque Teleguiado!	Może spróbuję pouderzać te zbiorniki\nAtakiem Naprowadzającym!	我或許能對那些容器使出追蹤攻擊！
+evi_hint_tank_sh	Maybe you can hit the tanks\nwith a Homing Attack!		あのタンク　ホーミングアタックで\n飛ばせないかしら？	¡Puedes golpear los tanques con tu Ataque Teledirigido!				Talvez você possa atingir os tanques\ncom um Ataque Teleguiado!	Może spróbujesz pouderzać te zbiorniki\nAtakiem Naprowadzającym?	你或許能對那些容器使出追蹤攻擊！
+evi_hint_door_so	I can probably break through here\nwith a Speed Break!		こいつはスピードブレーキで\n壊しそにないな	¡Con un Impulso, puede que\natraviese este obstáculo!				Acho que posso passar por aqui\ncom um Impulso!	Pewnie mógłbym się tu przedrzeć\nza pomocą Rozdarcia Pędu!	我或許能用速度突破衝出這裡！
+evi_hint_door_sh	A Speed Break should be able to\nsmash down this door.		このとびらはスピードブレーキで\n壊しそにないわね	Con un Impulso, debería ser capaz\nde tirar esta puerta abajo.				Um Impulso deve ser capaz de\nquebrar esta porta.	Rozdarcie Pędu pewnie pozwoliłoby ci\nrozwalić te drzwi.	用速度突破應該就能把這扇門打爛。
+evi_hint_propeller_so	I probably shouldn't touch\nthose propeller blades!		このプロペラ\n触らないようにしないとな	¡No creo que sea buena idea\ntocar esas helices cortantes!				Acho que não é uma boa\ntocar nessas hélices afiadas!	Raczej powinienem stronić\nod tych śmigieł!	最好避開那些螺旋刀！
+evi_hint_propeller_sh	Don't touch the propellers!		このプロペラ\n触らないようにね	¡Evita las hélices!				Evite as hélices!	Nie dotykaj tych śmigieł!	別碰螺旋刀！
+evi_hint_levitate_so	I can use this to go up!		これを使って上に上れるぜ！	¡Con esto puedo llegar ahí arriba!				Posso usar isto pra ir lá pra cima!	Mogę użyć tego, aby dostać się wyżej!	我能用這上去！
+evi_hint_levitate_sh	You can use this to go up.		これを使って上に上れそうよ！	Puedes usar esto para subir.				Você pode usar isto para subir.	Możesz użyć tego, aby dostać się wyżej!	你能用這上去！
+evi_hint_homing_attack_so	I think I can get across using that machine!		あの機械を使って渡れそうだな！	¡Creo que puedo llegar al otro lado usando la maquinaria!				Acho que posso atravessar usando essa máquina!	Myślę, że ta maszyna może mi pomóc się przedostać!	我應該能用那個機械跨過去！
+evi_hint_homing_attack_sh	You can use a homing attack on that machine.		あの機械　ホーミングアタック\nできそうよ！	Puedes usar un Ataque Teledirigido en ese mecanismo.				Você pode usar um\nAtaque Teleguiado neste mecanismo.	Możesz użyć ataku naprowadzającego na tej maszynie.	你能對那個機械使出追蹤攻擊。
+evi_hint_hot_so	Woah, that looks hot!		ぐわー\nこれはあつそうだな	¡Uf, eso pinta caliente!				Uou, parece que tá pelando!	Ło, gorąco to wygląda!	哇嗚，那看起來超燙！
+evi_hint_hot_sh	That seems hot to the touch.		これは触ったらあつそうよ	Parece que está ardiendo.				Isso aparenta ser quente demais para tocar.	Tylko mi się nie poparz.	那看起來燙到不行。
 										
-evi_boss_intro_so	You know, I've let you play around\nmore than enough for one day!			¿Sabes qué? ¡Creo que ya basta de tus juegecitos!						
-evi_boss_intro_sh	Sonic, be careful!\nThe Ifrit is no child!			¡Sonic, cuidado! ¡El Ifrit no es para tomárselo a guasa!						
-evi_boss_prepare_sh	Ifrit, prepare yourself!			Ifrit, ¡pretárate!						
-evi_boss_hit_so	Yeah, how do you like that?\nNot so tough now, are you?			¿Qué te ha parecido? Ya no te ves tan duro, ¿eh, Ifrit?						
-evi_boss_hit_sh	That's it! You found its weak point!									
-evi_boss_hit2_so	Stubborn little fella, isn't he?\nWell, OK, maybe not little.									
-evi_boss_hit3_so	Alright! Looks like it's almost\nlights out for you, big guy!									
-evi_boss_defeat_so	Now I see why they tell you\nnot to play with fire.									
+evi_boss_intro_so	You know, I've let you play around\nmore than enough for one day!		好き放題あばれやがって…\nちょいとオシオキが必要だな！	¿Sabes qué? ¡Creo que ya basta de tus juegecitos!				Olha, te deixei brincar\ndemais, já passou da hora!	Wiesz co, chyba na za dużo\ntobie pozwoliłem jak na jeden dzień	我這一整天好像讓你玩得太開心了呢！
+evi_boss_intro_sh	Sonic, be careful!\nThe Ifrit is no child!		気をつけてソニーク！\nイフリートはコドモじゃないのよ！	¡Sonic, cuidado! ¡El Ifrit\nno es para tomárselo a guasa!				Sonic, cuidado!\O Ifrit não é nenhuma criança!	Sonic, uważaj!\nIfrit nie jest taki głupi!	索尼克，小心啊！別把伊弗力特當成小孩子了！
+evi_boss_prepare_sh	Ifrit, prepare yourself!		イフリート！\nカンネンしなさい！	Ifrit, ¡pretárate!				Ifrit, prepare-se!	Ifricie, orientuj się!	伊弗力特，儘管放馬過來吧！
+evi_boss_hit_so	Yeah, how do you like that?\nNot so tough now, are you?		ＹＥＳ！どうだ敵ロボ？\n少しははんせいしたか？	¿Qué te ha parecido? Ya no te ves tan duro, ¿eh, Ifrit?				Iai, curtiu? Não é mais tão durão, né?	No, jak ci się to podoba?\nJuż nie taki hop do przodu, co?	這樣如何呀？不是好像很厲害嗎？
+evi_boss_hit_sh	That's it! You found its weak point!		やった！\nやっぱりここが弱点だったのね！	¡Ahí está!\n¡Has encontrado su punto débil!				É isso! Você encontrou o ponto fraco!	O, to, to! Znalazłeś jego słaby punkt!	很好！你找到它的弱點了！
+evi_boss_hit2_so	Stubborn little fella, isn't he?\nWell, OK, maybe not little.		しぶといヤツだな\nデカいだけのことはあるぜ！	Pero mira que es pesado... ¡En más de un sentido!				Pequeno teimoso, né?\nTá bom, nem tão pequeno assim.	Mały, ale śmiały, co nie?\nNo może nie taki mały.	很頑固的小傢伙嘛！嗯…叫你小傢伙好像也不太對。
+evi_boss_hit3_so	Alright! Looks like it's almost\nlights out for you, big guy!		だいぶ効いてるみたいだな\nそろそろオネンネしてもらうぜ！	¡Ajá! ¡Pronto no nos darás más\nla lata, grandullón!				Beleza! Tá quase na\nhora da naninha, grandão!	Dobra! Za chwilę to ci pozostanie\nwąchać kwiatki od spodu, baryło!	好極了！大塊頭睡覺覺的時間快到囉！
+evi_boss_defeat_so	Now I see why they tell you\nnot to play with fire.		火アソビが過ぎたようだな！	Ya veo por qué dicen que es\nmejor no jugar con fuego.				E é por isso que\nnão se deve brincar com fogo.	Już rozumiem czemu mówią\nżeby nie igrać z ogniem.	難怪俗話說，玩火易自焚！
 										
-evi_hint_hand_sh	Maybe you should try attacking\nthe hands holding up its body?									
-evi_hint_head_sh	I sense a strong power coming\nfrom the light on the Ifrit's head.									
-evi_hint_head2_sh	Try to find some way to get the Ifrit\nto lower his head into range!									
-evi_hint_laser_sh	It looks like the Ifrit's eye laser\nitself won't hurt you.									
-evi_hint_water_sh	As the Ifrit's body sinks,\nthe water level in the furnace rises.									
+evi_hint_hand_sh	Maybe you should try attacking\nthe hands holding up its body?		あの　体を支えている手を攻撃したら\nけっこう効くんじゃないかしら？	¿Quizás deberías atacar las\nmanos que lo sostienen?				Talvez você devesse tentar\natacar as mãos que sustentam o corpo?	Może powinieneś zaatakować ręce\npodtrzymujące jego ciało.	試試看攻擊把它身體支撐起來的雙手？
+evi_hint_head_sh	I sense a strong power coming\nfrom the light on the Ifrit's head.		イフリートの頭の光る部分に強い力を\n感じる…弱点はきっとそこよ！	Siento un gran poder proveniente de\nla luz de la cabeza del Ifrit.				Eu sinto uma forte energia vindo\nda luz na cabeça de Ifrit.	Wyczuwam ogromną moc pochodząca\nze światła na głowie Ifrita.	我從伊弗力特頭頂上的光芒感覺到了強大的力量。
+evi_hint_head2_sh	Try to find some way to get the Ifrit\nto lower his head into range!		イフリートの頭を下へおろすには\nどうしたらいいのかしら？	¡Tienes que encontrar alguna manera\nde acercar su cabeza hacia ti!				Encontre uma maneira de fazer\na cabeça de Ifrit chegar perto!	Spróbuj znaleźć sposób, aby\nsprowadzić głowę Ifrita do parteru!	想辦法讓伊弗力特的頭降落到攻擊範圍內！
+evi_hint_laser_sh	It looks like the Ifrit's eye laser\nitself won't hurt you.		イフリートの　目のレーザー自体は\nさわっても大丈夫みたいね！	Parece que el ojo láser del Ifrit\nno te hace daño directamente.				Parece que o laser ocular de Ifrit\nnão te causa dano diretamente.	Wygląda na to, że laser z oka Ifrita\nsam z siebie nie będzie w stanie cię zranić.	看樣子伊弗力特的眼睛雷射本身傷不了你。
+evi_hint_water_sh	As the Ifrit's body sinks,\nthe water level in the furnace rises.		イフリートが体を沈めると溶鉱炉の\n水面が上昇するわ！　気をつけて！　	Según el cuerpo del Ifrit se hunde,\nel nivel del agua sube.				Assim que o corpo de Ifrit afunda, o\nnível da água na fornalha sobe.	Im bardziej ciało Ifrita topnieje,\ntym bardziej poziom wody w piecu się podnosi.	伊弗力特的身體沉下去會讓熔爐的水面上升。
 										
 levitated_ruin	Levitated Ruin		レビテイテッド　ルーイン	Ruinas Levitantes				Ruínas Levitantes	Lewitujące Ruiny	懸浮遺址
 levitated_ruin_description	A floating hall of the dead.		天空をさまよう墳墓。	Un mausoleo celeste.				Um salão flutuante dos mortos.	Fruwająca sala umarłych.	在天空徘徊的墳墓。
 										
 										
 pirate_storm	Pirate Storm		パイレーツ　ストーム	Tormenta Pirata				Tormenta Pirata	Piracki Sztorm	海盜暴風
-pirate_storm_description	Bandits roam through the tempest.		荒れ狂う海城と海賊団。	Forajidos navegan a través de la tempestad.				Bandidos rondam pela tempestade.	Bandyci grasują wśrod nawałnic.	有著海盜與暴風雨的海域。
+pirate_storm_description	Bandits roam through the tempest.		荒れ狂う海城と海賊団。	Forajidos navegan a través de la tempestad.				Bandidos rondam pela tempestade.	Bandyci grasują wśrod nawałnic.	受海盜與暴風雨肆虐的海域。
 										
 										
 skeleton_dome	Skeleton Dome		スケルトン　ドーム	Domo Esquelético				Domo Esquelético	Kraśna Kostnica	骷髏巨蛋
@@ -552,7 +570,7 @@ nig_boss_duel_hint1	(Better time your attack when he comes around.)			(Espera al
 nig_boss_duel_hint2	(Slow down!)			(¡Ve más lento!)				(Devagar!)	(Zwolnij!)	（慢下來！）
 nig_boss_duel_hint3	(It's one-on-one! Be ready to jump!)			(Un uno contra uno; ¡prepárate para saltar!)				(É agora! Prepare-se para pular!)	(Teraz albo nigdy! Bądź gotów do skoku!)	（一對一決鬥！準備跳！）
 nig_boss_hit1_so	Aha! It's working! Now I just have to keep that up!			¡Ajá! ¡Funciona! ¡Solo tengo que seguir así!				Ahá! Tá funcionando! Agora basta eu manter o ritmo!	Aha! To działa! Teraz muszę cisnąć tak dalej!	啊哈！奏效了！接下來我只要堅持下去就好！
-nig_boss_hit1_er	Ha! Insolent pest! Your feeble attacks cannot harm me!			¡Já! ¡Alimaña insolente! ¡No me afectan tus patéticos ataques!				Há! Peste insolente! Seus ataques fúteis não podem me machucar!	Ha! Bezczelny szkodniku! Twoje marne ataki nic mi nie zrobią!	哈！你這隻無禮的害蟲！你軟弱的攻擊是傷不了我的！
+nig_boss_hit1_er	Ha! Insolent pest! Your feeble attacks cannot harm me!			¡Já! ¡Alimaña insolente! ¡No me afectan tus patéticos ataques!				Há! Peste insolente! Seus ataques fúteis não podem me machucar!	Ha! Bezczelny szkodniku! Twoje marne ataki nic mi nie zrobią!	哈！你這隻無禮的害蟲！如此軟弱的攻擊是傷不了我的！
 nig_boss_hit2_so	What's wrong, Erazor? You don't look so good!			¿Qué pasa, Erazor? ¡Se te ve mala cara!				O que foi, Erazor? Você não tá com uma cara boa!	Co tam, Erazorze? Złość piękności szkodzi!	怎麼啦，伊萊薩？臉色怎麼臭起來啦！
 nig_boss_hit2_er	Enjoy your moment of pride, rat. It shall be your last!			Disfruta de este momento, rata... ¡Será el último!				Aproveite seu momento de orgulho, rato. Pois será o seu último!	Ciesz się chwilą chluby, szczurku. Będzie ona twą ostatnią!	好好享受你最後一次短暫的榮耀吧，老鼠！
 nig_boss_win_er	N...No...This isn't...Possible...			N... No... No puede ser... Imposible...				N...Não...Isso não é...Possível...	N...Nie...To nie...Możliwe...	不…不可能…這不…可能…
@@ -568,11 +586,11 @@ result_total	Total		トータル	Total				Total	Suma	總分
 										
 exp_total	exp		経験値	exp				exp	pd	exp
 exp_score	Score Bonus		スコア　ボーナス	Puntos				Pontuação Bônus	Bonus Wyniku	分數獎勵
-exp_mission	First Clear Bonus		クリア ボーナス	Primera VIctoria				Primeira Vitória	Bonus Pierwszego Podboju	第一次通關獎勵
-exp_skill	Skill Bonus		スキル　ボーナス	Destreza				Bônus de Habilidade	Bonus Umiejętności	技能獎勵
+exp_mission	First Clear Bonus		クリア ボーナス	Primera VIctoria				Primeira Vitória	Bonus Debiutanta	第一次通關獎勵
+exp_skill	Skill Bonus		スキル　ボーナス	Destreza				Bônus de Habilidade	Bonus Talentów	技能獎勵
 exp_level	Level		レベル	Nivel				Nível	Poziom	等級
-exp_sp	Skill Points		スキル ポイント	Puntos de Habilidad				Pontos de Habilidade	Punkty Umiejętności	技能點數
-exp_soul	Soul Gauge		ソール　ゲージ	Barra de Almas				Barra de Almas	Duszomierz	魂力槽
+exp_sp	Skill Points		スキル ポイント	Puntos de Habilidad				Pontos de Habilidade	Punkty Talentów	技能點數
+exp_soul	Soul Gauge		ソール　ゲージ	Barra de Almas				Barra de Almas	Duszomierz	魂力量表
 										
 										
 skill_select_level	Level:0		レベル:0	Nivel:0				Nível:0	Poziom:0	等級:0
@@ -580,27 +598,29 @@ skill_sp_shortage	You do not have enough SP.		ＳＰがたりません。	No tie
 skill_conflict	Equipping SKILL will unequip CONFLICT.\nProceed?		SKILLが装備されると、CONFLICTは装備されなくなります。\nよろしいですか？	Si equipas SKILL,\ndesactivarás CONFLICT.\n¿Deseas proceder?				Equipar SKILL irá desequipar CONFLICT.\nDeseja continuar?	Użycie SKILL spowoduje usunięcie CONFLICT.\nKontynuować?	裝備 SKILL 會解除裝備 CONFLICT。\n是否要繼續？
 										
 skill_autorun	Autorun		オートラン	Avance Automático				Corrida Automática	Autobieg	自動奔跑
-skill_autorun_description	Allows Sonic to run forward automatically.		ソニックが自動的に前進する。	Sonic se desplaza hacia delante\nde forma automática.				Permite que Sonic corra\npara frente automaticamente.	Pozwala Sonicowi automatycznie biec do przodu.	索尼克會自動前進。
+skill_autorun_description	Allows Sonic to run forward automatically.		ソニックが自動的に前進する。	Sonic se desplaza hacia delante\nde forma automática.				Permite que Sonic corra\npara frente automaticamente.	Pozwala Sonicowi automatycznie\nbiec do przodu.	讓索尼克自動向前奔跑。
+skill_charge_jump	Charge Jump		チャージジャンプ	Salto con Carga					Skok na Korbkę	集氣跳躍
+skill_charge_jump_description	Restores the Charge Jump from the original retail release.		チャージジャンプをリテール版から復元。	Sonic salta cargando su salto\ncomo en el juego original.					Przywraca Skok na Korbkę\nz oryginalnego wydania gry.	恢復原版遊戲的集氣跳躍。
 skill_speed_up	Speed-Up		スピードアップ	Brío				Aceleração	Zryw	加速
 skill_speed_up1	Super Speed-Up		スーパースピードアップ	Brío Veloz 				Super Aceleração	Super Zryw	超級加速
 skill_speed_up2	Hyper Speed-Up		ハイパースピードアップ	Brío Máximo				Hiper Aceleração	Hiper Zryw	究極加速
 skill_speed_up3	Sub Hyper Speed-Up		サブハイパースピードアップ	Sub Brío				Sub Hiper Aceleração	Fals Hiper Zryw	次究極加速
-skill_speed_up_description	Slightly increases Sonic's top speed.		最高速度の上限がちょっと上昇する。	Aumenta ligeramente la velocidad máxima de Sonic.				Aumenta ligeiramente a\nvelocidade máxima de Sonic.	Lekko zwiększa prędkość maksymalną Sonica.	稍微提升索尼克的最高速度。
-skill_speed_up_description1	Moderately increases Sonic's top speed.		最高速度の上限がほどほど上昇する。	Aumenta moderadamente\nla velocidad máxima de Sonic.				Aumenta moderadamente a\nvelocidade máxima de Sonic.	Umiarkowanie zwiększa prędkość maksymalną Sonica.	提升索尼克的最高速度。
-skill_speed_up_description2	Greatly Increases Sonic's top speed.		最高速度の上限がかなり上昇する。	Aumenta significativamente\nla velocidad máxima de Sonic.				Aumenta significativamente a\nvelocidade máxima de Sonic.	Znacznie zwiększa prędkość maksymalną Sonica.	提升索尼克的最高速度。
-skill_speed_up_description3	Greatly Increases Sonic's top speed, but also reduces defense.		最高速度の上限がかなり上昇するが\n防御力が低下する。	Aumenta en gran medida tu velocidad\nmáxima, pero reduce tu defensa.				Aumenta significativamente a velocidade\nmáxima de Sonic, mas também reduz a defesa.	Znacznie zwiększa prędkość maksymalną Sonica, ale ogranicza jego obronę.	提升索尼克的最高速度，但防禦力降低。
+skill_speed_up_description	Slightly increases Sonic's top speed.		最高速度の上限がちょっと上昇する。	Aumenta ligeramente la velocidad máxima de Sonic.				Aumenta ligeiramente a\nvelocidade máxima de Sonic.	Lekko zwiększa maksymalną prędkość Sonica.	稍微提升索尼克的最高速度。
+skill_speed_up_description1	Moderately increases Sonic's top speed.		最高速度の上限がほどほど上昇する。	Aumenta moderadamente\nla velocidad máxima de Sonic.				Aumenta moderadamente a\nvelocidade máxima de Sonic.	Umiarkowanie zwiększa maksymalną prędkość Sonica.	適度提升索尼克的最高速度。
+skill_speed_up_description2	Greatly Increases Sonic's top speed.		最高速度の上限がかなり上昇する。	Aumenta significativamente\nla velocidad máxima de Sonic.				Aumenta significativamente a\nvelocidade máxima de Sonic.	Znacznie zwiększa maksymalną prędkość Sonica.	提升索尼克的最高速度。
+skill_speed_up_description3	Greatly Increases Sonic's top speed, but also reduces defense.		最高速度の上限がかなり上昇するが\n防御力が低下する。	Aumenta en gran medida tu velocidad\nmáxima, pero reduce tu defensa.				Aumenta significativamente a velocidade\nmáxima de Sonic, mas também reduz a defesa.	Znacznie zwiększa maksymalną prędkość Sonica,\nale ogranicza jego defensywę.	大幅提升索尼克的最高速度，但防禦力降低。
 skill_slow_turn	Slow Turn		スローターン	Giro Lento				Virada Lenta	Wolny Skręt	慢速轉向
 skill_slow_turn1	Super Slow Turn		スーパースローターン	Giro Súper Lento				Super Virada Lenta	Super Wolny Skręt	超級慢速轉向
 skill_slow_turn2	Hyper Slow Turn		ハイパースローターン	Giro Lento Máximo				Hiper Virada Lenta	Hiper Wolny Skręt	究極慢速轉向
-skill_slow_turn_description	Slightly decreases horizontal turning sensitivity.		左右移動がちょっと遅くになる。	Reduce ligeramente la sensibilidad de giro\ny de movimiento lateral.				Reduz ligeiramente a velocidade horizontal.	Lekko zmniejsza czułość skręcania w poziomie.	稍微降低左右移動速度。
-skill_slow_turn_description1	Moderately decreases horizontal turning sensitivity.		左右移動がほどほど遅くになる。	Reduce moderadamente la sensibilidad\nde giro y de movimiento lateral.				Reduz moderadamente a velocidade horizontal.	Umierkowanie zmniejsza czułość skręcania w poziomie.	適度降低左右移動速度。
-skill_slow_turn_description2	Greatly decreases horizontal turning sensitivity.		左右移動がかなり遅くになる。	Reduce significativamente la sensibilidad de giro y de movimiento lateral.				Reduz significativamente a velocidade horizontal.	Znacznie zmniejsza czułość skręcania w poziomie.	大幅降低左右移動速度。
+skill_slow_turn_description	Slightly decreases horizontal turning sensitivity.		左右移動がちょっと遅くになる。	Reduce ligeramente la sensibilidad de giro\ny de movimiento lateral.				Reduz ligeiramente a velocidade horizontal.	Lekko zmniejsza horyzontalną\nczułość skręcania.	稍微降低左右移動速度。
+skill_slow_turn_description1	Moderately decreases horizontal turning sensitivity.		左右移動がほどほど遅くになる。	Reduce moderadamente la sensibilidad\nde giro y de movimiento lateral.				Reduz moderadamente a velocidade horizontal.	Umierkowanie zmniejsza horyzontalną\nczułość skręcania.	適度降低左右移動速度。
+skill_slow_turn_description2	Greatly decreases horizontal turning sensitivity.		左右移動がかなり遅くになる。	Reduce significativamente la sensibilidad de giro y de movimiento lateral.				Reduz significativamente a velocidade horizontal.	Znacznie zmniejsza horyzontalną\nczułość skręcania.	大幅降低左右移動速度。
 skill_quick_turn	Quick Turn		クイックターン	Giro Rápido				Virada Rápida	Szybki Skręt	快速轉向
 skill_quick_turn1	Super Quick Turn		スーパークイックターン	Giro Súper Rápido				Super Virada Rápida	Super Szybki Skręt	超級快速轉向
 skill_quick_turn2	Hyper Quick Turn		ハイパークイックターン	Giro Rápido Máximo				Hiper Virada Rápida	Hiper Szybki Skręt	究極快速轉向
-skill_quick_turn_description	Slightly increases horizontal turning sensitivity.		左右移動がちょっと速くになる。	Aumenta ligeramente la sensibilidad de giro\ny de movimiento lateral.				Aumenta ligeiramente a velocidade horizontal.	Lekko zwiększa czułość skręcania w poziomie.	稍微提升左右移動速度。
-skill_quick_turn_description1	Moderately increases horizontal turning sensitivity.		左右移動がほどほど速くになる。	Aumenta moderadamente la sensibilidad\nde giro y de movimiento lateral.				Aumenta moderadamente a velocidade horizontal.	Umierkowanie zwiększa czułość skręcania w poziomie.	適度提升左右移動速度。
-skill_quick_turn_description2	Greatly increases horizontal turning sensitivity.		左右移動がかなり速くになる。	Aumenta significativamente la sensibilidad\nde giro y de movimiento lateral.				Aumenta significativamente a velocidade horizontal.	Znacznie zwiększa czułość skręcania w poziomie.	大幅提升左右移動速度。
+skill_quick_turn_description	Slightly increases horizontal turning sensitivity.		左右移動がちょっと速くになる。	Aumenta ligeramente la sensibilidad de giro\ny de movimiento lateral.				Aumenta ligeiramente a velocidade horizontal.	Lekko zwiększa horyzontalną\nczułość skręcania.	稍微提升左右移動速度。
+skill_quick_turn_description1	Moderately increases horizontal turning sensitivity.		左右移動がほどほど速くになる。	Aumenta moderadamente la sensibilidad\nde giro y de movimiento lateral.				Aumenta moderadamente a velocidade horizontal.	Umierkowanie zwiększa horyzontalną\nczułość skręcania.	適度提升左右移動速度。
+skill_quick_turn_description2	Greatly increases horizontal turning sensitivity.		左右移動がかなり速くになる。	Aumenta significativamente la sensibilidad\nde giro y de movimiento lateral.				Aumenta significativamente a velocidade horizontal.	Znacznie zwiększa horyzontalną\nczułość skręcania.	大幅提升左右移動速度。
 skill_traction_up	Charger		チャージャー	Embestida				Investida	Ładowara	衝刺
 skill_traction_up1	Turbo Charger		ターボチャージャー	Embestida Turbo				Investida Turbo	Turbo Ładowara	加速衝刺
 skill_traction_up2	Rocket Charger		ロケットチャージャー	Embestida Cohete				Investida Foguete	Rakietowa Ładowara	火箭衝刺
@@ -615,20 +635,20 @@ skill_grind_up	Quick Grind		クイックグラインド	Montaje Acelerado				Des
 skill_grind_up1	Fast Grind		ファストグラインド	Montaje Rápido				Deslizamento Veloz	Szybki Grind	高速滑軌
 skill_grind_up2	Mach Grind		マッハグラインド	Montaje Mach				Deslizamento Sônico	Bystry Grind	急速滑軌
 skill_grind_up3	Sub Mach Grind		サブ　マッハグラインド	Sub Montaje Mach				Sub Deslizamento Sônico	Fals Bystry Grind	次急速滑軌
-skill_grind_up_description	Slightly increases initial Grinding speed.		グラインドの出足の速度がちょっと上昇する。	Aumenta ligeramente la velocidad\ninicial de montar un raíl.				Aumenta ligeiramente a velocidade de deslizamento.	Lekko zwiększa początkową Prędkość Grindowania.	稍微提升滑軌的起始速度。
-skill_grind_up_description1	Moderately increases initial Grinding speed.		グラインドの出足の速度がほどほど上昇する。	Aumenta moderadamente la velocidad\ninicial de montar un raíl.				Aumenta moderadamente a velocidade de deslizamento.	Umiarkowanie zwiększa początkową Prędkość Grindowania.	適度提升滑軌的起始速度。
-skill_grind_up_description2	Greatly increases initial Grinding speed.		グラインドの出足の速度がかなり上昇する。	Aumenta en gran medida la velocidad\ninicial de montar un raíl.				Aumenta significativamente a velocidade de deslizamento.	Znacznie zwiększa początkową Prędkość Grindowania.	大幅提升滑軌的起始速度。
-skill_grind_up_description3	Greatly increases initial Grinding speed,\nbut consumes rings in the process.		グラインドの出足の速度がかなり上昇するが\n発動中　リングをに消費する。	Aumenta enormemente la velocidad de\nmontar raíles, pero gasta anillos.				Aumenta significativamente a velocidade de\ndeslizamento, mas consome anéis no processo.	Znacznie zwiększa początkową Prędkość Grindowania, ale zużywa przy tym pierścienie.	大幅提升滑軌的起始速度，但防禦力降低。
+skill_grind_up_description	Slightly increases initial Grinding speed.		グラインドの出足の速度がちょっと上昇する。	Aumenta ligeramente la velocidad\ninicial de montar un raíl.				Aumenta ligeiramente a velocidade de deslizamento.	Lekko zwiększa prędkość\npoczątkową Grindowania.	稍微提升滑軌的起始速度。
+skill_grind_up_description1	Moderately increases initial Grinding speed.		グラインドの出足の速度がほどほど上昇する。	Aumenta moderadamente la velocidad\ninicial de montar un raíl.				Aumenta moderadamente a velocidade de deslizamento.	Umiarkowanie zwiększa prędkość\npoczątkową Grindowania.	適度提升滑軌的起始速度。
+skill_grind_up_description2	Greatly increases initial Grinding speed.		グラインドの出足の速度がかなり上昇する。	Aumenta en gran medida la velocidad\ninicial de montar un raíl.				Aumenta significativamente a velocidade de deslizamento.	Znacznie zwiększa prędkość\npoczątkową Grindowania.	大幅提升滑軌的起始速度。
+skill_grind_up_description3	Greatly increases initial Grinding speed,\nbut consumes rings in the process.		グラインドの出足の速度がかなり上昇するが\n発動中　リングをに消費する。	Aumenta enormemente la velocidad de\nmontar raíles, pero gasta anillos.				Aumenta significativamente a velocidade de\ndeslizamento, mas consome anéis no processo.	Znacznie zwiększa prędkość początkową\nGrindowania, ale zużywa przy tym pierścienie.	大幅提升滑軌的起始速度，但防禦力降低。
 skill_all_rounder	All Rounder		オールラウンダー	Todoterreno				Polivalente	Krętacz	全能跑手
 skill_all_rounder_description	Reduces speed loss caused\nby rugged terrain.		移動速度が遅くなる地形で\n減速率が低下する。	Reduce la pérdida de velocidad\nen terrenos escabrosos.				Reduz a perda de velocidade\nem terrenos rugosos.	Zmniejsza utratę prędkości\nna niekorzystnym terenie.	降低因遲緩地形造成之減速率。
 skill_pearl_range	Pearl Collector		パールコレクター	Colecctionista de Perlas				Coletor de Pérolas	Kolekcjoner Pereł	魂珠收集者
 skill_pearl_range_description	Attracts nearby Pearls.		近くにあるパールを吸い寄せて回収する。	Atrae Perlas cercanas.				Atrai Pérolas próximas.	Przyciąga pobliskie Perły.	吸引周圍之魂珠。
 skill_pearl_respawn	Soul Resurrection		ソウルリザレクション	Resurrección del Alma				Ressureição da Alma	Wskrzeszenie Duszy	靈魂再生
-skill_pearl_respawn_description	Uses the Soul Gauge\nto revive when defeated.		ソウルゲージを消費することで\n死亡時に復活することができる。	Gasta tu Barra de Almas para revivir\ncuando te derroten.				Usa a Barra de Almas pra\nreviver quando derrotado.	Używa Duszomierzu\naby odrodzić się po klęsce.	被打倒時，消耗魂力槽復活。
+skill_pearl_respawn_description	Uses the Soul Gauge\nto revive when defeated.		ソウルゲージを消費することで\n死亡時に復活することができる。	Gasta tu Barra de Almas para revivir\ncuando te derroten.				Usa a Barra de Almas pra\nreviver quando derrotado.	Używa Duszomierzu\naby odrodzić się po klęsce.	被打倒時，消耗魂力量表復活。
 skill_pearl_damage	Soul Armor		ソウルアーマー	Armadura Ánima				Armadura de Almas	Pancerz Duszy	靈魂護甲
 skill_pearl_damage1	Sub Soul Armor		サブ　ソウルアーマー	Sub Armadura Ánima				Sub-Armadura de Almas	Fals Pancerz Duszy	次靈魂護甲
-skill_pearl_damage_description	Reduces Soul Power loss when damaged.		ダメージ時にマイナスされるソウルが減少する。	Reduce la pérdida de Poder de Almas\nal recibir daños.				Reduz a perda de Poder de Almas\nao receber dano.	Zmniejsza utratę Mocy Dusz po odniesieniu obrażeń.	降低因受傷失去的魂力。
-skill_pearl_damage_description1	Greatly reduces Soul Power loss when damaged, but also reduces defense.		ダメージ時にマイナスされるソウルが\nかなり減少するが防御力が低下する。	Reduce la pérdida de Poder de Almas\n por daños, pero también tu defensa.				Reduz bastante a perda de Poder de Almas\nao receber dano, mas também reduz a defesa.	Znacznie zmniejsza utratę Mocy Dusz po odniesieniu obrażeń, ale ogranicza obronę.	大幅降低因受傷失去的魂力，但防禦力降低。
+skill_pearl_damage_description	Reduces Soul Power loss when damaged.		ダメージ時にマイナスされるソウルが減少する。	Reduce la pérdida de Poder de Almas\nal recibir daños.				Reduz a perda de Poder de Almas\nao receber dano.	Zmniejsza utratę Mocy Dusz\npo odniesieniu obrażeń.	降低因受傷失去的魂力。
+skill_pearl_damage_description1	Greatly reduces Soul Power loss when damaged, but also reduces defense.		ダメージ時にマイナスされるソウルが\nかなり減少するが防御力が低下する。	Reduce la pérdida de Poder de Almas\n por daños, pero también tu defensa.				Reduz bastante a perda de Poder de Almas\nao receber dano, mas também reduz a defesa.	Znacznie zmniejsza utratę Mocy Dusz po odniesieniu\nobrażeń, ale ogranicza obronę.	大幅降低因受傷失去的魂力，但防禦力降低。
 skill_ring_loss_convert	Soul Barrier		ソウルバリア	Barrera Ánima				Barreira Espiritual	Bariera Duszy	魂力屏障
 skill_ring_loss_convert1	Sub Soul Barrier		サブ　ソウルバリア	Sub Barrera Ánima				Sub Barreira Espiritual	Fals Bariera Duszy	次魂力屏障
 skill_ring_loss_convert_description	Increases Soul Power\nwhen losing rings.		リングが減った時に\nソウルゲージが上昇する。	Obtén Poder de Almas\nal perder anillos.				Obtenha Poder de Almas\nao perder anéis.	Zwiększa Moc Dusz\nprzy utracie pierścieni.	損失金環時，增加魂力。
@@ -636,11 +656,11 @@ skill_ring_loss_convert_description1	Greatly increases Soul Power when losing ri
 skill_ring_pearl_convert	Ring Exchange		リングエクスチェンジ	Intercambio de Anillos				Câmbio de Anéis	Wymiana Pierścieni	金環交換
 skill_ring_pearl_convert_description	Counts each Ring collected as 2 pearls.		リング獲得の時\nパール2個分として換算される。	Obtén dos perlas por\ncada Anillo que recojas.				Para cada anel coletado, você recebe 2 pérolas	Liczy każdy zebrany Pierścień jako 2 perły.	每獲得一枚金環等於獲得兩顆魂珠。
 skill_ring_spawn	Ring Bonus		リングボーナス	Bonificación de Anillos				Bônus de Anéis	Bonusowe Pierścienie	額外金環
-skill_ring_spawn_description	Grants additional rings\nwhen starting a stage.		ミッション開始時の所持\nリング個数が増加する。	Comienza el nivel con algunos anillos.				Concede anéis adicionais ao iniciar uma fase.	Przyznaje dodatkowe pierścienie wraz z rozpoczęciem etapu.	任務開始時，增加持有的金環數。
-skill_ring_respawn	Power Restart		パワーリスタート	Retorno Poderoso				Reinício Poderoso	Mocny Restart	再來金環
+skill_ring_spawn_description	Grants additional rings\nwhen starting a stage.		ミッション開始時の所持\nリング個数が増加する。	Comienza el nivel con algunos anillos.				Concede anéis adicionais ao iniciar uma fase.	Przyznaje dodatkowe pierścienie\nwraz z rozpoczęciem etapu.	任務開始時，增加持有的金環數。
+skill_ring_respawn	Power Restart		パワーリスタート	Retorno Poderoso				Reinício Poderoso	Twardy Restart	再來金環
 skill_ring_respawn_description	Grants additional Rings when\nrestarting after being defeated.		死亡から復活の時\n所持リング個数が増加する。	Obtén algunos anillos\ncuando reaparezcas.				Concede anéis adicionais ao renascer.	Przyznaje dodatkowe pierścienie po odrodzeniu się.	被打倒並復活後，增加持有的金環數。
 skill_ring_damage	Ring Saver		リングセーバー	Protector de Anillos				Salva-Anéis	Ciułacz Pierścieni	小氣金環
-skill_ring_damage_description	Reduces the number of rings lost\nwhen damage is taken.		ダメージをうけた時にマイナスされる\nリングの個数が減少する。	Reduce el número de anillos\nsubstraído al sufrir daños.				Reduz o número de anéis perdidos ao receber dano.	Zmniejsza liczbę pierścieni utraconych po otrzymaniu obrażeń.	降低受傷時失去的金環數量。
+skill_ring_damage_description	Reduces the number of rings lost\nwhen damage is taken.		ダメージをうけた時にマイナスされる\nリングの個数が減少する。	Reduce el número de anillos\nsubstraído al sufrir daños.				Reduz o número de anéis perdidos ao receber dano.	Zmniejsza liczbę utraconych pierścieni po otrzymaniu obrażeń.	降低受傷時失去的金環數量。
 skill_slide_attack	Volcano Slider		ボルカノンスライダー	Deslizamiento Volcán				Deslizamento Vulcânico	Wulkaniczny Ślizg	火山滑行
 skill_slide_attack_description	Increases attack power when sliding.		スライディング中に攻撃力が追加される。	Aumenta tu poder de ataque al deslizarte.				Aumenta o ataque ao deslizar.	Zwiększa siłę ataku podczas ślizgania.	滑行追加攻擊力。
 skill_slide_defense	Aegis Slider		イージススライダー	Deslizamiento Égida				Deslizamento Égide	Egidzki Ślizg	護盾滑行
@@ -664,44 +684,44 @@ skill_accel_jump_attack1	Sub Fire Tackle		サブ　ファイヤータックル	S
 skill_accel_jump_attack_description	Increases attack power when\nperforming a Short Jump.		小ジャンプ中に攻撃力が追加される。	Aumenta tu poder de ataque\nal realizar un Brinco.				Aumenta o ataque ao\nrealizar um pulo curto.	Zwiększa siłę ataku podczas\nwykonywania Krótkiego Skoku.	短跳追加攻擊力。
 skill_accel_jump_attack_description1	Increases attack power when performing a Short Jump, but also reduces defense.		小ジャンプ中に攻撃力が追加されるが\n防御力が低下する。	Aumenta tu poder de ataque tras\nun Brinco, pero reduce tu defensa.				Aumenta o ataque ao realizar\num pulo curto, mas também reduz a defesa.	Zwiększa siłę ataku podczas wykonywania Krótkiego Skoku, ale ogranicza obronę.	短跳追加攻擊力，但防禦力降低。
 skill_backstep_attack	Fire Step		ファイヤーステップ	Paso Ígneo				Esquiva Ardente	Ogień w Butach	火焰跨步
-skill_backstep_attack_description	Increases attack power when\nperforming a Backflip.		バックステップに攻撃力が追加される。	Aumenta tu poder de ataque tras\nutilizar la Voltereta hacia Atrás.				Aumenta o poder de ataque ao se esquivar para trás.	Zwiększa siłę ataku podczas\nwykonywania Backflipa.	後空翻追加攻擊力。
+skill_backstep_attack_description	Increases attack power when\nperforming a Backflip.		バックステップに攻撃力が追加される。	Aumenta tu poder de ataque tras\nutilizar la Voltereta hacia Atrás.				Aumenta o poder de ataque ao se esquivar para trás.	Zwiększa siłę ataku podczas\nwykonywania Przewrotki.	後空翻追加攻擊力。
 skill_land_dash	Landing Dash		ランディングダッシュ	Aterrizaje Acelerante				Impulso de aterrissagem	Miękkie Lądowanie	著地衝刺
 skill_land_dash_description	Provides a speed boost when landing.		着地した時に初速があがる。	Recibe un acelerón al entrar\nen contacto con el suelo.				Obtenha um impulso ao aterrissar.	Zapewnia przyspieszenie podczas lądowania.	著地時加速。
 skill_land_soul	Soul Absorber		ソウルアブソーバー	Absorción de Almas				Absorção Espiritual	Pochłaniacz Dusz	魂力吸收者
 skill_land_soul1	Soul Assimilator		ソウルセモレイター	Asimilación de Almas				Assimilador Espiritual	Asymilator Dusz	魂力同化者
 skill_land_soul2	Soul Devourer		ソウルディヴァウワー	Devorador de Almas				Devorador Espiritual	Pożeracz Dusz	魂力吞噬者
 skill_land_soul3	Sub Soul Devourer		サブ　ソウルディヴァウワー	Sub Devorador de Almas				Sub Devorador Espiritual	Fals Pożeracz Dusz	次魂力吞噬者
-skill_land_soul_description	Slightly increases the Soul Gauge\nwhen landing.		着地した時にソウルゲージがちょっと上昇する。	Aumenta ligeramente la EXP\nobtenida al aterrizar de un salto.				Aumenta ligeiramente a Barra de Almas ao aterrissar.	Lekko zwiększa Duszomierz\npodczas lądowania.	著地時稍微增加魂力槽。
-skill_land_soul_description1	Moderately increases the Soul Gauge\nwhen landing.		着地した時にソウルゲージがほどほど上昇する。	Aumenta moderadamente la EXP\nobtenida al aterrizar de un salto.				Aumenta moderadamente a Barra de Almas ao aterrissar.	Umiarkowanie zwiększa Duszomierz\npodczas lądowania.	著地時適度增加魂力槽。
-skill_land_soul_description2	Greatly increases the Soul Gauge\nwhen landing.		着地した時にソウルゲージがかなり上昇する。	Aumenta significativamente la EXP\nobtenida al aterrizar de un salto.				Aumenta significativamente a Barra de Almas ao aterrissar.	Znacznie zwiększa Duszomierz\npodczas lądowania.	著地時大幅增加魂力槽。
-skill_land_soul_description3	Significantly increases the Soul Gauge when landing, but consumes rings.		着地した時にソウルゲージがかなり上昇するが\nリングを消費する。	Aumenta en gran medida la EXP\nobtenida al aterrizar, pero gasta anillos.				Aumenta significativamente a Barra de Almas ao aterrissar, mas consome anéis.	Konkretnie zwiększa Duszomierz podczas lądowania, ale zużywa przy tym pierścienie.	著地時大幅增加魂力槽，但會消耗金環。
-skill_rocket_start	Rocket Start		ロケットスタート	Salida Cohete				Largada Foguete	Rakietowy Start	火箭起跑
-skill_rocket_start_description	Press the Action Button when\nthe countdown is at 1 for a speed boost.		スタートカウントが１の時\nアクションボタンを押押すことで加速する。	Pulsa Acción Especial cuando la\ncuenta atrás diga 1 para un impulso.				Pressione o Botão de Ação quando a contagem\nregressiva estiver em 1 para ser impulsionado.	Naciśnij Przycisk Akcji podczas odliczania,\ngdy wyświetli się 1, aby uzyskać przyspieszenie.	當倒數至1時按下動作鍵會加速。
-skill_down_cancel	Down Cancel		ダウンキャンセル	Antiderribos				Retomada	Zdziwko	倒下取消
-skill_down_cancel_description	Press the Jump Button when\ntaking damage to cancel knockdown.		ダメージ中にジャンプボタンを押すことで\nダメージ体勢をキャンセルする。	Pulsa el Botón de Salto para\nevitar salir despedido al recibir daños.				Pressione o Botão de Pulo quando\nreceber dano para evitar ser derrubado.	Naciśnij Przycisk Skoku podczas odnoszenia\nobrażeń, aby nie dać się przeciwnikowi.	受傷時按下跳躍鍵可以取消受傷動畫。
+skill_land_soul_description	Slightly increases the Soul Gauge\nwhen landing.		着地した時にソウルゲージがちょっと上昇する。	Aumenta ligeramente la EXP\nobtenida al aterrizar de un salto.				Aumenta ligeiramente a Barra de Almas ao aterrissar.	Lekko zwiększa Duszomierz\npodczas lądowania.	著地時稍微增加魂力量表。
+skill_land_soul_description1	Moderately increases the Soul Gauge\nwhen landing.		着地した時にソウルゲージがほどほど上昇する。	Aumenta moderadamente la EXP\nobtenida al aterrizar de un salto.				Aumenta moderadamente a Barra de Almas ao aterrissar.	Umiarkowanie zwiększa Duszomierz\npodczas lądowania.	著地時適度增加魂力量表。
+skill_land_soul_description2	Greatly increases the Soul Gauge\nwhen landing.		着地した時にソウルゲージがかなり上昇する。	Aumenta significativamente la EXP\nobtenida al aterrizar de un salto.				Aumenta significativamente a Barra de Almas ao aterrissar.	Znacznie zwiększa Duszomierz\npodczas lądowania.	著地時大幅增加魂力量表。
+skill_land_soul_description3	Significantly increases the Soul Gauge when landing, but consumes rings.		着地した時にソウルゲージがかなり上昇するが\nリングを消費する。	Aumenta en gran medida la EXP\nobtenida al aterrizar, pero gasta anillos.				Aumenta significativamente a Barra de Almas ao aterrissar, mas consome anéis.	Konkretnie zwiększa Duszomierz podczas\nlądowania, ale zużywa przy tym pierścienie.	著地時大幅增加魂力量表，但會消耗金環。
+skill_rocket_start	Rocket Start		ロケットスタート	Salida Cohete				Largada Foguete	Rakietowy Start	火箭起步
+skill_rocket_start_description	Press the Action Button when\nthe countdown is at 1 for a speed boost.		スタートカウントが１の時\nアクションボタンを押押すことで加速する。	Pulsa Acción Especial cuando la\ncuenta atrás diga 1 para un impulso.				Pressione o Botão de Ação quando a contagem\nregressiva estiver em 1 para ser impulsionado.	Podczas odliczania, gdy wyświetli się 1,\nnaciśnij Przycisk Akcji, aby uzyskać przyspieszenie.	當倒數至1時按下動作鍵會加速。
+skill_down_cancel	Down Cancel		ダウンキャンセル	Antiderribos				Retomada	Zdziwko	受身
+skill_down_cancel_description	Press the Jump Button when\ntaking damage to cancel knockdown.		ダメージ中にジャンプボタンを押すことで\nダメージ体勢をキャンセルする。	Pulsa el Botón de Salto para\nevitar salir despedido al recibir daños.				Pressione o Botão de Pulo quando\nreceber dano para evitar ser derrubado.	Gdy odniesiesz obrażenia, naciśnij\nPrzycisk Skoku, aby nie dać się przeciwnikowi.	受傷時按下跳躍鍵可以取消受傷硬直時間。
 skill_fire_soul_lockon	Fire Lock-On		ファイヤーロックオン	Fijado Ígneo				Trava Ardente	Zaognienie	火焰追蹤
-skill_fire_soul_lockon_description	Allows Homing Attacks\nto target Fire Souls.		ファイヤーソウルをロックオンしホーミング\nアタックできるようになる。	Permite al Ataque Teledirigido fijar\nAlmas Ígneas como objetivo.				Permite realizar ataques\nteleguiados em Almas Ígneas.	Pozwala Atakom Naprowadzającym namierzać Ogniste Dusze.	允許對焰魂使用追蹤攻擊。
+skill_fire_soul_lockon_description	Allows Homing Attacks\nto target Fire Souls.		ファイヤーソウルをロックオンしホーミング\nアタックできるようになる。	Permite al Ataque Teledirigido fijar\nAlmas Ígneas como objetivo.				Permite realizar ataques\nteleguiados em Almas Ígneas.	Pozwala Atakom Naprowadzającym\nnamierzać Ogniste Duchy.	允許對焰魂使用追蹤攻擊。
 skill_splash_jump	Splash Jump		スプラッシュジャンプ	Salto de Respaldo				Salto Estilhaçado	Szczupak	噴濺跳躍
-skill_splash_jump_description	Provides an extra jump when\nJump Dashing into an obstacle.		空中で障害物に接触すると\nジャンプする	Obtén un salto extra al realizar un\nAcelerón Aéreo contra un obstáculo.				Obtenha um pulo extra ao realizar\num impulso aéreo contra um obstáculo.	Zapewnia Ekstra Skok podczas Wskoku\nw przeszkodę.	允許跳躍衝刺接觸障礙物時能進行二段跳。
+skill_splash_jump_description	Provides an extra jump when\nJump Dashing into an obstacle.		空中で障害物に接触すると\nジャンプする	Obtén un salto extra al realizar un\nAcelerón Aéreo contra un obstáculo.				Obtenha um pulo extra ao realizar\num impulso aéreo contra um obstáculo.	Zapewnia Ekstra Skok podczas\nWskoku w przeszkodę.	允許跳躍衝刺接觸障礙物時能進行二段跳。
 skill_drift_exp	Expert Drift		エキスパートドリフト	Derrape Experto				Derrapagem de Especialista	Ekspercki Drift	專家甩尾
-skill_drift_exp_description	Increases EXP during a Drift, but requires pressing the Action Button with good timing.		ドリフト中にEXPが増加するがタイミングよく\nアクションボタンを押す必要がある。	Aumenta la EXP obtenida al derrapar,\npero ahora el derrape es manual.				Aumenta a Experiência ganha por Derrapagem,\nmas requer controle manual.	Zwiększa PD podczas driftu, ale wymaga naciśnięcia Przycisku Akcji w dobrym momencie.	在甩尾時獲得EXP，但需要在正確時間點按下跳躍鍵。
+skill_drift_exp_description	Increases EXP during a Drift, but requires pressing the Action Button with good timing.		ドリフト中にEXPが増加するがタイミングよく\nアクションボタンを押す必要がある。	Aumenta la EXP obtenida al derrapar,\npero ahora el derrape es manual.				Aumenta a Experiência ganha por Derrapagem,\nmas requer controle manual.	Zwiększa PD podczas driftu, ale wymaga\nnaciśnięcia Przycisku Akcji\nw dobrym momencie.	在甩尾時獲得EXP，但需要在正確時間點按下動作鍵。
 skill_rank_preview	Rank Preview		ランク プレビュー	Rango Visible				Prévia de Ranque	Podgląd Rangi	評價預覽
 skill_rank_preview_description	Displays the current rank during gameplay.		ゲーム中現在の順位が表示されます。	Comprueba tu rango actual mientras juegas.				Mostra o ranque atual durante o jogo.	Wyświetla aktualną rangę podczas rozgrywki.	在遊玩時顯示目前的評價順位。
 skill_perfect_homing_attack	Perfect Homing Attack		パーフェクトストライク	Ataque Teledirigido Preciso				Ataque Teleguiado Perfeito	Perfekcyjny Atak Naprowadzający	完美追蹤攻擊
 skill_perfect_homing_attack_description	Increases attack power when\nperforming a well-timed Homing Attack.		タイミングよくホーミングアタックを行った\n時の攻撃力が増加する。	Inflinge mayor daño al realizar un\nAtaque Teledirigido en el momento justo.				Inflige maior dano ao realizar um\nataque teleguiado no tempo certo.	Zwiększa siłę ataku podczas dobrze\nwymiorzonego Ataku Naprowadzającego.	在正確時間點進行的追蹤攻擊追加攻擊力。
 skill_crest_wind	Crest of Wind		クレストオブウィンド	Cresta del Viento				Brasão do Vento	Powiew Wiatru	風之徽章
-skill_crest_wind_description	Unlocks the power of Wind if you equip\n10 Wind based skills.		風属性のスキルを10個装備すると\n属性スキルに封印された力が開放する。	Desbloquea el poder del Viento al\nequipar 10 o más abilidades de Viento.				Desbloqueia o poder do Vento ao\nequipar 10 habilidades de Vento.	Odblokowuje moc Wiatru pod wyposażeniu się w\n10 Wietrznych umiejętności.	在裝備10個風屬性技能時解鎖被封印的風之力。
+skill_crest_wind_description	Unlocks the power of Wind if you equip\n10 Wind based skills.		風属性のスキルを10個装備すると\n属性スキルに封印された力が開放する。	Desbloquea el poder del Viento al\nequipar 10 o más abilidades de Viento.				Desbloqueia o poder do Vento ao\nequipar 10 habilidades de Vento.	Odblokowuje moc Wiatru\npo wyposażeniu się\nw 10 Wietrznych umiejętności.	在裝備10個風屬性技能時解鎖被封印的風之力。
 skill_crest_fire	Crest of Fire		クレストオブフャイヤー	Cresta Ígnea				Brasão do Fogo	Powiew Ognia	焰之徽章
-skill_crest_fire_description	Unlocks the power of Fire if you equip\n6 Fire based skills.		炎属性のスキルを6個装備すると\n属性スキルに封印された力が開放する。	Desbloquea el poder del Fuego al\nequipar 6 o más abilidades de Fuego.				Desbloqueia o poder do Fogo ao\nequipar 6 habilidades de Fogo.	Odblokowuje moc Ognia pod wyposażeniu się w\n6 Ognistych umiejętności.	在裝備6個焰屬性技能時解鎖被封印的焰之力。
+skill_crest_fire_description	Unlocks the power of Fire if you equip\n6 Fire based skills.		炎属性のスキルを6個装備すると\n属性スキルに封印された力が開放する。	Desbloquea el poder del Fuego al\nequipar 6 o más abilidades de Fuego.				Desbloqueia o poder do Fogo ao\nequipar 6 habilidades de Fogo.	Odblokowuje moc Ognia\npo wyposażeniu się w\n6 Ognistych umiejętności.	在裝備6個焰屬性技能時解鎖被封印的焰之力。
 skill_crest_dark	Crest of Darkness		クレストオブダーク	Cresta Sombría				Brasão das Trevas	Powiew Mroku	闇之徽章
-skill_crest_dark_description	Unlocks the power of Darkness if you equip\n8 Dark based skills.		闇属性のスキルを8個装備すると\n属性スキルに封印された力が開放する。	Desbloquea el poder de la Oscuridad al\nequipar 8 o más habilidades Oscuras.				Desbloqueia o poder da Escuridão ao\nequipar 8 habilidades de Escuridão.	Odblokowuje moc Mroku pod wyposażeniu się w\n8 Mrocznych umiejętności.	在裝備8個闇屬性技能時解鎖被封印的闇之力。
+skill_crest_dark_description	Unlocks the power of Darkness if you equip\n8 Dark based skills.		闇属性のスキルを8個装備すると\n属性スキルに封印された力が開放する。	Desbloquea el poder de la Oscuridad al\nequipar 8 o más habilidades Oscuras.				Desbloqueia o poder da Escuridão ao\nequipar 8 habilidades de Escuridão.	Odblokowuje moc Mroku\npo wyposażeniu się w\n8 Mrocznych umiejętności.	在裝備8個闇屬性技能時解鎖被封印的闇之力。
 										
 										
 bonus_ring	Ring Bonus		リング　ボーナス	Bonificación por Anillos				Bônus de Anéis	Bonus za Pierścienie	金環獎勵
 bonus_enemy	Enemy Bonus		マジン　ボーナス	Bonificación por Enemigos				Bônus de Inimigo	Bonus za Ofensywę	敵人獎勵
 bonus_drift	Drift Bonus		ドリフト　ボーナス	Bonificación por Derrape				Bônus de Derrapagem	Bonus za Drift	甩尾獎勵
-bonus_grindstep	Grind Step Bonus		ステップ　ボーナス	Bonificación por Aterrizaje en Raíl				Bônus de Deslizamento	Bonus za Grindowanie	滑軌加速獎勵
-bonus_grind_shuffle	Grind Shuffle Bonus		シャッフル　ボーナス	Bonificación por Truco en Raíl				Bônus de Deslize em Seq.	Bonus za Szalony Grind	換軌獎勵
+bonus_grindstep	Grind Step Bonus		ステップ　ボーナス	Bonificación por Aterrizaje en Raíl				Bônus de Deslizamento	Bonus za Grind Skrzyżny	換軌獎勵
+bonus_grind_shuffle	Grind Shuffle Bonus		シャッフル　ボーナス	Bonificación por Truco en Raíl				Bônus de Deslize em Seq.	Bonus za Szalony Grind	踏軌加速獎勵
 bonus_exp	EXP Bonus		EXP　ボーナス	Bonificación de EXP				Bônus de XP	Bonus za PD	EXP獎勵
 										
 										
@@ -711,7 +731,7 @@ event01_2	Um...	Excuse me...		Disculpa...				Um...	Um...	嗚…
 event01_3	ZZZ...			¡Zzz... !				Zzz...	ZZZ...	ZZZ…
 event01_4	Hmph!	Come on...		Lo que hay que ver...				Hum!	Hmf! No weź...	哼！
 event01_5	Hey, wake up!			¡Oye!, ¡despierta!				Ei, acorde!	Hej, pobudka!	嘿，醒來啊！
-event01_6	Yaaaaawwn! Boy, is it that late\nalready? What time is it?	Yaaaaawwn! It's so late already, huh.\nWhat time is it?		¡Uaaaaa! ¡Vaya! Me he pasado\ndurmiendo... ¿Qué hora es?				Ããããaaaah! Mano, já tá tão tarde assim?\nQue horas são?	Zieeeeeew! Kurka rurka, już tak\npóźno? Która to godzina?	哈哈啊啊！哇已經這麼晚啦？幾點了？
+event01_6	Yaaaaawwn! Boy, is it that late\nalready? What time is it?	Yaaaaawwn! It's so late already, huh.\nWhat time is it?		¡Uaaaaa! ¡Vaya! Me he pasado\ndurmiendo... ¿Qué hora es?				Ããããaaaah! Mano, já tá tão tarde assim?\nQue horas são?	Zieeeeeew! Kurka rurka, już tak\npóźno? Która to godzina?	哈啊啊啊！哇已經這麼晚啦？現在幾點了？
 event01_7	Huh?			¿Eh?				Hã?	Huh?	嗯？
 event01_8	You are the blue hedgehog.	So you are the blue hedgehog.		Así que tú eres el erizo azul...				Você é o ouriço azul.	To ty jesteś niebieskim jeżem.	你就是那位藍色的刺蝟。
 event01_9	Ahh...What the...!	Aaaah!		¡Aaah!				Ah! Mas que...!	Ahh...Co do...!	啊… 什麼…！
@@ -725,8 +745,8 @@ event01_16	Hey, the page is blank!	The pages are blank!?		¿¡Las páginas está
 event01_17	Our world...	Our world,		Nuestro mundo,				Nosso mundo...	Nasz Świat...	我們的世界…
 event01_18	...The world of the Arabian Nights is vanishing.	The world of the Arabian Nights, is vanishing.		el mundo de Las mil y una noches,\nse desvanece...				...O mundo das Mil e uma Noites está desaparecendo.	...Świat Tysiąca i Jednej Nocy zanika.	…天方夜譚的世界正在逐漸消滅。
 event01_19	Vanishing? But how?	Vanishing? Why?		¿Se desvanece? ¿Por qué?				Desaparecendo? Como?	Zanika? Ale jak? Zanika? Czemu?	逐漸消滅？怎麼會這樣？
-event01_20	This is the work of an incredibly\nevil spirit...The Erazor Djinn.	It is the work of an evil genie: Erazor Djinn...		Es obra de un malvado ser mágico... Erazor el Yinn.				Isso é obra de um espírito maligno, o Erazor Djinn...	To sprawka niewyobrażalnie\nzłej duszy... Erazor Dżinna.	這都是一個非常邪惡的魔神… 伊萊薩害的。
-event01_21	Erazor...Djinn?			¿Erazor... el Yinn?				Erazor...Djinn?	Erazor...Dżinn?	滅… 靈？
+event01_20	This is the work of an incredibly\nevil spirit...The Erazor Djinn.	It is the work of an evil genie: Erazor Djinn...		Es obra de un malvado ser mágico... Erazor el Yinn.				Isso é obra de um espírito maligno, o Erazor Djinn...	To sprawka niewyobrażalnie\nzłego ducha... Erazor Dżinna.	這都是一個非常邪惡的魔神… 伊萊薩害的。
+event01_21	Erazor...Djinn?			¿Erazor... el Yinn?				Erazor...Djinn?	Erazor...Dżinn?	伊… 萊薩？
 event01_22	Yes.			Así es.				Sim.	Ta.	沒錯。
 event01_23	He used his evil magic to become even\nmore powerful.	He is a genie who possesses really powerful magic.		Es un genio que posee una\nmagia tan poderosa que				Ele usou sua magia maligna\npara se tornar ainda mais forte.	Użył swojej złej magii, aby stać się jeszcze\nbardziej potężnym.	他利用了他的邪惡魔法使他變得更加強大。
 event01_24	He could not bear to simply\nremain in the book any longer.	He did not know what to do with it, and could\nnot bear to remain within the book any longer.		ya no soportaba estar atrapado\ncon ella dentro del libro.				Ele não está mais satisfeito em\nficar apenas dentro do livro.	Nie mógł już dłużej\nwytrzymać w tej książce.	他無法忍受繼續被困在書中。
@@ -739,10 +759,10 @@ event01_30	But the Erazor Djinn will then be\nunleashed into your world.	But it 
 event01_31	That definitely sounds like trouble.\nBut, what do you want me to do?	That definitely sounds like trouble.\nSo? What do you want from me?		Pues vaya lío que se ha armado...\nVale, ¿qué quieres que haga?				Isso realmente é encrenca.\nMas o que você quer que eu faça?	Nie brzmi to za dobrze.\nAle, co chcesz, żebym zrobił?	聽起來是個問題呢。\n但你想要我怎麼做？
 event01_32	I want you to stop him...	I want you...		Quiero que tú...				Eu quero que você o pare...	Chcę, żebyś go powstrzymał...	我想要你阻止他…
 event01_33	You mush stop the Erazor Djinn.	...to stop the Erazor Djinn.		...detengas a Erazor el Yinn.				Você precisa parar o Erazor Djinn.	Musisz powstrzymać Erazor Dżinn.	你必須阻止伊萊薩。
-event01_34	Only you, the blue hedgehog, can do it.	You, the "blue hedgehog",\nare the only one who can do it.		El único que puede hacerlo eres\ntú, el "erizo azul".				Apenas você, o ouriço azul, é capaz.	Tylko ty, niebieski jeżu, możesz to zrobić.	只有藍色刺蝟你才能辦到。
+event01_34	Only you, the blue hedgehog, can do it.	You, the "blue hedgehog",\nare the only one who can do it.		El único que puede hacerlo eres\ntú, el "erizo azul".				Apenas você, o ouriço azul, é capaz.	Tylko ty, niebieski jeżu, możesz to zrobić.	藍色刺蝟，只有你才能辦到。
 event01_35	Hmm.			¡Hum!				Hum.	Hmm.	哼嗯。
 event01_36	So this guy needs someone\nto put him in his place, does he?	So you want me to play around\na little with this selfish kiddo, huh?		Así que quieres que juegue un\nrato con ese "crío" egoísta, ¿eh?				Então esse cara precisa entrar nos eixos, né?	Więc ten gość prosi się o kogoś kto\nzaprowadzi go z powrotem do domu, co nie?	所以這傢伙需要有人來\n教訓教訓他，是吧？
-event01_37	I suppose I can help out with that.\nIt might even be fun.	Though, even if you\nask for my help,		Aun así, en el fondo,				Eu acho que posso ajudar, talvez até seja divertido!	W sumie to mogę pomóc.\nMoże być nawet zabawnie.	我想我可以幫忙喔。\n可能還很有趣呢。
+event01_37	I suppose I can help out with that.\nIt might even be fun.	Though, even if you\nask for my help,		Aun así, en el fondo,				Eu acho que posso ajudar, talvez até seja divertido!	W sumie to mogę pomóc.\nMoże być nawet zabawnie.	我想我能幫上忙喔。\n可能還很有趣呢。
 event01_38	But... this is all just something\nout of a storybook, right?	This is all happening in a book, isn't it?		todo esto ocurre dentro de un libro, ¿no?				Mas... Isso tudo vem de um livro, certo?	Ale... to wszystko dzieje\ndzieje się w bajce, prawda?	但…這都是\n故事書裡的事，對吧？
 event01_39	How am I supposed to do anything\nabout that?	What do you want me to do about that?		¿Cómo se supone que\nhe de ayudarte?				Como eu posso fazer algo a respeito disso?	Jak miałbym coś\nz tym zrobić?	我要怎麼辦呢？
 event01_40	That's easy.	It's simple.		Es simple.				É bem simples.	Prościzna.	很簡單。
@@ -753,11 +773,11 @@ event01_44	Bringing you into the world of the\nArabian Nights is within my power
 event01_45	What?! Inside that book?	Huh?! Inside the book?		¿Qué? ¿Dentro de ese libro?				O quê!? Dentro do livro?	Co?! Że tak do wnętrza tej książki?	什麼？！進入那本書？
 event01_46	Now please,\nplace the ring on your finger!	Now, please, put this ring on your finger!		Primero,\nponte este anillo en el dedo				Agora por gentileza, ponha\no anel em seu dedo!	Teraz proszę,\nzałóż ten pierścień na na swój palec!	請你現在戴上戒指！
 event01_47	Like this?	...Like this?		... ¿Así está bien?				Tipo... assim?	Że tak?	像這樣嗎？
-event01_48	OUCH!\nHey, take it easy!	OUCH!\nOw-ow-ow...		¡Ay! ¡Eso duele!				AI! Ei, calma aí!	AUĆ!\nHej, spokojnie!	痛！嘿，下手輕一點嘛！
+event01_48	OUCH!\nHey, take it easy!	OUCH!\nOw-ow-ow...		¡Ay! ¡Eso duele!				AI! Ei, calma aí!	AUĆ!\nHej, spokojnie!	好痛！嘿，下手輕一點嘛！
 event01_49	My apologies, O Master,\nbut now the contract has been sealed.	My apologies, O Master.\nThe contract is now sealed.		Mis más sinceras disculpas, maestro.\nAhora el contrato está sellado.				Perdão, ó meu mestre.\nAgora, o contrato está selado.	Moje kondolencje, O Panie,\nale umowa została już przypieczętowana.	主人啊，容我向你道歉，\n但現在契約已經生效了。
 event01_50	Contract?			¿Eh? ¿Contrato?				Contrato?	Umowa?	契約？
-event01_51	Yes. As Master of the Ring,\nI am now bound to protect you.	Yes... And thanks to it,\nnow I can also protect you.		Sí, así es.\nGracias a él podré protegerte.				Sim. Como Mestre do Anel, agora\ndevo lhe proteger	Tak. Jako Władczyni Pierścienia,\njestem zobowiązana by Cię chronić.	沒錯，我現在有義務要保護\n身為戒指主人的你。
-event01_52	Now, rub the ring!	Now then, rub the ring, please.		Ahora, frota el anillo.				Agora, esfregue o anel!	A teraz, okręć pierścień!	摩擦戒指吧！
+event01_51	Yes. As Master of the Ring,\nI am now bound to protect you.	Yes... And thanks to it,\nnow I can also protect you.		Sí, así es.\nGracias a él podré protegerte.				Sim. Como Mestre do Anel, agora\ndevo lhe proteger	Tak. Jako Władczyni Pierścienia,\njestem zobowiązana Cię chronić.	沒錯，我現在有義務要保護\n身為戒指主人的你。
+event01_52	Now, rub the ring!	Now then, rub the ring, please.		Ahora, frota el anillo.				Agora, esfregue o anel!	A teraz, okręć pierścień!	現在摩擦戒指吧！
 event01_53	Like...Like this?	Will this do?		¿Así?				Tipo... assim?	Że...Że tak?	像… 像這樣嗎？
 event01_54	"O Master of the ring, what is thy wish?"	What do you wish for, O Master?\nI am at your command.		A su servicio, mi maestro.\nSus deseos son órdenes.				Ó, Mestre do Anel, o que você deseja?	O Panie pierścienia, jakie jest twe życzenie?	「喔戒指的主人啊，您有何願望？」
 event01_55	Achoo!\nAchoo!			¡Achís!\n¡Achís!				Atchim! Atchim!	Aciuu!\nAciuu!	哈啾！\n哈啾！
@@ -771,7 +791,7 @@ event01_62	Take me to this world of\nthe Arabian Nights!	Take me to the world of
 event01_63	As you wish, Master!	Understood, Master!		¡¡Como usted desee, maestro!!				Como quiser, mestre!	Jak sobie życzysz, Panie!	如你所願，主人！
 event01_64	Quit it, will you!	Cut that out!		¡Deja eso de "maestro"!				Corta essa, beleza?	Ejże, no co ty!	別再叫我主人了！
 event01_65	My name's Sonic.\nSonic the Hedgehog!	I'm Sonic!\nSonic the Hedgehog!		Yo soy "Sonic"...\n¡Sonic el Erizo!				Meu nome é Sonic! Sonic o Ouriço!	Nazywam się Sonic.\nJeż Sonic!	我的名字叫索尼克。\n刺蝟索尼克！
-event01_66	Very well then, Sonic.			Ya veo.\nConque Sonic...				Muito bem, Sonic.	Niech będzie, Soniku.	好吧，索尼克。
+event01_66	Very well then, Sonic.			Ya veo.\nConque Sonic...				Muito bem, Sonic.	Niech będzie, Sonicu.	好吧，索尼克。
 event01_67	...The legendary hedgehog.			...El legendario erizo.				...O Lendário Ouriço...	...Legendarny jeżu.	…傳說中的刺蝟。
 event01_68	Here we go!\nInto the world of the Arabian Nights!	Alright, let us go!\nTo the world of the Arabian Nights!		¡Dirijámonos al mundo de Las mil y una noches!				Vamos lá! Ao mundo das Mil e uma Noites!	Lecimy!\nDo świata Tysiąca i Jednej Nocy!	走囉！進入天方夜譚的世界！
 event01_69	OK!	OK.		¡OK!				Ok!	OK!	OK！

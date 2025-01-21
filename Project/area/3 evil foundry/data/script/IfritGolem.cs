@@ -197,6 +197,9 @@ public partial class IfritGolem : Node3D
 		ProcessShutters();
 		if (isLaserAttackActive)
 			ProcessLaserAttack();
+
+		if (isLavaInteractingWithPlayer)
+			ProcessLavaCollision();
 	}
 
 	public override void _Process(double _)
@@ -327,7 +330,7 @@ public partial class IfritGolem : Node3D
 
 		EnterIdle();
 
-		if (SoundManager.instance.IsDialogActive)
+		if (SoundManager.instance.IsSubtitlesActive)
 			return;
 
 		if (dialogFlags[1] < 3 && dialogFlags[3] != 1)
@@ -390,7 +393,7 @@ public partial class IfritGolem : Node3D
 		// Launch the player back to solid ground
 		Player.Animator.SnapRotation(bounceCameraSettings.yawAngle - (Mathf.Pi * 0.5f));
 		Player.StartLauncher(LaunchSettings.Create(Player.GlobalPosition, PlayerLaunchTarget.GlobalPosition, 5f));
-		Player.Camera.LockonTarget = null;
+		Player.Camera.SetLockonTarget(null);
 		Player.Animator.StartSpin(3f);
 		EmitSignal(SignalName.HitstunLaunched);
 		EmitSignal(SignalName.StunEnded);
@@ -456,7 +459,7 @@ public partial class IfritGolem : Node3D
 	{
 		ExitHitstun();
 
-		Player.Camera.LockonTarget = null;
+		Player.Camera.SetLockonTarget(null);
 		HitstunStatePlayback.Start(RecoveryAnimation);
 		currentState = GolemState.Recovery;
 	}
@@ -517,6 +520,7 @@ public partial class IfritGolem : Node3D
 		EnterHitstun(false);
 	}
 
+	private bool isLavaInteractingWithPlayer;
 	private bool isInteractingWithPlayer;
 	private bool isInteractionProcessed;
 	private void SetInteractionProcessed()
@@ -536,7 +540,7 @@ public partial class IfritGolem : Node3D
 		if (isInteractionProcessed)
 			return;
 
-		Player.Camera.LockonTarget = HeadHurtbox;
+		Player.Camera.SetLockonTarget(HeadHurtbox);
 
 		switch (Player.AttackState)
 		{
@@ -556,6 +560,39 @@ public partial class IfritGolem : Node3D
 
 		Player.StartBounce(true);
 		SetInteractionProcessed();
+	}
+
+	private void ProcessLavaCollision()
+	{
+		if (Player.IsLaunching)
+			return;
+
+		if (Player.VerticalSpeed > 0)
+			return;
+
+		if (Player.IsDefeated || Player.IsTeleporting) // Don't bother launching the player when respawning
+			return;
+
+		// Launch the player to the correct burn position
+		int burnPositionIndex = 0;
+		if (playerSector == 0 || playerSector == 5)
+			burnPositionIndex = 0;
+		else if (playerSector == 1 || playerSector == 2)
+			burnPositionIndex = 1;
+		else if (playerSector == 3 || playerSector == 4)
+			burnPositionIndex = 2;
+
+		Player.StartKnockback(new()
+		{
+			knockForward = true,
+			ignoreInvincibility = true,
+			disableDamage = Player.IsInvincible
+		});
+
+		LaunchSettings settings = LaunchSettings.Create(Player.GlobalPosition, burnPositions[burnPositionIndex].GlobalPosition, 5f, true);
+		settings.IgnoreCollisions = true;
+		Player.StartLauncher(settings);
+		EmitSignal(SignalName.LavaLaunched);
 	}
 
 	private bool IsSecondPhaseActive => currentHealth <= SecondPhaseRequirement;
@@ -600,6 +637,7 @@ public partial class IfritGolem : Node3D
 		Root.Rotation = Vector3.Zero;
 		ExitHitstun();
 
+		Player.Skills.DisableBreakSkills();
 		Player.Deactivate();
 		Player.AddLockoutData(Runtime.Instance.DefaultCompletionLockout);
 
@@ -1027,25 +1065,20 @@ public partial class IfritGolem : Node3D
 		isInteractingWithPlayer = false;
 	}
 
-	private void OnLavaDamagedPlayer()
+	private void OnLavaEntered(Area3D a)
 	{
-		if (Player.IsLaunching)
+		if (!a.IsInGroup("player"))
 			return;
 
-		if (Player.IsDefeated || Player.IsTeleporting) // Don't bother launching the player when respawning
+		isLavaInteractingWithPlayer = true;
+	}
+
+	private void OnLavaExited(Area3D a)
+	{
+		if (!a.IsInGroup("player"))
 			return;
 
-		// Launch the player to the correct burn position
-		int burnPositionIndex = 0;
-		if (playerSector == 0 || playerSector == 5)
-			burnPositionIndex = 0;
-		else if (playerSector == 1 || playerSector == 2)
-			burnPositionIndex = 1;
-		else if (playerSector == 3 || playerSector == 4)
-			burnPositionIndex = 2;
-
-		Player.StartLauncher(LaunchSettings.Create(Player.GlobalPosition, burnPositions[burnPositionIndex].GlobalPosition, 5f, true));
-		EmitSignal(SignalName.LavaLaunched);
+		isLavaInteractingWithPlayer = false;
 	}
 	#endregion
 }

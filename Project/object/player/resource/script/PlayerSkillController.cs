@@ -18,10 +18,41 @@ public partial class PlayerSkillController : Node3D
 		MaxSoulPower = SaveManager.ActiveGameData.CalculateMaxSoulPower();
 
 		SetUpSkills();
+		timeBreakAnimator.Play("RESET");
+		speedBreakAnimator.Play("RESET");
 	}
 
 	#region Skills
 	private SkillRing SkillRing => SaveManager.ActiveSkillRing;
+
+	public bool IsJumpCharged => JumpCharge >= 0.25f;
+	public float JumpCharge { get; private set; }
+	private readonly float ChargeFXDelay = 0.1f;
+	public void ChargeJump()
+	{
+		bool isFullyCharged = IsJumpCharged;
+		bool canStartFX = JumpCharge < ChargeFXDelay;
+
+		JumpCharge = Mathf.MoveToward(JumpCharge, 1f, PhysicsManager.physicsDelta);
+
+		if (canStartFX && JumpCharge >= ChargeFXDelay)
+		{
+			Player.Effect.StartChargeFX();
+
+			if (Player.MoveSpeed > Player.Stats.InitialSlideSpeed)
+				Player.Effect.PlayActionSFX(Player.Effect.SlideSfx);
+		}
+
+		if (IsJumpCharged && !isFullyCharged)
+			Player.Effect.StartFullChargeFX();
+	}
+	public bool ConsumeJumpCharge()
+	{
+		bool isJumpCharged = IsJumpCharged;
+		JumpCharge = 0;
+		Player.Effect.StopChargeFX();
+		return isJumpCharged;
+	}
 
 	[ExportGroup("Countdown Skills")]
 	[Export]
@@ -59,12 +90,12 @@ public partial class PlayerSkillController : Node3D
 		}
 		else if (SkillRing.IsSkillEquipped(SkillKey.CrestFire))
 		{
-			crestRequirement = 8;
+			crestRequirement = 6;
 			crestType = SkillResource.SkillElement.Fire;
 		}
 		else if (SkillRing.IsSkillEquipped(SkillKey.CrestDark))
 		{
-			crestRequirement = 6;
+			crestRequirement = 8;
 			crestType = SkillResource.SkillElement.Dark;
 		}
 		else
@@ -341,6 +372,7 @@ public partial class PlayerSkillController : Node3D
 			if (!IsSoulGaugeCharged) return;
 			if (!IsSpeedBreakEnabled) return;
 			if (!Player.IsOnGround || Player.IsDefeated) return;
+			if (Player.IsDrifting && !IsSpeedBreakActive) return;
 
 			ToggleSpeedBreak();
 		}
@@ -382,8 +414,6 @@ public partial class PlayerSkillController : Node3D
 
 	public void ToggleSpeedBreak()
 	{
-		//Player.ResetActionState();
-
 		IsSpeedBreakActive = !IsSpeedBreakActive;
 		SoundManager.IsBreakChannelMuted = IsSpeedBreakActive;
 		breakTimer = IsSpeedBreakActive ? SpeedBreakDelay : BreakSkillsCooldown;

@@ -5,17 +5,15 @@ namespace Project.Gameplay;
 
 public partial class KnockbackState : PlayerState
 {
-	[Export]
-	private PlayerState landState;
-	[Export]
-	private PlayerState jumpState;
+	[Export] private PlayerState landState;
+	[Export] private PlayerState jumpState;
 	public KnockbackSettings Settings { get; set; }
 	public KnockbackSettings PreviousSettings { get; set; }
 	private readonly float DamageFriction = 20f;
 
 	public override void EnterState()
 	{
-		Player.Camera.LockonTarget = null;
+		Player.Camera.SetLockonTarget(null);
 
 		if (Player.Skills.IsSpeedBreakActive) // Disable speedbreak
 			Player.Skills.ToggleSpeedBreak();
@@ -23,7 +21,7 @@ public partial class KnockbackState : PlayerState
 		Player.IsKnockback = true;
 		Player.MovementAngle = Player.PathFollower.ForwardAngle; // Prevent being knocked sideways
 
-		Player.Animator.StartHurt();
+		Player.Animator.StartHurt(Settings.knockForward);
 		Player.Animator.ResetState();
 		PreviousSettings = Settings;
 
@@ -40,23 +38,23 @@ public partial class KnockbackState : PlayerState
 		if (Player.ExternalController != null)
 			return; // Only allow autorespawning when not using external controller
 
+		if (Player.IsInvincible)
+			return;
+		Player.StartInvincibility();
+
 		if (Settings.disableDamage)
 			return;
 
-		// Apply invincibility and drop rings
-		if (!Player.IsInvincible)
-		{
-			Player.StartInvincibility();
-
-			if (!Settings.disableDamage)
-				Player.TakeDamage();
-		}
+		Player.TakeDamage();
 	}
 
 	public override void ExitState()
 	{
+		if (Settings.knockForward) // NOTE: This is handled in LandState if we're being knocked forward
+			return;
+
 		Player.IsKnockback = false;
-		Player.Animator.StopHurt();
+		Player.Animator.StopHurt(Settings.knockForward);
 		Player.Animator.ResetState();
 	}
 
@@ -65,6 +63,7 @@ public partial class KnockbackState : PlayerState
 		Player.MoveSpeed = Mathf.MoveToward(Player.MoveSpeed, 0, DamageFriction * PhysicsManager.physicsDelta);
 		Player.VerticalSpeed -= Runtime.Gravity * PhysicsManager.physicsDelta;
 		Player.ApplyMovement();
+		Player.UpdateUpDirection();
 
 		if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.DownCancel) &&
 			Player.Controller.IsJumpBufferActive)

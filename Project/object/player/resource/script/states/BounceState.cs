@@ -30,15 +30,15 @@ public partial class BounceState : PlayerState
 		AttemptBounceSnapping();
 		bounceInterruptTimer = LockoutSettings.length - .5f;
 
-		if (Player.IsLockoutActive && Player.ActiveLockoutData == LockoutSettings) return;
-
 		Player.IsOnGround = false;
 		Player.CanJumpDash = true;
+		Player.Lockon.IsMonitoring = true;
 		Player.VerticalSpeed = Runtime.CalculateJumpPower(bounceHeight);
 		Player.MovementAngle = Player.PathFollower.ForwardAngle;
-		Player.AddLockoutData(LockoutSettings);
 
-		Player.Lockon.IsMonitoring = false;
+		if (!Player.IsLockoutActive || Player.ActiveLockoutData != LockoutSettings)
+			Player.AddLockoutData(LockoutSettings);
+
 		Player.Animator.ResetState(0.1f);
 		Player.Animator.BounceTrick();
 		Player.Effect.PlayActionSFX(Player.Effect.JumpSfx);
@@ -59,9 +59,10 @@ public partial class BounceState : PlayerState
 		if (!Player.IsLockoutActive || Player.ActiveLockoutData != LockoutSettings) // Lockout has ended
 			return fallState;
 
-		if (!Player.Lockon.IsMonitoring)
+		if (!Player.IsBounceInteruptable)
 		{
-			UpdateBounceTimer();
+			bounceInterruptTimer = Mathf.MoveToward(bounceInterruptTimer, 0, PhysicsManager.physicsDelta);
+			Player.IsBounceInteruptable = Mathf.IsZeroApprox(bounceInterruptTimer);
 			return null;
 		}
 
@@ -108,11 +109,5 @@ public partial class BounceState : PlayerState
 
 		// Only snap when target being hit is correct
 		Player.GlobalPosition = Player.Lockon.Target.GlobalPosition;
-	}
-
-	private void UpdateBounceTimer()
-	{
-		bounceInterruptTimer = Mathf.MoveToward(bounceInterruptTimer, 0, PhysicsManager.physicsDelta);
-		Player.Lockon.IsMonitoring = Mathf.IsZeroApprox(bounceInterruptTimer);
 	}
 }

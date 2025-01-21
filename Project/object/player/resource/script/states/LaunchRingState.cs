@@ -16,8 +16,8 @@ public partial class LaunchRingState : PlayerState
 	public override void EnterState()
 	{
 		Player.MoveSpeed = Player.VerticalSpeed = 0;
-		Player.MovementAngle = ExtensionMethods.CalculateForwardAngle(Launcher.Forward().RemoveVertical().Normalized());
 
+		Player.MovementAngle = ExtensionMethods.CalculateForwardAngle(Launcher.GetLaunchDirection());
 		Player.Lockon.IsMonitoring = false; // Disable homing reticle
 
 		Player.Animator.ExternalAngle = Player.MovementAngle;
@@ -45,7 +45,7 @@ public partial class LaunchRingState : PlayerState
 	{
 		if (!Launcher.IsPlayerCentered)
 		{
-			Player.CenterPosition = Launcher.RecenterPlayer();
+			Player.GlobalPosition = Launcher.RecenterPlayer();
 			Player.Controller.ResetJumpBuffer(); // Reset jump buffers just in case
 			return null;
 		}

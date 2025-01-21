@@ -4,23 +4,28 @@ using Project.Gameplay.Objects;
 
 namespace Project.Gameplay;
 
+[Tool]
 public partial class GolemMajin : Enemy
 {
-	[Export]
-	private PathFollow3D pathFollower;
+	[Signal] public delegate void TurnStartedEventHandler();
+	[Signal] public delegate void FallenEventHandler();
+
 	/// <summary> Optional reference to a gas tank that can be thrown at the player. </summary>
-	[Export]
-	private GasTank gasTank;
-	[Export(PropertyHint.NodePathValidTypes, "Node3D")]
-	private NodePath gasTankParent;
+	[Export] private GasTank gasTank;
+	[Export(PropertyHint.NodePathValidTypes, "Node3D")] private NodePath gasTankParent;
 	private Node3D _gasTankParent;
+	[Export] private bool automaticallyThrowTank = true;
 	private bool canThrowGasTank;
 
+	private bool isTurning;
+
+	private PathFollow3D pathFollower;
 	private float startingProgress;
 
 	private Vector3 velocity;
-	private const float RotationResetSpeed = 5f;
+	private const float RotationResetRatio = .5f;
 	private const float WalkSpeed = 2f;
+	private const float DefaultCameraShakeDistance = 20;
 
 	private readonly StringName ThrowTrigger = "parameters/throw_trigger/request";
 	private readonly StringName StateTransition = "parameters/state_transition/transition_request";
@@ -30,13 +35,18 @@ public partial class GolemMajin : Enemy
 
 	protected override void SetUp()
 	{
-		if (pathFollower != null)
+		if (GetParent() is PathFollow3D)
+		{
+			pathFollower = GetParent<PathFollow3D>();
+			pathFollower.UseModelFront = true;
+			pathFollower.CubicInterp = false;
 			startingProgress = pathFollower.Progress;
+		}
 
 		if (gasTank != null)
 		{
 			_gasTankParent = GetNodeOrNull<Node3D>(gasTankParent);
-			gasTank.Connect(GasTank.SignalName.OnStrike, new(this, MethodName.LockGasTankToGolem));
+			gasTank.OnStrike += LockGasTankToGolem;
 		}
 
 		base.SetUp();
@@ -56,7 +66,7 @@ public partial class GolemMajin : Enemy
 
 	private void RespawnGasTank()
 	{
-		canThrowGasTank = true;
+		canThrowGasTank = automaticallyThrowTank;
 		gasTank.GetParent().RemoveChild(gasTank);
 		_gasTankParent.AddChild(gasTank);
 		gasTank.Transform = Transform3D.Identity;
@@ -80,7 +90,7 @@ public partial class GolemMajin : Enemy
 
 	private void LaunchGasTank()
 	{
-		if (gasTank.IsTraveling || gasTank.IsDetonated) // Gas tank has already been launched
+		if (gasTank.IsTravelling || gasTank.IsDetonated) // Gas tank has already been launched
 			return;
 
 		Transform3D t = gasTank.GlobalTransform;
@@ -92,6 +102,7 @@ public partial class GolemMajin : Enemy
 		else
 		{
 			gasTank.endTarget = Player;
+			gasTank.Monitorable = true;
 		}
 
 		_gasTankParent.RemoveChild(gasTank);
@@ -101,7 +112,18 @@ public partial class GolemMajin : Enemy
 	}
 
 	/// <summary> Update the gas tank to lock onto the golem's head. </summary>
-	private void LockGasTankToGolem() => gasTank.endTarget = Hurtbox;
+	private void LockGasTankToGolem()
+	{
+		if (!gasTank.IsTravelling)
+		{
+			gasTank.height = 2f;
+			gasTank.endPosition = Vector3.Down * 2.0f;
+			return;
+		}
+
+		gasTank.endTarget = Hurtbox;
+		gasTank.height = 2f;
+	}
 
 	protected override void EnterRange()
 	{
@@ -115,22 +137,57 @@ public partial class GolemMajin : Enemy
 	{
 		AnimationTree.Set(StateTransition, "defeat");
 		base.Defeat();
+		CallDeferred(MethodName.SetHitboxStatus, false, false);
 
 		if (gasTank != null) // Drop the gas tank
 			LaunchGasTank();
 	}
 
+	protected override void SpawnPearls() => Runtime.Instance.SpawnPearls(pearlAmount, GlobalPosition + (this.Back() * 5f), new Vector2(2, 1.5f), 1.5f);
+
 	protected override void UpdateEnemy()
 	{
+		if (StageSettings.Instance?.IsLevelIngame == false) return;
 		if (!IsActive) return;
 		if (pathFollower == null) return;
 
 		if (IsDefeated)
 		{
-			pathFollower.Rotation = pathFollower.Rotation.Lerp(Vector3.Zero, RotationResetSpeed * PhysicsManager.physicsDelta);
+			pathFollower.Rotation = pathFollower.Rotation.Lerp(Vector3.Zero, RotationResetRatio);
 			return;
 		}
 
+		CheckGasTank();
+		MoveGolem();
+	}
+
+	private void MoveGolem()
+	{
+		Vector3 forwardDirection = pathFollower.Forward();
 		pathFollower.Progress += WalkSpeed * PhysicsManager.physicsDelta;
+
+		// Check for turning to play a sound effect
+		if (forwardDirection.IsEqualApprox(pathFollower.Forward()))
+		{
+			if (isTurning)
+				isTurning = false;
+
+			return;
+		}
+
+		if (isTurning) return;
+
+		EmitSignal(SignalName.TurnStarted);
+		isTurning = true;
+	}
+
+	public void PlayScreenShake(float magnitude)
+	{
+		StageSettings.Player.Camera.StartCameraShake(new()
+		{
+			origin = GlobalPosition,
+			maximumDistance = DefaultCameraShakeDistance * magnitude,
+			magnitude = Vector3.One.RemoveDepth() * magnitude,
+		});
 	}
 }

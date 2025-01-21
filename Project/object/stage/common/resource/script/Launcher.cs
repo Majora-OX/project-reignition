@@ -135,12 +135,24 @@ public partial class Launcher : Node3D // Jumps between static points w/ custom 
 	{
 		if (launchDirection == LaunchDirection.Forward)
 			return LaunchPoint.Forward();
-		else if (launchDirection == LaunchDirection.Flatten)
-			return LaunchPoint.Up().RemoveVertical().Normalized();
+
+		if (launchDirection == LaunchDirection.Flatten)
+		{
+			if (Mathf.Abs(LaunchPoint.Forward().Dot(Vector3.Up)) > .9f)
+			{
+				int sign = LaunchPoint.Forward().Y > -0.01f ? 1 : -1;
+				sign *= LaunchPoint.Up().Y > -0.01f ? 1 : -1;
+				return -(LaunchPoint.Up() * sign).RemoveVertical().Normalized();
+			}
+
+			return LaunchPoint.Forward().RemoveVertical().Normalized();
+		}
 
 		return LaunchPoint.Up();
 	}
 
+	/// <summary> Overload method so launch rings can recenter the player visually. </summary>
+	protected virtual Vector3 CalculateStartingPoint() => StartingPoint;
 	public Vector3 StartingPoint => LaunchPoint.GlobalPosition + (Vector3.Up * startingHeight);
 
 	public LaunchSettings GetLaunchSettings()
@@ -149,8 +161,8 @@ public partial class Launcher : Node3D // Jumps between static points w/ custom 
 		float blendedMiddleHeight = Mathf.Lerp(middleHeight, secondaryMiddleHeight, GetLaunchRatio());
 		float blendedFinalHeight = Mathf.Lerp(finalHeight, secondaryFinalHeight, GetLaunchRatio());
 
-		Vector3 startPosition = StartingPoint;
-		Vector3 endPosition = startPosition + (GetLaunchDirection() * blendedDistance) + (Vector3.Up * blendedFinalHeight);
+		Vector3 startPosition = CalculateStartingPoint();
+		Vector3 endPosition = StartingPoint + (GetLaunchDirection() * blendedDistance) + (Vector3.Up * blendedFinalHeight);
 
 		LaunchSettings settings = LaunchSettings.Create(startPosition, endPosition, blendedMiddleHeight);
 		settings.AllowJumpDash = allowJumpDashing;
@@ -159,6 +171,9 @@ public partial class Launcher : Node3D // Jumps between static points w/ custom 
 
 		return settings;
 	}
+
+	public override void _Ready() => SetUp();
+	protected virtual void SetUp() => _sfxPlayer = GetNodeOrNull<AudioStreamPlayer3D>(sfxPlayer);
 
 	public virtual void Activate(Area3D a)
 	{
@@ -186,6 +201,7 @@ public partial class Launcher : Node3D // Jumps between static points w/ custom 
 	protected virtual void LaunchAnimation()
 	{
 		Player.Effect.StopSpinFX();
+		Player.Effect.StopTrailFX();
 		Player.Animator.ResetState(.1f);
 		if (GetLaunchSettings().InitialVelocity.AngleTo(Vector3.Up) < Mathf.Pi * .1f)
 			Player.Animator.JumpAnimation();
@@ -201,8 +217,9 @@ public partial class Launcher : Node3D // Jumps between static points w/ custom 
 
 	public Vector3 RecenterPlayer()
 	{
-		Vector3 pos = Player.GlobalPosition.MoveToward(StartingPoint, recenterSpeed * PhysicsManager.physicsDelta);
-		IsPlayerCentered = pos.IsEqualApprox(StartingPoint);
+		Vector3 targetPosition = CalculateStartingPoint();
+		Vector3 pos = Player.GlobalPosition.MoveToward(targetPosition, recenterSpeed * PhysicsManager.physicsDelta);
+		IsPlayerCentered = pos.IsEqualApprox(targetPosition);
 		return pos;
 	}
 
@@ -210,9 +227,10 @@ public partial class Launcher : Node3D // Jumps between static points w/ custom 
 
 	[Export]
 	/// <summary> Optional SFX player. </summary>
-	private AudioStreamPlayer3D sfxPlayer;
-	protected bool IsSfxActive => sfxPlayer.Playing;
-	protected virtual void PlayLaunchSfx() => sfxPlayer?.Play();
+	private NodePath sfxPlayer;
+	private AudioStreamPlayer3D _sfxPlayer;
+	protected bool IsSfxActive => _sfxPlayer.Playing;
+	protected virtual void PlayLaunchSfx() => _sfxPlayer?.Play();
 	[Export]
 	/// <summary> Option voice to play. </summary>
 	private StringName voiceKey;

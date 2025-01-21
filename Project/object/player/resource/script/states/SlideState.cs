@@ -18,12 +18,19 @@ public partial class SlideState : PlayerState
 
 	public override void EnterState()
 	{
-		if (Player.MoveSpeed <= Player.Stats.InitialSlideSpeed)
-			Player.MoveSpeed = Player.Stats.InitialSlideSpeed;
+		if (!SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.ChargeJump))
+		{
+			// Only add initial slide speed for normal sliding
+			if (Player.MoveSpeed <= Player.Stats.InitialSlideSpeed)
+				Player.MoveSpeed = Player.Stats.InitialSlideSpeed;
+
+			// So the SlideSFX can be synced to the ChargeFX
+			Player.Effect.PlayActionSFX(Player.Effect.SlideSfx);
+		}
 
 		Player.DisableSidle = true;
 		Player.Animator.StartSliding();
-		Player.Effect.PlayActionSFX(Player.Effect.SlideSfx);
+		Player.Effect.StartDust();
 		Player.ChangeHitbox("slide");
 
 		if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.SlideDefense))
@@ -52,10 +59,18 @@ public partial class SlideState : PlayerState
 	{
 		Player.DisableSidle = false;
 		Player.ChangeHitbox("RESET");
+		Player.Effect.StopDust();
+
+		if (!Player.IsDrifting &&
+			Player.StateMachine.QueuedState != jumpState &&
+			Player.StateMachine.QueuedState != crouchState)
+		{
+			Player.Skills.ConsumeJumpCharge();
+		}
 
 		if (!Mathf.IsZeroApprox(Player.MoveSpeed))
 		{
-			Player.Animator.StopCrouching(0.2f);
+			Player.Animator.StopCrouching();
 			Player.Animator.CrouchToMoveTransition();
 		}
 
@@ -82,6 +97,8 @@ public partial class SlideState : PlayerState
 		Player.AddSlopeSpeed(true);
 		Player.ApplyMovement();
 		Player.CheckWall();
+		if (Player.CheckCeiling())
+			return null;
 
 		if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.SlideExp))
 			Player.Skills.UpdateSoulSlide();
@@ -89,25 +106,41 @@ public partial class SlideState : PlayerState
 		if (!Player.CheckGround())
 			return fallState;
 
-		if (Player.Skills.IsSpeedBreakActive ||
-			(!Input.IsActionPressed("button_action") && !Player.Animator.IsSlideTransitionActive))
-		{
+		if (Player.Skills.IsSpeedBreakActive)
 			return runState;
-		}
 
-		if (Player.Controller.IsJumpBufferActive)
+		if (SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.ChargeJump))
 		{
-			Player.Controller.ResetJumpBuffer();
-
-			float inputAngle = Player.Controller.GetTargetInputAngle();
-			float inputStrength = Player.Controller.GetInputStrength();
-			if (!Mathf.IsZeroApprox(inputStrength) &&
-				Player.Controller.IsHoldingDirection(inputAngle, Player.PathFollower.BackAngle))
+			Player.Skills.ChargeJump();
+			if (!Input.IsActionPressed("button_jump"))
 			{
-				return backflipState;
-			}
+				Player.Effect.AbortActionSFX(Player.Effect.SlideSfx);
+				if (!Player.Controller.IsBrakeHeld())
+					return jumpState;
 
-			return jumpState;
+				Player.Skills.ConsumeJumpCharge();
+				return runState;
+			}
+		}
+		else
+		{
+			if (!Input.IsActionPressed("button_action") && !Player.Animator.IsSlideTransitionActive)
+				return runState;
+
+			if (Player.Controller.IsJumpBufferActive)
+			{
+				Player.Controller.ResetJumpBuffer();
+
+				float inputAngle = Player.Controller.GetTargetInputAngle();
+				float inputStrength = Player.Controller.GetInputStrength();
+				if (!Mathf.IsZeroApprox(inputStrength) &&
+					Player.Controller.IsHoldingDirection(inputAngle, Player.PathFollower.BackAngle))
+				{
+					return backflipState;
+				}
+
+				return jumpState;
+			}
 		}
 
 		if (Player.IsLockoutDisablingActions)

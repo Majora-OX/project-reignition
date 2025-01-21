@@ -33,13 +33,13 @@ public partial class BonusManager : VBoxContainer
 		if (ringChain >= 10)
 		{
 			BonusData ringBonus = new(BonusType.Ring, ringChain);
-			QueuedScore = ringBonus.CalculateBonusPoints();
+			QueuedScore += ringBonus.CalculateBonusPoints();
 		}
 
 		if (enemyChain >= 2)
 		{
 			BonusData enemyBonus = new(BonusType.Enemy, enemyChain);
-			QueuedScore = enemyBonus.CalculateBonusPoints();
+			QueuedScore += enemyBonus.CalculateBonusPoints();
 		}
 	}
 
@@ -118,29 +118,34 @@ public partial class BonusManager : VBoxContainer
 	private int enemyChain;
 	private float enemyChainTimer;
 	/// <summary> "Grace time" to allow player to chain attacks from a speed-break. </summary>
-	private readonly float ENEMY_CHAIN_BUFFER = .5f;
+	private readonly float EnemyChainBuffer = .5f;
+	private readonly List<Node> activeEnemyComboExtenders = [];
+
 	/// <summary> Increases the enemy chain. </summary>
 	public void AddEnemyChain()
 	{
 		enemyChain++;
 		UpdateQueuedScore();
 	}
+
 	/// <summary> Checks whether the enemy chain should end. </summary>
 	public void UpdateEnemyChain()
 	{
 		if (!Player.IsOnGround) return; // Chain is never counted when the player is in the air
+		if (Player.AllowLandingGrind || Player.IsGrinding) return; // Ignore Grindrails
 		if (Player.ExternalController != null) return; // Chains only end during normal movement
 
 		if (Player.Skills.IsSpeedBreakActive)
 		{
-			enemyChainTimer = ENEMY_CHAIN_BUFFER;
+			enemyChainTimer = EnemyChainBuffer;
 			return; // Chain continues during speedbreak
 		}
 
 		enemyChainTimer = Mathf.MoveToward(enemyChainTimer, 0, PhysicsManager.physicsDelta);
-		if (Mathf.IsZeroApprox(enemyChainTimer))
+		if (Mathf.IsZeroApprox(enemyChainTimer) && activeEnemyComboExtenders.Count == 0)
 			FinishEnemyChain();
 	}
+
 	/// <summary> Ends the current enemy chain. </summary>
 	public void FinishEnemyChain()
 	{
@@ -149,6 +154,16 @@ public partial class BonusManager : VBoxContainer
 
 		enemyChain = 0; // Reset enemy chain
 	}
+
+	public bool IsEnemyComboExtenderRegistered(Node n) => activeEnemyComboExtenders.Contains(n);
+	public void RegisterEnemyComboExtender(Node n)
+	{
+		if (activeEnemyComboExtenders.Contains(n))
+			return;
+
+		activeEnemyComboExtenders.Add(n);
+	}
+	public void UnregisterEnemyComboExtender(Node n) => activeEnemyComboExtenders.Remove(n);
 
 	/// <summary> Called when the level is completed. Forces all bonuses to be counted. </summary>
 	private void OnLevelCompleted()

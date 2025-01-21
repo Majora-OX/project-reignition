@@ -551,38 +551,37 @@ _data = {
 "demo3": SubResource("Animation_820jq")
 }
 
-[sub_resource type="Gradient" id="Gradient_lbers"]
+[sub_resource type="Gradient" id="Gradient_20q8e"]
 offsets = PackedFloat32Array(0.791045)
 colors = PackedColorArray(1, 0.415, 0.1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_auj1f"]
-gradient = SubResource("Gradient_lbers")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ei2rn"]
+gradient = SubResource("Gradient_20q8e")
 
-[sub_resource type="Gradient" id="Gradient_4slir"]
+[sub_resource type="Gradient" id="Gradient_l2yv1"]
 interpolation_color_space = 2
 offsets = PackedFloat32Array(0.149485, 0.365979, 0.5, 0.994845)
 colors = PackedColorArray(0, 0.654735, 0.948889, 1, 0.952253, 0.690817, 1, 1, 0, 0.116667, 1, 1, 0, 0.654735, 0.948889, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_inq5n"]
-gradient = SubResource("Gradient_4slir")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pbhgi"]
+gradient = SubResource("Gradient_l2yv1")
 use_hdr = true
 fill_from = Vector2(0.982906, 1)
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ea1lp"]
-panorama = SubResource("GradientTexture2D_inq5n")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fucwd"]
+panorama = SubResource("GradientTexture2D_pbhgi")
 
-[sub_resource type="Sky" id="Sky_cdpwp"]
+[sub_resource type="Sky" id="Sky_x73yc"]
 resource_local_to_scene = true
-sky_material = SubResource("PanoramaSkyMaterial_ea1lp")
+sky_material = SubResource("PanoramaSkyMaterial_fucwd")
 radiance_size = 1
 
-[sub_resource type="Environment" id="Environment_wea48"]
-background_mode = 2
-sky = SubResource("Sky_cdpwp")
+[sub_resource type="Environment" id="Environment_xc600"]
+sky = SubResource("Sky_x73yc")
 sky_rotation = Vector3(0.307178, 0, 0)
 ambient_light_source = 3
-ambient_light_color = Color(0.402667, 0.36, 1, 1)
-ambient_light_sky_contribution = 0.4
+ambient_light_color = Color(0.269526, 0.203777, 1, 1)
+ambient_light_sky_contribution = 0.2
 ambient_light_energy = 0.3
 reflected_light_source = 2
 tonemap_mode = 2
@@ -601,7 +600,7 @@ glow_blend_mode = 1
 glow_hdr_threshold = 3.5
 glow_hdr_scale = 1.0
 glow_map_strength = 1.0
-glow_map = SubResource("GradientTexture1D_auj1f")
+glow_map = SubResource("GradientTexture1D_ei2rn")
 fog_enabled = true
 fog_light_color = Color(0.533585, 0.699592, 1, 1)
 fog_density = 0.0002
@@ -637,7 +636,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 3, -0.5)
 shape = SubResource("SphereShape3D_eqslh")
 
 [node name="Object" type="Node3D" parent="Trigger"]
-visible = false
 
 [node name="DriftTrigger1" parent="Trigger/Object" instance=ExtResource("17_vcxwi")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 70.19, 75, -52.15)
@@ -652,7 +650,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50.15,
 [node name="DriftCamera" type="Node3D" parent="Trigger/Object/DriftTrigger2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42999, 0.299999, -12)
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
+transitionTime = 0.0
 deactivationTransitionTime = 1.0
 settings = ExtResource("20_0g5qj")
 
@@ -723,7 +721,7 @@ path = NodePath("../../../../Path/UTurnPath")
 [node name="Camera" type="Node3D" parent="Trigger/Object/UTurnTrigger"]
 transform = Transform3D(0.989442, 0, 0.144932, 0, 1, 0, -0.144932, 0, 0.989442, -7.95213, 14, -4.99524)
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
+transitionTime = 0.0
 settings = ExtResource("20_0g5qj")
 
 [node name="BeachPath" type="Node3D" parent="Trigger/Object/UTurnTrigger" node_paths=PackedStringArray("path")]
@@ -771,7 +769,7 @@ ignoreDirection = true
 [node name="Camera" type="Node3D" parent="Trigger/Object/WallClimbTrigger"]
 transform = Transform3D(1, 0, 3.55271e-15, 0, 1, -6.14081e-16, 0, -6.14083e-16, 1, 0, 6.99998, -13)
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
+transitionTime = 0.0
 settings = ExtResource("20_0g5qj")
 
 [node name="Path" type="Node3D" parent="Trigger/Object/WallClimbTrigger" node_paths=PackedStringArray("path")]
@@ -794,8 +792,6 @@ path = NodePath("../../../../Path/SidlePath")
 
 [node name="Camera" type="Node3D" parent="Trigger/Object/SidleTrigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("23_g7g12")
 previousSettings = ExtResource("20_0g5qj")
 
@@ -812,8 +808,6 @@ transform = Transform3D(-4.37114e-08, -0.173649, -0.984808, 8.74228e-08, 0.98480
 
 [node name="CameraTrigger" type="Node3D" parent="Trigger/Camera/Hall1Trigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("24_qtnck")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/Hall1Trigger"]
@@ -827,8 +821,6 @@ transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -2
 
 [node name="CameraTrigger" type="Node3D" parent="Trigger/Camera/OasisTrigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("23_vlc8n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/OasisTrigger"]
@@ -892,8 +884,6 @@ transform = Transform3D(0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, 0.422618, 
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/FieldTrigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("26_0w5je")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/FieldTrigger"]
@@ -907,8 +897,6 @@ transform = Transform3D(0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, 0.422618, 
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/ForestTrigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("29_gte7b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/ForestTrigger"]
@@ -922,8 +910,6 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 53.174, -40, -154.883)
 
 [node name="CameraTrigger" type="Node3D" parent="Trigger/Camera/IslandTrigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("34_ger3f")
 previousSettings = ExtResource("29_gte7b")
 
@@ -983,8 +969,6 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/Field2Trigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("26_0w5je")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/Field2Trigger"]
@@ -999,7 +983,7 @@ transform = Transform3D(0, 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1, 0, -
 [node name="Camera" type="Node3D" parent="Trigger/Camera/WallClimbTopTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35188e-23, 0, 0, 1, -0.599976, 14.7424, 20)
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
+transitionTime = 0.0
 settings = ExtResource("20_0g5qj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/WallClimbTopTrigger"]
@@ -1051,8 +1035,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -620, 
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/PillarTrigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("24_qtnck")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/PillarTrigger"]
@@ -1066,8 +1048,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -527.5
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/PierTrigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("34_ubrmr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/PierTrigger"]
@@ -1080,8 +1060,6 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -328.081, 
 
 [node name="Camera" type="Node3D" parent="Trigger/Camera/TownTrigger"]
 script = ExtResource("13_3nlok")
-"Additional Blend Settings/Blend By Distance" = false
-transitionTime = 0.5
 settings = ExtResource("30_eqqmw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Camera/TownTrigger"]
@@ -1199,6 +1177,7 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 60.5882, -45, -220.579)
 [node name="PathTrigger" type="Node3D" parent="Trigger/Path/Island1Trigger" node_paths=PackedStringArray("path")]
 script = ExtResource("19_gytq8")
 path = NodePath("../../../../Path/Island1Path")
+cameraPathBlendTime = 1.0
 
 [node name="CameraTrigger" type="Node3D" parent="Trigger/Path/Island1Trigger"]
 script = ExtResource("13_3nlok")
@@ -1217,6 +1196,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.148, -45.386, -358.5)
 [node name="PathTrigger" type="Node3D" parent="Trigger/Path/Island2Trigger" node_paths=PackedStringArray("path")]
 script = ExtResource("19_gytq8")
 path = NodePath("../../../../Path/Island2Path")
+cameraPathBlendTime = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Path/Island2Trigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
@@ -1544,7 +1524,7 @@ loopEndPosition = 205.12
 isStageMusic = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_wea48")
+environment = SubResource("Environment_xc600")
 
 [node name="PlanarReflectionRenderer" parent="." instance=ExtResource("28_5kt56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, -50, -250)
