@@ -1,12 +1,10 @@
-[gd_scene load_steps=79 format=3 uid="uid://chyg4fd83jn8r"]
+[gd_scene load_steps=77 format=3 uid="uid://chyg4fd83jn8r"]
 
 [ext_resource type="Script" path="res://object/stage/StageSettings.cs" id="1_61liy"]
 [ext_resource type="Resource" uid="uid://brknjxuaah7xr" path="res://area/1 sand oasis/act 1/camera/StartCam.tres" id="2_k2hv6"]
 [ext_resource type="Resource" uid="uid://b57nulf6d3pq4" path="res://area/1 sand oasis/data/DialogLibrary.tres" id="3_xe623"]
 [ext_resource type="PackedScene" uid="uid://c2ckwltf2j1kv" path="res://area/1 sand oasis/act 1/environment/collision/Collision.tscn" id="4_hlv8o"]
 [ext_resource type="PackedScene" uid="uid://bn6wr6l8s3qyt" path="res://object/trigger/StageTrigger.tscn" id="5_pgl6d"]
-[ext_resource type="PackedScene" uid="uid://kbkp2xxcqpq2" path="res://area/BK camelot castle/Act1/Environment/Collision/collision.tscn" id="5_w7m2o"]
-[ext_resource type="PackedScene" uid="uid://wpj0smmgjk01" path="res://area/1 sand oasis/act 1/environment/sandfall event/SandfallEvent.tscn" id="6_c7jqd"]
 [ext_resource type="PackedScene" uid="uid://etu2s6i547gb" path="res://object/trigger/state trigger/DriftTrigger.tscn" id="7_gs3dn"]
 [ext_resource type="Script" path="res://object/trigger/modules/CameraTrigger.cs" id="8_1o8wn"]
 [ext_resource type="Resource" uid="uid://dxy5ed0og2ka7" path="res://area/BK camelot castle/Act1/Camera/Bridge2DCamera2.tres" id="10_tnuyq"]
@@ -35,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bjndablfhyvl1" path="res://area/BK camelot castle/Act1/Environment/08Rooftops3.tscn" id="43_vatar"]
 [ext_resource type="PackedScene" uid="uid://dvwq3e6gjf0vj" path="res://area/BK camelot castle/Act1/Environment/09Aquaduct.tscn" id="44_ei121"]
 [ext_resource type="PackedScene" uid="uid://chmduy6dl3my2" path="res://area/BK camelot castle/Act1/Environment/10Sewer.tscn" id="45_4a3r2"]
+[ext_resource type="PackedScene" uid="uid://c8dmdhaa116wd" path="res://area/BK camelot castle/Act1/Environment/Collision/collision.tscn" id="46_jp2ub"]
 [ext_resource type="PackedScene" uid="uid://clg26r2i6xo03" path="res://area/BK camelot castle/Data/Skybox/Skybox.tscn" id="46_qhkvu"]
 [ext_resource type="PackedScene" uid="uid://jd11ou375uw1" path="res://area/BK camelot castle/Act1/Environment/11Sidemountains.tscn" id="46_ylx6j"]
 [ext_resource type="PackedScene" uid="uid://dby4xjgh8wxuh" path="res://area/BK camelot castle/Act1/Environment/12Castlemountains1.tscn" id="47_7728n"]
@@ -45,9 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://0o1ds8o5k04j" path="res://effect/buffer/PlanarReflectionRenderer.tscn" id="58_w30dl"]
 [ext_resource type="Material" uid="uid://5wxyrpeo8ycq" path="res://area/1 sand oasis/data/material/Water.tres" id="59_y3xcj"]
 [ext_resource type="Curve3D" uid="uid://7x2dmp2pfdfy" path="res://area/BK camelot castle/Act1/Environment/Path/Stairfixpath.tres" id="67_no0jt"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_eqslh"]
-radius = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_84q52"]
 size = Vector3(13.4558, 20, 4.65532)
@@ -471,7 +467,6 @@ ambient_light_color = Color(0.214362, 0.28108, 0.476243, 1)
 ambient_light_sky_contribution = 0.27
 ambient_light_energy = 0.0
 reflected_light_source = 1
-tonemap_mode = 2
 tonemap_exposure = 1.1
 tonemap_white = 1.1
 ssao_intensity = 1.59
@@ -509,23 +504,9 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 281.024, 0)
 visible = false
 
-[node name="Collision" parent="." instance=ExtResource("5_w7m2o")]
-visible = false
+[node name="collision" parent="." instance=ExtResource("46_jp2ub")]
 
 [node name="Trigger" type="Node3D" parent="."]
-
-[node name="SandfallTrigger" parent="Trigger" instance=ExtResource("5_pgl6d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -666, 7.003, -765)
-visible = false
-collision_layer = 0
-
-[node name="SandfallEvent" parent="Trigger/SandfallTrigger" instance=ExtResource("6_c7jqd")]
-transform = Transform3D(0.972087, -0.0423664, -0.230762, 0.0634712, 0.994374, 0.084812, 0.22587, -0.0970912, 0.969307, 542.771, -28.6034, 1368.04)
-"Trigger Settings/Player Stand-in" = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/SandfallTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 3, -0.5)
-shape = SubResource("SphereShape3D_eqslh")
 
 [node name="Object" type="Node3D" parent="Trigger"]
 
@@ -575,10 +556,10 @@ lockoutData = ExtResource("12_in01s")
 transform = Transform3D(0.999774, 0, 0.0215359, 0, 1, 0, -0.0215359, 0, 0.999774, -1.50545, 8, -79.5993)
 shape = SubResource("BoxShape3D_uhguw")
 
-[node name="HallOneWayTrigger" parent="Trigger/Object" instance=ExtResource("5_pgl6d")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.15163, -44.9061, -435.905)
+[node name="RoofOneWayTrigger" parent="Trigger/Object" instance=ExtResource("5_pgl6d")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -75.7731, 8.69218, -254.048)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Object/HallOneWayTrigger"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger/Object/RoofOneWayTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 shape = SubResource("BoxShape3D_84q52")
 
@@ -1190,11 +1171,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 shape = SubResource("BoxShape3D_84q52")
 
 [node name="06Load-04~11Unload" parent="Visuals/CullingMap" instance=ExtResource("5_pgl6d")]
-transform = Transform3D(-0.428178, 0, -0.903695, 0, 1, 0, 0.903695, 0, -0.428178, -260.46, -37.8188, -176.933)
+transform = Transform3D(-0.428178, 0, -0.903695, 0, 1, 0, 0.903695, 0, -0.428178, -260.46, -36.3288, -176.933)
 "Trigger Mode" = 2
 "Exit Mode" = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visuals/CullingMap/06Load-04~11Unload"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52013, 8, 0)
+shape = SubResource("BoxShape3D_84q52")
+
+[node name="05Unload~08Load~12Unload~13Load" parent="Visuals/CullingMap" instance=ExtResource("5_pgl6d")]
+transform = Transform3D(-0.0319001, 0, 0.999492, 0, 1, 0, -0.999492, 0, -0.0319001, -71.0033, 4.20155, -255.863)
+"Trigger Mode" = 2
+"Exit Mode" = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visuals/CullingMap/05Unload~08Load~12Unload~13Load"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52013, 8, 0)
 shape = SubResource("BoxShape3D_84q52")
 
@@ -1435,7 +1425,7 @@ environment = SubResource("Environment_l3kfp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, -50, -250)
 reflectionMaterials = [ExtResource("59_y3xcj")]
 
-[connection signal="Activated" from="Trigger/Object/HallOneWayTrigger" to="CollisionOld/HallOneWay" method="Activate"]
+[connection signal="Activated" from="Trigger/Object/RoofOneWayTrigger" to="collision/Oneway_001" method="Activate"]
 [connection signal="Activated" from="Trigger/Object/UTurnTrigger" to="Trigger/Object/UTurnTrigger/UTurnPath" method="Activate"]
 [connection signal="Activated" from="Trigger/Object/UTurnTrigger" to="Trigger/Object/UTurnTrigger/Camera" method="Activate"]
 [connection signal="Deactivated" from="Trigger/Object/UTurnTrigger" to="CollisionOld/UTurnOneWay" method="Activate"]
@@ -1472,3 +1462,7 @@ reflectionMaterials = [ExtResource("59_y3xcj")]
 [connection signal="Deactivated" from="Visuals/CullingMap/06Load-04~11Unload" to="Visuals/04Bridge" method="Activate"]
 [connection signal="Deactivated" from="Visuals/CullingMap/06Load-04~11Unload" to="Visuals/06Rooftops1" method="Deactivate"]
 [connection signal="Deactivated" from="Visuals/CullingMap/06Load-04~11Unload" to="Visuals/11Sidemountains" method="Activate"]
+[connection signal="Activated" from="Visuals/CullingMap/05Unload~08Load~12Unload~13Load" to="Visuals/05PostBridge" method="Deactivate"]
+[connection signal="Activated" from="Visuals/CullingMap/05Unload~08Load~12Unload~13Load" to="Visuals/08Rooftops3" method="Activate"]
+[connection signal="Activated" from="Visuals/CullingMap/05Unload~08Load~12Unload~13Load" to="Visuals/12Castlemountains1" method="Deactivate"]
+[connection signal="Activated" from="Visuals/CullingMap/05Unload~08Load~12Unload~13Load" to="Visuals/13Castlemountains2" method="Activate"]

@@ -58,3 +58,22 @@ transform = Transform3D(0.0975099, 0, 0, 0, -1.16241e-08, -0.0975099, 0, 0.09750
 gi_mode = 0
 mesh = SubResource("ArrayMesh_vixnq")
 skeleton = NodePath("")
+
+[node name="EnvironmentReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.026, -67.2629, 548.958)
+layers = 1024
+size = Vector3(940.447, 197.046, 768.032)
+interior = true
+cull_mask = 2
+ambient_mode = 2
+ambient_color = Color(0.72549, 0.839216, 1, 1)
+ambient_color_energy = 0.5
+
+[node name="ObjectReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.8711, -40.1466, -937.969)
+layers = 1024
+size = Vector3(3078.1, 172.472, 4989.9)
+cull_mask = 65
+ambient_mode = 2
+ambient_color = Color(0.78, 0.882667, 1, 1)
+ambient_color_energy = 0.2

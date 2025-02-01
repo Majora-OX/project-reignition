@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Project/area/BK camelot castle/Data/Texture/stg10_lens02.png.import
-uid="uid://uvpvnuqbin53"
+uid="uid://cfjienkvic6v8"
 path="res://.godot/imported/stg10_lens02.png-693b9e187920593a4d9b6799d7a098ab.ctex"
-========
-uid="uid://esj5pbrx8grh"
-path="res://.godot/imported/fire preset.png-316669321884f0a029102adab3ea6cf3.ctex"
->>>>>>>> origin/fix/v0.2.x-bugs:Project/interface/menu/skill select/texture/fire preset.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Project/area/BK camelot castle/Data/Texture/stg10_lens02.png.import
 source_file="res://area/BK camelot castle/Data/Texture/stg10_lens02.png"
 dest_files=["res://.godot/imported/stg10_lens02.png-693b9e187920593a4d9b6799d7a098ab.ctex"]
-========
-source_file="res://interface/menu/skill select/texture/fire preset.png"
-dest_files=["res://.godot/imported/fire preset.png-316669321884f0a029102adab3ea6cf3.ctex"]
->>>>>>>> origin/fix/v0.2.x-bugs:Project/interface/menu/skill select/texture/fire preset.png.import
 
 [params]
 

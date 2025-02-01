@@ -2,23 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://bb5f1f1f2q6bt" path="res://area/BK camelot castle/Act1/Environment/Model/Rooftops1.glb" id="2_kevn4"]
 [ext_resource type="PackedScene" uid="uid://cit62ys07s4ex" path="res://area/BK camelot castle/Act1/Environment/Model/Water3.glb" id="3_2jr4x"]
-[ext_resource type="PackedScene" uid="uid://d33ohgnonqlfs" path="res://area/BK camelot castle/Act1/Environment/Model/PostBridge.glb" id="4_io455"]
+[ext_resource type="PackedScene" uid="uid://0o1ds8o5k04j" path="res://effect/buffer/PlanarReflectionRenderer.tscn" id="3_7uhys"]
 
 [node name="06Rooftops1" type="Node3D"]
-
-[node name="Lights" type="Node3D" parent="."]
-visible = false
-
-[node name="Sun" type="DirectionalLight3D" parent="Lights"]
-transform = Transform3D(-0.823719, -0.175288, 0.539223, 0.27586, 0.706972, 0.651223, -0.495367, 0.685175, -0.533991, 63.1512, 0.935509, 717.067)
-visible = false
-shadow_enabled = true
-shadow_bias = 0.2
-directional_shadow_mode = 0
-
-[node name="PostBridge" parent="." instance=ExtResource("4_io455")]
-visible = false
 
 [node name="Rooftops1" parent="." instance=ExtResource("2_kevn4")]
 
 [node name="Water3" parent="." instance=ExtResource("3_2jr4x")]
+
+[node name="EnvironmentReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(0.0202793, 0, -0.999794, 0, 1, 0, 0.999794, 0, 0.0202793, 717.647, -67.2629, -293.024)
+layers = 1024
+size = Vector3(2705.07, 197.046, 1725.15)
+cull_mask = 1
+ambient_color = Color(0.72549, 0.839216, 1, 1)
+ambient_color_energy = 0.5
+
+[node name="PlanarReflectionRenderer" parent="." instance=ExtResource("3_7uhys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2465, -25, -160.055)

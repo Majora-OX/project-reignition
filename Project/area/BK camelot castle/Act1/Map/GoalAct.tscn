@@ -14693,6 +14693,7 @@ transform = Transform3D(0.26368, 0.389596, 0.882433, 0.0606134, 0.906308, -0.418
 middleHeight = 12.0
 finalHeight = 5.0
 distance = 15.0
+sfxPlayer = NodePath("")
 voiceKey = &""
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainAct/Oasis/FallingPillarGroup/HiddenSpring"]
@@ -14730,18 +14731,37 @@ disableRespawn = true
 [node name="Shatter" parent="MainAct/Oasis/PillarCrateGroup/Crate4/Root/SFX" index="0"]
 volume_db = -80.0
 
+[node name="Rooftops" type="Node3D" parent="MainAct"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -258.913, -27.0604, -195.062)
+script = ExtResource("6_j1cnk")
+startEnabled = true
+saveVisibilityOnCheckpoint = true
+
+[node name="JumpPanel1" parent="MainAct/Rooftops" instance=ExtResource("42_ykhjl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 148.412, 27.118, -58.9169)
+middleHeight = 18.405
+finalHeight = 12.595
+distance = 36.885
+sfxPlayer = NodePath("")
+
+[node name="TriggerData" type="Node3D" parent="MainAct/Rooftops"]
+
+[node name="JumpCamera" type="Node3D" parent="MainAct/Rooftops/TriggerData"]
+script = ExtResource("35_3umj2")
+settings = ExtResource("28_2hcpv")
+
 [node name="CastleTown" type="Node3D" parent="MainAct"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -253.253, -13.5302, 392.627)
 script = ExtResource("6_j1cnk")
 startEnabled = true
 saveVisibilityOnCheckpoint = true
 
-[node name="JumpPanel1" parent="MainAct/CastleTown" node_paths=PackedStringArray("sfxPlayer") instance=ExtResource("42_ykhjl")]
+[node name="JumpPanel1" parent="MainAct/CastleTown" instance=ExtResource("42_ykhjl")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 39.1087, 14.4684, -133.926)
 middleHeight = 16.895
 finalHeight = -16.25
 distance = 64.41
-sfxPlayer = NodePath("../../Island/JumpPanel1/SFX")
+sfxPlayer = NodePath("")
 
 [node name="TriggerData" type="Node3D" parent="MainAct/CastleTown"]
 
@@ -14788,6 +14808,7 @@ enemyCount = 1
 transform = Transform3D(-0.422618, 0, -0.906308, 0, 1, 0, 0.906308, 0, -0.422618, -73.3899, 10.1, -27.6471)
 "Spawn Settings/Travel Time" = 1.0
 "Spawn Settings/Travel Delay Range" = 0.0
+animator = NodePath("")
 
 [node name="StaticPillarGroup" type="Node3D" parent="MainAct/Plain"]
 
@@ -15651,6 +15672,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.88
 middleHeight = 6.0
 finalHeight = -2.0
 distance = 32.0
+sfxPlayer = NodePath("")
 
 [node name="Grindrail1" parent="MainAct/Island" instance=ExtResource("33_4yr0h")]
 transform = Transform3D(1, 0, 0, 0, 0.996164, -0.0875035, 0, 0.0875035, 0.996164, -19.886, -3.28809, 88.3136)
@@ -15710,6 +15732,7 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -19.98
 middleHeight = 6.0
 finalHeight = -2.0
 distance = 52.0
+sfxPlayer = NodePath("")
 
 [node name="Grindrail2" parent="MainAct/Island" instance=ExtResource("43_8uocv")]
 transform = Transform3D(0.803857, 0.0539104, -0.592375, 0, 0.995884, 0.0906326, 0.594823, -0.0728556, 0.800549, -16.72, -5.562, -37.7)
@@ -15824,12 +15847,14 @@ transform = Transform3D(-0.771614, 0, 0.636092, 0, 1, 0, -0.636092, 0, -0.771614
 middleHeight = 15.0
 finalHeight = 12.0
 distance = 40.0
+sfxPlayer = NodePath("")
 
 [node name="Spring" parent="MainAct/Island" instance=ExtResource("24_oiixn")]
 transform = Transform3D(0.207912, -0.944819, 0.253163, 0, 0.258819, 0.965926, -0.978149, -0.200827, 0.0538115, 36.0919, 3.38381, -105.294)
 middleHeight = 1.0
 finalHeight = -11.5
 distance = 28.0
+sfxPlayer = NodePath("")
 voiceKey = &""
 
 [node name="Rings" type="Node3D" parent="MainAct/Island/Spring"]
@@ -15906,6 +15931,7 @@ transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -35.7361
 middleHeight = 7.5
 finalHeight = 1.0
 distance = 46.0
+sfxPlayer = NodePath("")
 
 [node name="Pearl" type="Node3D" parent="MainAct/Island/JumpPanel4"]
 transform = Transform3D(-1, -7.26374e-08, -1.32503e-07, 1.00375e-08, 0.843016, -0.537888, 1.50773e-07, -0.537888, -0.843016, 0, 4.23638, 4.40385)
@@ -16424,6 +16450,7 @@ transform = Transform3D(1, 5.96046e-08, 0, 0, 0.258819, 0.965926, 0, -0.965926, 
 middleHeight = 1.0
 finalHeight = -5.0
 distance = 25.0
+sfxPlayer = NodePath("")
 voiceKey = &""
 
 [node name="SandDustParticle3" parent="MainAct/Hallway/Switch/EventTrigger/EventTrigger/Pillar3" instance=ExtResource("14_b8eqf")]
@@ -20264,6 +20291,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999048, 0.0436194, 0, -0.0436194, 0.999048
 middleHeight = 14.0
 finalHeight = 2.0
 distance = 5.0
+sfxPlayer = NodePath("")
 voiceKey = &""
 
 [node name="Pearls" type="Node3D" parent="MainAct/End/JarGroup2/JarM/Spring"]
@@ -20428,6 +20456,7 @@ collider = NodePath("")
 transform = Transform3D(0.305472, 0.353298, -0.884232, -0.31273, 0.914332, 0.257287, 0.899381, 0.197932, 0.38979, 0.0999756, 0.250013, -40)
 middleHeight = 4.0
 distance = 10.0
+sfxPlayer = NodePath("")
 voiceKey = &""
 
 [node name="GrindrailR3" parent="MainAct/End" instance=ExtResource("70_qgm3a")]
@@ -20441,6 +20470,7 @@ collider = NodePath("")
 transform = Transform3D(0.992066, 0.0670337, -0.106356, 0, 0.845986, 0.533206, 0.125718, -0.528975, 0.839274, 0, 0.15, -29.5)
 middleHeight = 4.0
 distance = 12.25
+sfxPlayer = NodePath("")
 voiceKey = &""
 
 [node name="GrindrailL4" parent="MainAct/End" instance=ExtResource("43_8uocv")]
@@ -20505,6 +20535,7 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 0.967579, 0.25257, 0, -0.25257, 0
 middleHeight = 18.0
 finalHeight = 10.0
 distance = 8.0
+sfxPlayer = NodePath("")
 voiceKey = &""
 
 [node name="FireSoul3" parent="MainAct/End/GrindrailM2" instance=ExtResource("46_j72vc")]
@@ -20913,6 +20944,8 @@ shape = SubResource("65")
 [connection signal="Activated" from="MainAct/CullingMap/BeachUnload-EndLoad" to="MainAct/End" method="Activate"]
 [connection signal="Deactivated" from="MainAct/CullingMap/BeachUnload-EndLoad" to="MainAct/Beach" method="Activate"]
 [connection signal="Deactivated" from="MainAct/CullingMap/BeachUnload-EndLoad" to="MainAct/End" method="Deactivate"]
+[connection signal="Activated" from="MainAct/Rooftops/JumpPanel1" to="MainAct/Rooftops/TriggerData/JumpCamera" method="Activate"]
+[connection signal="Deactivated" from="MainAct/Rooftops/JumpPanel1" to="MainAct/Rooftops/TriggerData/JumpCamera" method="Deactivate"]
 [connection signal="Activated" from="MainAct/CastleTown/JumpPanel1" to="MainAct/CastleTown/TriggerData/JumpCamera" method="Activate"]
 [connection signal="Deactivated" from="MainAct/CastleTown/JumpPanel1" to="MainAct/CastleTown/TriggerData/JumpCamera" method="Deactivate"]
 [connection signal="area_entered" from="MainAct/Plain/MajinActivation" to="MainAct/Plain/BlueMajin1" method="Spawn"]

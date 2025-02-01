@@ -22,3 +22,22 @@ visible = false
 [node name="Brige" parent="." instance=ExtResource("3_oan1k")]
 
 [node name="Water2" parent="." instance=ExtResource("4_2gdae")]
+
+[node name="EnvironmentReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -467.584, -67.2629, -222.392)
+layers = 1024
+size = Vector3(940.447, 197.046, 768.032)
+interior = true
+cull_mask = 2
+ambient_mode = 2
+ambient_color = Color(0.72549, 0.839216, 1, 1)
+ambient_color_energy = 0.5
+
+[node name="ObjectReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -446.43, -40.1466, -1709.32)
+layers = 1024
+size = Vector3(3078.1, 172.472, 4989.9)
+cull_mask = 65
+ambient_mode = 2
+ambient_color = Color(0.78, 0.882667, 1, 1)
+ambient_color_energy = 0.2

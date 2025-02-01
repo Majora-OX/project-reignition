@@ -14,3 +14,22 @@ shadow_bias = 0.2
 directional_shadow_mode = 0
 
 [node name="CastleEntrance" parent="." instance=ExtResource("3_61jse")]
+
+[node name="EnvironmentReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -410.484, -67.2629, 404.622)
+layers = 1024
+size = Vector3(940.447, 197.046, 768.032)
+interior = true
+cull_mask = 2
+ambient_mode = 2
+ambient_color = Color(0.72549, 0.839216, 1, 1)
+ambient_color_energy = 0.5
+
+[node name="ObjectReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.33, -40.1466, -1082.31)
+layers = 1024
+size = Vector3(3078.1, 172.472, 4989.9)
+cull_mask = 65
+ambient_mode = 2
+ambient_color = Color(0.78, 0.882667, 1, 1)
+ambient_color_energy = 0.2
